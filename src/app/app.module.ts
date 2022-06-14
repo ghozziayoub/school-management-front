@@ -10,6 +10,7 @@ import { OurTeamComponent } from './components/public/our-team/our-team.componen
 import { ContactComponent } from './components/public/contact/contact.component';
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
+import { Page404Component } from './components/public/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RegisterComponent } from './components/public/register/register.compone
     OurTeamComponent,
     ContactComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
