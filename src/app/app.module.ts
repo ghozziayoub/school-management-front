@@ -13,7 +13,7 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { Page404Component } from './components/public/page404/page404.component';
 import { NavbarComponent } from './components/public/navbar/navbar.component';
 import { FooterComponent } from './components/public/footer/footer.component';
-
+import{ HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { FooterComponent } from './components/public/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
