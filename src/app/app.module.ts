@@ -11,6 +11,8 @@ import { ContactComponent } from './components/public/contact/contact.component'
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { Page404Component } from './components/public/page404/page404.component';
+import { NavbarComponent } from './components/public/navbar/navbar.component';
+import { FooterComponent } from './components/public/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { Page404Component } from './components/public/page404/page404.component'
     ContactComponent,
     LoginComponent,
     RegisterComponent,
-    Page404Component
+    Page404Component,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
