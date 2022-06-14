@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators,FormControl,FormGroup, FormBuilder } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   myform: FormGroup;
   
-  constructor(private fb:FormBuilder) {
+  constructor(private fb:FormBuilder,private router: Router) {
     let formLogin = {
     
       email: new FormControl('', [
@@ -25,8 +25,26 @@ export class LoginComponent implements OnInit {
     }
     this.myform = this.fb.group(formLogin)
    }
+   
+
+   get password() { return this.myform.get('password') }
+   get email() { return this.myform.get('email') }
+
+
+
+
 
   ngOnInit(): void {
   }
 
+
+  login() {
+     
+    let data = this.myform.value;
+    
+     console.log(data)
+     this.router.navigate(['/'])
+ 
+ 
+  }
 }
