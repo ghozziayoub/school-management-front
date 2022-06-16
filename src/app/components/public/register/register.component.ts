@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
+import { User } from 'src/app/models/user';
+
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -65,7 +69,27 @@ export class RegisterComponent implements OnInit {
 
     let data = this.registerForm.value;
     console.log(data);
+
+    let user = new User(data.firstname,data.lastname,data.file,data.email, data.password,data.repassword);
+
+    this.Userservice.addUser(user).subscribe(
+      res=>{
+        this.router.navigate(['/login']);
+      },
+      err=>{
+        console.log(err);
+      }
+    )
     
   }
 
 }
+
+
+
+
+  
+
+
+
+ 
