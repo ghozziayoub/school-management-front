@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
       ]),
       repassword: new FormControl('', [
         Validators.required,
+        Validators.minLength(6)
       ])
     }
 

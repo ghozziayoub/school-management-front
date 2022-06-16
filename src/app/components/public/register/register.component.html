@@ -19,7 +19,8 @@
                                 <label for="name">Your Firstname</label>
                                 <div *ngIf="firstname?.invalid && firstname?.touched">
                                     <small *ngIf="firstname?.errors?.['required']" class="text-danger">Firstname required<br></small>
-                                    <small *ngIf="firstname?.errors?.['firstname']" class="text-danger"> invalid Firstname<br></small>
+                                    <small *ngIf="firstname?.errors?.['pattern']" class="text-danger"> invalid Firstname<br></small>
+                                    <small *ngIf="firstname?.errors?.['minLength']" class="text-danger"> invalid input<br></small>
                                 </div>
                             </div>
                         </div>
@@ -29,7 +30,8 @@
                                 <label for="name">Your Lastname</label>
                                 <div *ngIf="lastname?.invalid && lastname?.touched">
                                     <small *ngIf="lastname?.errors?.['required']" class="text-danger">lastname required<br></small>
-                                    <small *ngIf="lastname?.errors?.['lastname']" class="text-danger"> invalid lastname<br></small>
+                                    <small *ngIf="lastname?.errors?.['pattern']" class="text-danger"> invalid lastname<br></small>
+                                    <small *ngIf="lastname?.errors?.['minLength']" class="text-danger"> invalid input<br></small>
                                 </div>
                             </div>
                         </div>
@@ -61,7 +63,7 @@
                                 <label for="name">Your Password</label>
                                 <div *ngIf="password?.invalid && password?.touched">
                                     <small *ngIf="password?.errors?.['required']" class="text-danger">password required<br></small>
-                                    <small *ngIf="password?.errors?.['password']" class="text-danger"> invalid password<br></small>
+                                    <small *ngIf="password?.errors?.['minLength']" class="text-danger"> invalid password<br></small>
                                 </div>
                             </div>
                         </div>
@@ -72,7 +74,7 @@
                                 <label for="name">Repeat Your Password</label>
                                 <div *ngIf="repassword?.invalid && repassword?.touched">
                                     <small *ngIf="repassword?.errors?.['required']" class="text-danger">repassword required<br></small>
-                                    <small *ngIf="repassword?.errors?.['repassword']" class="text-danger"> invalid repassword<br></small>
+                                    <small *ngIf="repassword?.errors?.['minLength']" class="text-danger"> invalid repassword<br></small>
                                 </div>
                             </div>
                         </div>
