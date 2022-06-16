@@ -15,6 +15,9 @@ import { NavbarComponent } from './components/public/navbar/navbar.component';
 import { FooterComponent } from './components/public/footer/footer.component';
 import{ HttpClientModule} from '@angular/common/http';
 import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
+import { TopBarComponent } from './components/private/shared/top-bar/top-bar.component';
+import { SideBarComponent } from './components/private/shared/side-bar/side-bar.component';
+import { FooterDashboardComponent } from './components/private/shared/footer-dashboard/footer-dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,10 @@ import { DashboardComponent } from './components/private/shared/dashboard/dashbo
     Page404Component,
     NavbarComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    TopBarComponent,
+    SideBarComponent,
+    FooterDashboardComponent
   ],
   imports: [
     BrowserModule,
