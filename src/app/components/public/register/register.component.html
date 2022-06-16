@@ -36,7 +36,11 @@
 
                         <div class="col-12">
                             <div class="form-floating">
-                                <p for="file">Import Your Image : <input type="file" class="form-control-file" id="file"> </p>
+                                <p for="file">Import Your Image : <input type="file" class="form-control-file" id="file" formControlName="file"> </p>
+                                <div *ngIf="firstname?.invalid && file?.touched">
+                                    <small *ngIf="file?.errors?.['required']" class="text-danger">image required<br></small>
+                                    <small *ngIf="file?.errors?.['file']" class="text-danger"> invalid Image<br></small>
+                                </div>
                             </div>
                         </div>
 

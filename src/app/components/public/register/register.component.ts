@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
       ]),
       file: new FormControl('', [
         Validators.required,
+        
       ]),
       email: new FormControl('', [
         Validators.required,
