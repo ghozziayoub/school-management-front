@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
 
   myform: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router, private userService: UserService,private toastr: ToastrService) {
+  constructor(private fb: FormBuilder, private router: Router, private userService: UserService, private toastr: ToastrService) {
     let formLogin = {
 
       email: new FormControl('', [
@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("myToken", token)
         this.toastr.success(result.message);
 
-        this.router.navigate(['/private/dashboard']);
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         console.log(err);
