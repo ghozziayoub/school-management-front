@@ -13,14 +13,14 @@ import { User } from 'src/app/models/user';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup
-  
+
 
   constructor(
 
-    private fb: FormBuilder,private router: Router, private userr: UserService,
+    private fb: FormBuilder, private router: Router, private userr: UserService,
 
   ) {
-    
+
     let formControls = {
       firstname: new FormControl('', [
         Validators.required,
@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
       ]),
       file: new FormControl('', [
         Validators.required,
-        
+
       ]),
       email: new FormControl('', [
         Validators.required,
@@ -62,26 +62,14 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
 
-
   }
 
-  register(){
-
+  register() {
     let data = this.registerForm.value;
-    console.log(data);
 
-    let user = new User(data.firstname,data.lastname,data.file,data.email, data.password,data.repassword);
+    let user = new User(data.firstname, data.lastname, data.file, data.email, data.password, data.repassword);
 
-    this.userr.addUser(user).subscribe(
-      res=>{
-
-        this.router.navigate(['/login']);
-      },
-      err=>{
-        console.log(err);
-      }
-    )
-    
+    console.log(user);
   }
 
 }
@@ -89,8 +77,7 @@ export class RegisterComponent implements OnInit {
 
 
 
-  
 
 
 
- 
+
