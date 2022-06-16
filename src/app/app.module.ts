@@ -14,6 +14,7 @@ import { Page404Component } from './components/public/page404/page404.component'
 import { NavbarComponent } from './components/public/navbar/navbar.component';
 import { FooterComponent } from './components/public/footer/footer.component';
 import{ HttpClientModule} from '@angular/common/http';
+import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import{ HttpClientModule} from '@angular/common/http';
     RegisterComponent,
     Page404Component,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
