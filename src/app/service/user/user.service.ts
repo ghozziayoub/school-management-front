@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { User } from './user';
+import { User } from '../../models/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -11,8 +11,8 @@ export class UserService {
     private getAllUsersUrl = "http://localhost:3000/users";
     private getOneUserUrl = "http://localhost:3000/users/";
     private deleteUserUrl = "http://localhost:3000/users/";
-    private addUserUrl = "http://localhost:3000/users/add";
-    private updateUserUrl = "http://localhost:3000/users/update";
+    private addUserUrl = "http://localhost:3000/users/";
+    private updateUserUrl = "http://localhost:3000/users/";
     private registerUserUrl = "http://localhost:3000/users/register";
     private loginUserUrl = "http://localhost:3000/users/login";
   

@@ -1,36 +1,36 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Message } from './message';
+import { Message } from '../../models/message';
 @Injectable({
   providedIn: 'root'
 })
 export class MessageService {
 
-  private getAllmessagesUrl = "http://localhost:3000/messages";
-  private getOnemessageUrl = "http://localhost:3000/messages/";
-  private deletemessageUrl = "http://localhost:3000/messages/";
-  private addmessageUrl = "http://localhost:3000/messages/add";
-  private updatemessageUrl = "http://localhost:3000/messages/update";
+  private getAllMessagesUrl = "http://localhost:3000/messages";
+  private getOneMessageUrl = "http://localhost:3000/messages/";
+  private deleteMessageUrl = "http://localhost:3000/messages/";
+  private addMessageUrl = "http://localhost:3000/messages/";
+  private updateMessageUrl = "http://localhost:3000/messages/";
 
   constructor(private http: HttpClient) { }
 
-  getAllmessages() {
-    return this.http.get<any>(this.getAllmessagesUrl);
+  getAllMessages() {
+    return this.http.get<any>(this.getAllMessagesUrl);
   }
 
-  getOnemessage(id: String) {
-    return this.http.get<any>(this.getOnemessageUrl + id)
+  getOneMessage(id: String) {
+    return this.http.get<any>(this.getOneMessageUrl + id)
   }
 
-  deletemessage(id: String) {
-    return this.http.delete<any>(this.deletemessageUrl + id)
+  deleteMessage(id: String) {
+    return this.http.delete<any>(this.deleteMessageUrl + id)
   }
 
-  addmessage(message: Message) {
-    return this.http.post<any>(this.addmessageUrl, message);
+  addMessage(Message: Message) {
+    return this.http.post<any>(this.addMessageUrl, Message);
   }
 
-  updatemessage(message: Message) {
-    return this.http.put<any>(this.updatemessageUrl, message);
+  updateMessage(Message: Message) {
+    return this.http.put<any>(this.updateMessageUrl, Message);
   }
 }

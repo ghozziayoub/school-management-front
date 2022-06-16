@@ -1,37 +1,37 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Training } from './training';
+import { Training } from '../../models/training';
 @Injectable({
   providedIn: 'root'
 })
 export class TrainingService {
 
  
-  private getAlltrainingsUrl = "http://localhost:3000/trainings";
-  private getOnetrainingUrl = "http://localhost:3000/trainings/";
-  private deletetrainingUrl = "http://localhost:3000/trainings/";
-  private addtrainingUrl = "http://localhost:3000/trainings/add";
-  private updatetrainingUrl = "http://localhost:3000/trainings/update";
+  private getAllTrainingsUrl = "http://localhost:3000/trainings";
+  private getOneTrainingUrl = "http://localhost:3000/trainings/";
+  private deleteTrainingUrl = "http://localhost:3000/trainings/";
+  private addTrainingUrl = "http://localhost:3000/trainings/";
+  private updateTrainingUrl = "http://localhost:3000/trainings/";
 
   constructor(private http: HttpClient) { }
 
-  getAlltrainings() {
-    return this.http.get<any>(this.getAlltrainingsUrl);
+  getAllTrainings() {
+    return this.http.get<any>(this.getAllTrainingsUrl);
   }
 
-  getOnetraining(id: String) {
-    return this.http.get<any>(this.getOnetrainingUrl + id)
+  getOneTraining(id: String) {
+    return this.http.get<any>(this.getOneTrainingUrl + id)
   }
 
-  deletetraining(id: String) {
-    return this.http.delete<any>(this.deletetrainingUrl + id)
+  deleteTraining(id: String) {
+    return this.http.delete<any>(this.deleteTrainingUrl + id)
   }
 
-  addtraining(training: Training) {
-    return this.http.post<any>(this.addtrainingUrl, training);
+  addTraining(Training: Training) {
+    return this.http.post<any>(this.addTrainingUrl, Training);
   }
 
-  updatetraining(training: Training) {
-    return this.http.put<any>(this.updatetrainingUrl, training);
+  updateTraining(Training: Training) {
+    return this.http.put<any>(this.updateTrainingUrl, Training);
   }
 }

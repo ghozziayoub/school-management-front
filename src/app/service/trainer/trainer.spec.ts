@@ -1,4 +1,4 @@
-import { Trainer } from './trainer';
+import { Trainer } from '../../models/trainer';
 
 describe('Trainer', () => {
   it('should create an instance', () => {

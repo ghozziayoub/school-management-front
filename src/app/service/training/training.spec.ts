@@ -1,4 +1,4 @@
-import { Training } from './training';
+import { Training } from '../../models/training';
 
 describe('Training', () => {
   it('should create an instance', () => {
