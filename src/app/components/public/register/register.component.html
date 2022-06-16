@@ -16,14 +16,22 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="firstname" placeholder="Your Firstname">
+                                <input type="text" class="form-control" id="firstname" placeholder="Your Firstname" formControlName="firstname">
                                 <label for="name">Your Firstname</label>
+                                <div *ngIf="firstname?.invalid && firstname?.touched">
+                                    <small *ngIf="firstname?.errors?.['required']" class="text-danger">Firstname required<br></small>
+                                    <small *ngIf="firstname?.errors?.['firstname']" class="text-danger"> invalid Firstname<br></small>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="lastname" placeholder="Your Lastname">
+                                <input type="text" class="form-control" id="lastname" placeholder="Your Lastname" formControlName="lastname">
                                 <label for="name">Your Lastname</label>
+                                <div *ngIf="lastname?.invalid && lastname?.touched">
+                                    <small *ngIf="lastname?.errors?.['required']" class="text-danger">lastname required<br></small>
+                                    <small *ngIf="lastname?.errors?.['lastname']" class="text-danger"> invalid lastname<br></small>
+                                </div>
                             </div>
                         </div>
 
@@ -35,22 +43,34 @@
 
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" formControlName="email">
                                 <label for="email">Your Email</label>
+                                <div *ngIf="firstname?.invalid && email?.touched">
+                                    <small *ngIf="email?.errors?.['required']" class="text-danger">email required<br></small>
+                                    <small *ngIf="email?.errors?.['email']" class="text-danger"> invalid email<br></small>
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="password" placeholder="**********">
+                                <input type="text" class="form-control" id="password" placeholder="**********" formControlName="password">
                                 <label for="name">Your Password</label>
+                                <div *ngIf="password?.invalid && password?.touched">
+                                    <small *ngIf="password?.errors?.['required']" class="text-danger">password required<br></small>
+                                    <small *ngIf="password?.errors?.['password']" class="text-danger"> invalid password<br></small>
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="repassword" placeholder="**********">
+                                <input type="text" class="form-control" id="repassword" placeholder="**********" formControlName="repassword">
                                 <label for="name">Repeat Your Password</label>
+                                <div *ngIf="repassword?.invalid && repassword?.touched">
+                                    <small *ngIf="repassword?.errors?.['required']" class="text-danger">repassword required<br></small>
+                                    <small *ngIf="repassword?.errors?.['repassword']" class="text-danger"> invalid repassword<br></small>
+                                </div>
                             </div>
                         </div>
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,12 +9,14 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup
+  
 
   constructor(
 
-    private fb: FormBuilder,
+    private fb: FormBuilder,private router: Router
 
   ) {
+    
     let formControls = {
       firstname: new FormControl('', [
         Validators.required,
