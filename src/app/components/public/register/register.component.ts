@@ -17,7 +17,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
 
-    private fb: FormBuilder,private router: Router
+    private fb: FormBuilder,private router: Router, private userr: UserService,
 
   ) {
     
@@ -72,8 +72,9 @@ export class RegisterComponent implements OnInit {
 
     let user = new User(data.firstname,data.lastname,data.file,data.email, data.password,data.repassword);
 
-    this.Userservice.addUser(user).subscribe(
+    this.userr.addUser(user).subscribe(
       res=>{
+
         this.router.navigate(['/login']);
       },
       err=>{
