@@ -27,11 +27,11 @@ export class TrainingService {
     return this.http.delete<any>(this.deleteTrainingUrl + id)
   }
 
-  addTraining(Training: Training) {
-    return this.http.post<any>(this.addTrainingUrl, Training);
+  addTraining(training: Training) {
+    return this.http.post<any>(this.addTrainingUrl, training);
   }
 
-  updateTraining(Training: Training) {
-    return this.http.put<any>(this.updateTrainingUrl, Training);
+  updateTraining(training: Training) {
+    return this.http.put<any>(this.updateTrainingUrl, training);
   }
 }

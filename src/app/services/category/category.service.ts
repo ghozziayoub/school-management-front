@@ -26,11 +26,11 @@ export class CategoryService {
     return this.http.delete<any>(this.deleteCategoryUrl + id)
   }
 
-  addCategory(Category: Category) {
-    return this.http.post<any>(this.addCategoryUrl, Category);
+  addCategory(category: Category) {
+    return this.http.post<any>(this.addCategoryUrl, category);
   }
 
-  updateCategory(Category: Category) {
-    return this.http.put<any>(this.updateCategoryUrl, Category);
+  updateCategory(category: Category) {
+    return this.http.put<any>(this.updateCategoryUrl, category);
   }
 }

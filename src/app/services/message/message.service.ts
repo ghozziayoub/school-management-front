@@ -26,11 +26,11 @@ export class MessageService {
     return this.http.delete<any>(this.deleteMessageUrl + id)
   }
 
-  addMessage(Message: Message) {
-    return this.http.post<any>(this.addMessageUrl, Message);
+  addMessage(message: Message) {
+    return this.http.post<any>(this.addMessageUrl, message);
   }
 
-  updateMessage(Message: Message) {
-    return this.http.put<any>(this.updateMessageUrl, Message);
+  updateMessage(message: Message) {
+    return this.http.put<any>(this.updateMessageUrl, message);
   }
 }
