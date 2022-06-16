@@ -10,9 +10,8 @@
             <h1 class="mb-5">Join our community</h1>
         </div>
         <div class="row g-4">
-
-            <div class="col col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                <form>
+            <form [formGroup]="registerForm" (ngSubmit)="register()">
+                <div class="col col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
@@ -54,7 +53,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="password" placeholder="**********" formControlName="password">
+                                <input type="password" class="form-control" id="password" placeholder="**********" formControlName="password">
                                 <label for="name">Your Password</label>
                                 <div *ngIf="password?.invalid && password?.touched">
                                     <small *ngIf="password?.errors?.['required']" class="text-danger">password required<br></small>
@@ -65,7 +64,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="repassword" placeholder="**********" formControlName="repassword">
+                                <input type="password" class="form-control" id="repassword" placeholder="**********" formControlName="repassword">
                                 <label for="name">Repeat Your Password</label>
                                 <div *ngIf="repassword?.invalid && repassword?.touched">
                                     <small *ngIf="repassword?.errors?.['required']" class="text-danger">repassword required<br></small>
@@ -79,11 +78,15 @@
                             <button class="btn btn-primary w-100 py-3" type="submit">Register Now !</button>
                         </div>
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
+
+
         </div>
     </div>
 </div>
+
+
 <!-- Contact End -->
 
 <!-- Footer Start -->
