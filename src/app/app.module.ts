@@ -16,6 +16,7 @@ import { FooterComponent } from './components/public/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
+import { DisplayTeamComponent } from './components/public/display-team/display-team.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { ToastrModule } from 'ngx-toastr';
     Page404Component,
     NavbarComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    DisplayTeamComponent
   ],
   imports: [
     BrowserModule,
