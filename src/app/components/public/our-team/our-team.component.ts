@@ -13,9 +13,9 @@ export class OurTeamComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.trainerService.getAllTrainers().subscribe(
-     res =>{this.teamlists=res},
-      err =>{console.log(err);}  
+    this.trainerService.getAllTrainers().subscribe({
+    next: res =>{this.teamlists=res},
+     error: err =>{console.log(err);}  }
     )
   }
 
