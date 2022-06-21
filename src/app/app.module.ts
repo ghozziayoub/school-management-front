@@ -22,6 +22,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { CategoriesListComponent } from './components/private/shared/categories-list/categoriesList.component';
 import { AddCategoryComponent } from './components/private/shared/add-category/add-category.component';
 import { ModifyCategoryComponent } from './components/private/shared/modify-category/modify-category.component';
+import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,7 @@ import { ModifyCategoryComponent } from './components/private/shared/modify-cate
     CategoriesListComponent,
     AddCategoryComponent,
     ModifyCategoryComponent,
-
+    TrainerItemComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +55,8 @@ import { ModifyCategoryComponent } from './components/private/shared/modify-cate
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(), // ToastrModule added
+    CommonModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

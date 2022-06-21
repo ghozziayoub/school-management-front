@@ -3,6 +3,10 @@ import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms'
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { User } from 'src/app/models/user';
+<<<<<<< HEAD
+=======
+import { ToastrService } from 'ngx-toastr';
+>>>>>>> 5d28c0034b5557d8a3a002659f2ac6e7ff4049f9
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,7 +16,11 @@ export class LoginComponent implements OnInit {
 
   myform: FormGroup;
 
+<<<<<<< HEAD
   constructor(private fb: FormBuilder, private router: Router, private userService: UserService) {
+=======
+  constructor(private fb: FormBuilder, private router: Router, private userService: UserService, private toastr: ToastrService) {
+>>>>>>> 5d28c0034b5557d8a3a002659f2ac6e7ff4049f9
     let formLogin = {
 
       email: new FormControl('', [
@@ -53,6 +61,10 @@ export class LoginComponent implements OnInit {
         console.log(result)
         let token = result.token;
         localStorage.setItem("myToken", token)
+<<<<<<< HEAD
+=======
+        this.toastr.success(result.message);
+>>>>>>> 5d28c0034b5557d8a3a002659f2ac6e7ff4049f9
 
         this.router.navigate(['/dashboard']);
       },
