@@ -13,11 +13,16 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { Page404Component } from './components/public/page404/page404.component';
 import { NavbarComponent } from './components/public/navbar/navbar.component';
 import { FooterComponent } from './components/public/footer/footer.component';
-import{ HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
 import { TopBarComponent } from './components/private/shared/top-bar/top-bar.component';
 import { SideBarComponent } from './components/private/shared/side-bar/side-bar.component';
 import { FooterDashboardComponent } from './components/private/shared/footer-dashboard/footer-dashboard.component';
+import { ToastrModule } from 'ngx-toastr';
+import { CategoriesListComponent } from './components/private/shared/categories-list/categoriesList.component';
+import { AddCategoryComponent } from './components/private/shared/add-category/add-category.component';
+import { ModifyCategoryComponent } from './components/private/shared/modify-category/modify-category.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +30,8 @@ import { FooterDashboardComponent } from './components/private/shared/footer-das
     AboutComponent,
     CoursesComponent,
     OurTeamComponent,
-    ContactComponent,
     LoginComponent,
+    ContactComponent,
     RegisterComponent,
     Page404Component,
     NavbarComponent,
@@ -34,7 +39,11 @@ import { FooterDashboardComponent } from './components/private/shared/footer-das
     DashboardComponent,
     TopBarComponent,
     SideBarComponent,
-    FooterDashboardComponent
+    FooterDashboardComponent,
+    CategoriesListComponent,
+    AddCategoryComponent,
+    ModifyCategoryComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,6 +51,7 @@ import { FooterDashboardComponent } from './components/private/shared/footer-das
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
