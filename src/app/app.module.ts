@@ -16,7 +16,11 @@ import { FooterComponent } from './components/public/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
+
 import { DisplayTeamComponent } from './components/public/display-team/display-team.component';
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +44,8 @@ import { DisplayTeamComponent } from './components/public/display-team/display-t
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(), // ToastrModule added
+    CommonModule,
+    BrowserAnimationsModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]
