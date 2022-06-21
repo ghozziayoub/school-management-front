@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TrainerService } from 'src/app/services/trainer.service';
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  teamlists: any = []
+  constructor(private trainerService: TrainerService,) {
+
+  }
 
   ngOnInit(): void {
+    this.trainerService.getAllTrainers().subscribe({
+      next: res => { this.teamlists = res },
+      error: err => { console.log(err); }
+    }
+    )
   }
 
 }

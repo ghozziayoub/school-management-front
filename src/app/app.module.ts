@@ -16,6 +16,8 @@ import { FooterComponent } from './components/public/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
+
+import { DisplayTeamComponent } from './components/public/display-team/display-team.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -32,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Page404Component,
     NavbarComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    DisplayTeamComponent
   ],
   imports: [
     BrowserModule,
