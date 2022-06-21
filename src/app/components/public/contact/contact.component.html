@@ -73,31 +73,50 @@
                     tabindex="0"></iframe>
             </div>
             <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                <form>
+                <form [formGroup]="contactForm" (ngSubmit)="register()">
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" formControlName="name">
                                 <label for="name">Your Name</label>
+                                <div *ngIf="name.touched && name.invalid">
+                                    <small *ngIf="name.errors.required" class="text-danger">name is required<br></small>
+                                    <small *ngIf="name.errors.pattern" class="text-danger">Invalid name<br></small>
+                                    <small *ngIf="name.errors.minlength" class="text-danger">name must contain two characters at least</small>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <input type="email" class="form-control" id="email" formControlName="email" placeholder="Your Email">
                                 <label for="email">Your Email</label>
+                                <div *ngIf="email.touched && email.invalid">
+                                    <small *ngIf="email.errors.required" class="text-danger">Email is required<br></small>
+                                    <small *ngIf="email.errors.email" class="text-danger">Invalid Email<br></small>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject" formControlName="subject">
                                 <label for="subject">Subject</label>
+                                <div *ngIf="subject.touched && subject.invalid">
+                                    <small *ngIf="subject.errors.required" class="text-danger">subject is required<br></small>
+                                    <small *ngIf="subject.errors.pattern" class="text-danger">Invalid subject<br></small>
+                                    <small *ngIf="subject.errors.minlength" class="text-danger">subject must contain two characters at least</small>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="message"
+                                <textarea class="form-control" placeholder="Leave a message here" id="content" formControlName="content"
                                     style="height: 150px"></textarea>
                                 <label for="message">Message</label>
+                                <div *ngIf="content.touched && content.invalid">
+                                    <small *ngIf="content.errors.required" class="text-danger">Message is required<br></small>
+                                    <small *ngIf="content.errors.pattern" class="text-danger">Invalid Message<br></small>
+                                    <small *ngIf="content.errors.minlength" class="text-danger">Message must contain ten characters at least</small>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12">
