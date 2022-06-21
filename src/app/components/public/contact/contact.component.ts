@@ -10,7 +10,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ContactComponent implements OnInit {
 
-  contactForm: any = FormGroup
+  contactForm: FormGroup
+
   constructor(private fb: FormBuilder, private messageService: MessageService, private toastr: ToastrService) {
     let formControls = {
       name: new FormControl('', [
@@ -25,8 +26,7 @@ export class ContactComponent implements OnInit {
       subject: new FormControl('', [
         Validators.required,
         Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2),
-        Validators.maxLength(15)
+        Validators.minLength(2)
       ]),
       content: new FormControl('', [
         Validators.required,
@@ -36,20 +36,16 @@ export class ContactComponent implements OnInit {
     }
     this.contactForm = this.fb.group(formControls);
   }
-  get name() {
-    return this.contactForm.get('name')
-  }
-  
+
+  get name() { return this.contactForm.get('name') }
   get email() { return this.contactForm.get('email') }
-  get subject() {
-    return this.contactForm.get('subject')
-  }
-  get content() {
-    return this.contactForm.get('content')
-  }
+  get subject() { return this.contactForm.get('subject') }
+  get content() { return this.contactForm.get('content') }
+
   ngOnInit(): void {
   }
-  register() {
+
+  sendMessage() {
 
     let data = this.contactForm.value;
 
@@ -58,7 +54,8 @@ export class ContactComponent implements OnInit {
     this.messageService.addMessage(message).subscribe(
       {
         next: res => {
-          this.toastr.success(res.message);
+          this.toastr.info(res.message);
+          this.contactForm.reset()
         },
         error: err => {
           console.log(err);
