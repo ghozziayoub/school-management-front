@@ -7,15 +7,18 @@ import { Trainer } from '../../../models/trainer';
   styleUrls: ['./our-team.component.scss']
 })
 export class OurTeamComponent implements OnInit {
-  teamlists: any = []
-  constructor(private trainerService: TrainerService,) {
+  
+  trainersList: any = []
+
+  constructor(private trainerService: TrainerService) {
 
   }
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({
-    next: res =>{this.teamlists=res},
-     error: err =>{console.log(err);}  }
+      next: res => { this.trainersList = res },
+      error: err => { console.log(err); }
+    }
     )
   }
 

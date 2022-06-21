@@ -17,7 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
 
-import { DisplayTeamComponent } from './components/public/display-team/display-team.component';
+import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -35,7 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     FooterComponent,
     DashboardComponent,
-    DisplayTeamComponent
+    TrainerItemComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     ToastrModule.forRoot(), // ToastrModule added
     CommonModule,
-    BrowserAnimationsModule, 
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

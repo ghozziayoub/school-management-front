@@ -10,14 +10,15 @@ import { TrainerService } from 'src/app/services/trainer.service';
 })
 export class HomeComponent implements OnInit {
 
-  teamlists: any = []
-  constructor(private trainerService: TrainerService,) {
+  trainersList: any = []
+
+  constructor(private trainerService: TrainerService) {
 
   }
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({
-      next: res => { this.teamlists = res },
+      next: res => { this.trainersList = res },
       error: err => { console.log(err); }
     }
     )
