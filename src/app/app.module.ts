@@ -28,6 +28,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component';
 import { AddTrainerComponent } from './components/private/shared/trainers/add-trainer/add-trainer.component';
 import { ModifyTrainerComponent } from './components/private/shared/trainers/modify-trainer/modify-trainer.component';
+import { TrainingListComponent } from './components/private/shared/trainings/training-list/training-list.component';
+import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
+import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +55,10 @@ import { ModifyTrainerComponent } from './components/private/shared/trainers/mod
     TrainerItemComponent,
     TrainersListComponent,
     AddTrainerComponent,
-    ModifyTrainerComponent
+    ModifyTrainerComponent,
+    TrainingListComponent,
+    AddTrainingComponent,
+    ModifyTrainingComponent
   ],
   imports: [
     BrowserModule,
