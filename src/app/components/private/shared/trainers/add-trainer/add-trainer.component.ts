@@ -11,9 +11,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-add-trainer',
   templateUrl: './add-trainer.component.html',
-  styleUrls: ['./add-trainer.component.scss']
+  styleUrls: ['./add-trainer.component.scss'],
 })
-
 export class AddTrainerComponent implements OnInit {
   myForm: FormGroup;
   selectedFile: any;
@@ -52,16 +51,16 @@ export class AddTrainerComponent implements OnInit {
     let data = this.myForm.value;
     let formData = new FormData();
     formData.append('firstname', data.firstname),
-    formData.append('lastname', data.lastname),
-    formData.append('email', data.email),
-    formData.append('speciality', data.speciality),
-    formData.append('yearsOfExperience', data.yearsOfExperience),
-    formData.append('picture', this.selectedFile);
-    console.log(this.selectedFile)
+      formData.append('lastname', data.lastname),
+      formData.append('email', data.email),
+      formData.append('speciality', data.speciality),
+      formData.append('yearsOfExperience', data.yearsOfExperience),
+      formData.append('picture', this.selectedFile);
+    console.log(this.selectedFile);
     this.trainerService.addTrainer(formData).subscribe({
       next: (result) => {
         console.log(result);
-        this.router.navigate(['/users-list']);
+        this.router.navigate(['/trainer-list']);
       },
       error: (err) => {
         console.log(err);

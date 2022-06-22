@@ -21,7 +21,7 @@ export class ModifyCategoryComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-
+    private router:Router,
     private categoryService: CategoryService
   ) {
     this.updateCategoryForm = this.fb.group({
@@ -70,6 +70,7 @@ export class ModifyCategoryComponent implements OnInit {
     this.categoryService.updateCategory(formData, id).subscribe({
       next: (result) => {
         console.log(result);
+        this.router.navigate(['/category'])
       },
       error: (err) => {
         console.log(err);

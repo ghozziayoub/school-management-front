@@ -21,7 +21,8 @@ export class AddCategoryComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router
   ) {
     this.myForm = this.fb.group({
       name: new FormControl(),
@@ -52,6 +53,7 @@ export class AddCategoryComponent implements OnInit {
     this.categoryService.addCategory(formData).subscribe({
       next: (result) => {
         console.log(result);
+        this.router.navigate(['/category'])
       },
       error: (err) => {
         console.log(err);
