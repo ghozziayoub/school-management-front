@@ -19,15 +19,15 @@ import { TopBarComponent } from './components/private/shared/top-bar/top-bar.com
 import { SideBarComponent } from './components/private/shared/side-bar/side-bar.component';
 import { FooterDashboardComponent } from './components/private/shared/footer-dashboard/footer-dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
-import { CategoriesListComponent } from './components/private/shared/categories-list/categoriesList.component';
-import { AddCategoryComponent } from './components/private/shared/add-category/add-category.component';
-import { ModifyCategoryComponent } from './components/private/shared/modify-category/modify-category.component';
+import { CategoriesListComponent } from './components/private/shared/categories/categories-list/categoriesList.component';
+import { AddCategoryComponent } from './components/private/shared/categories/add-category/add-category.component';
+import { ModifyCategoryComponent } from './components/private/shared/categories/modify-category/modify-category.component';
 import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TrainersListComponent } from './components/private/shared/trainers-list/trainers-list.component';
-import { AddTrainerComponent } from './components/private/shared/add-trainer/add-trainer.component';
-import { ModifyTrainerComponent } from './components/private/shared/modify-trainer/modify-trainer.component';
+import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component';
+import { AddTrainerComponent } from './components/private/shared/trainers/add-trainer/add-trainer.component';
+import { ModifyTrainerComponent } from './components/private/shared/trainers/modify-trainer/modify-trainer.component';
 
 @NgModule({
   declarations: [

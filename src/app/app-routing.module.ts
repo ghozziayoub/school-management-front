@@ -9,12 +9,12 @@ import { LoginComponent } from './components/public/login/login.component';
 import { OurTeamComponent } from './components/public/our-team/our-team.component';
 import { Page404Component } from './components/public/page404/page404.component';
 import { RegisterComponent } from './components/public/register/register.component';
-import { CategoriesListComponent } from './components/private/shared/categories-list/categoriesList.component';
-import { AddCategoryComponent } from './components/private/shared/add-category/add-category.component';
-import { ModifyCategoryComponent } from './components/private/shared/modify-category/modify-category.component';
-import { TrainersListComponent } from './components/private/shared/trainers-list/trainers-list.component'
-import { AddTrainerComponent } from './components/private/shared/add-trainer/add-trainer.component';
-import { ModifyTrainerComponent } from './components/private/shared/modify-trainer/modify-trainer.component';
+import { CategoriesListComponent } from './components/private/shared/categories/categories-list/categoriesList.component';
+import { AddCategoryComponent } from './components/private/shared/categories/add-category/add-category.component';
+import { ModifyCategoryComponent } from './components/private/shared/categories/modify-category/modify-category.component';
+import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component'
+import { AddTrainerComponent } from './components/private/shared/trainers/add-trainer/add-trainer.component';
+import { ModifyTrainerComponent } from './components/private/shared/trainers/modify-trainer/modify-trainer.component';
 const routes: Routes = [
   {
     path: "",
