@@ -25,6 +25,9 @@ import { ModifyCategoryComponent } from './components/private/shared/modify-cate
 import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TrainersListComponent } from './components/private/shared/trainers-list/trainers-list.component';
+import { AddTrainerComponent } from './components/private/shared/add-trainer/add-trainer.component';
+import { ModifyTrainerComponent } from './components/private/shared/modify-trainer/modify-trainer.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CategoriesListComponent,
     AddCategoryComponent,
     ModifyCategoryComponent,
-    TrainerItemComponent
+    TrainerItemComponent,
+    TrainersListComponent,
+    AddTrainerComponent,
+    ModifyTrainerComponent
   ],
   imports: [
     BrowserModule,

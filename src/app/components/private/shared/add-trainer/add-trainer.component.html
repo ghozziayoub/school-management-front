@@ -1,0 +1,85 @@
+<div class="sb-nav-fixed">
+    <app-top-bar></app-top-bar>
+  
+    <div id="layoutSidenav">
+      <app-side-bar></app-side-bar>
+  
+      <!-- CONTENT-->
+  
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h2 style="color: black">add a new trainer</h2>
+  
+            <form [formGroup]="myForm" (ngSubmit)="add()">
+              <div class="form-group">
+                <label for="exampleFormControlFile1" class="m-2"
+                  >firstname</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  class="m-2"
+                  formControlName="firstname"
+                  id="firstname"
+                />
+                <label for="exampleFormControlFile1" class="m-2"
+                  >lastname</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  class="m-2"
+                  formControlName="lastname"
+                  id="lastname"
+                />    
+                <label for="exampleFormControlFile1" class="m-2"
+                  >email</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  class="m-2"
+                  formControlName="email"
+                  id="email"
+                />                              
+                <label for="exampleFormControlFile1" class="m-2"
+                  >speciality</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  class="m-2"
+                  formControlName="speciality"
+                  id="speciality"
+                />  
+                <label for="exampleFormControlFile1" class="m-2"
+                  >years of experience</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  class="m-2"
+                  formControlName="yearsOfExperience"
+                  id="yearsOfExperience"
+                />              
+                <label for="exampleFormControlFile1" class="m-2"
+                  >Example file input</label
+                >
+                <input
+                  type="file"
+                  class="form-control-file"
+                  (change)="save($event)"
+                  class="m-2"
+                  id="exampleFormControlFile1"
+                />
+                <button class="btn btn-primary" type="submit">add</button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+    <app-footer-dashboard></app-footer-dashboard>
+  </div>
+  

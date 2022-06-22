@@ -21,6 +21,7 @@ export class ModifyCategoryComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
+
     private categoryService: CategoryService
   ) {
     this.updateCategoryForm = this.fb.group({

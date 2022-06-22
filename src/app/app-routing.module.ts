@@ -12,6 +12,9 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { CategoriesListComponent } from './components/private/shared/categories-list/categoriesList.component';
 import { AddCategoryComponent } from './components/private/shared/add-category/add-category.component';
 import { ModifyCategoryComponent } from './components/private/shared/modify-category/modify-category.component';
+import { TrainersListComponent } from './components/private/shared/trainers-list/trainers-list.component'
+import { AddTrainerComponent } from './components/private/shared/add-trainer/add-trainer.component';
+import { ModifyTrainerComponent } from './components/private/shared/modify-trainer/modify-trainer.component';
 const routes: Routes = [
   {
     path: "",
@@ -56,6 +59,18 @@ const routes: Routes = [
   {
     path:"modify-category/:id",
     component: ModifyCategoryComponent
+  },
+  {
+    path:"trainer-list",
+    component: TrainersListComponent
+  },
+  {
+    path:"add-new-trainer",
+    component: AddTrainerComponent
+  },
+  {
+    path:"modify-trainer/:id",
+    component: ModifyTrainerComponent
   },
   {
     path: "**",
