@@ -6,7 +6,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { TrainerService } from '../../../../services/trainer.service';
+import { TrainerService } from '../../../../../services/trainer.service';
 
 @Component({
   selector: 'app-modify-trainer',
