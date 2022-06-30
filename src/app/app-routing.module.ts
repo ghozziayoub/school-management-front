@@ -19,6 +19,7 @@ import { TrainingListComponent } from './components/private/shared/trainings/tra
 import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
 import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { UsersListComponent } from './components/private/shared/users/users-list/users-list.component';
 const routes: Routes = [
   {
     path: "",
@@ -74,6 +75,10 @@ const routes: Routes = [
   {
     path:"trainer-list",
     component: TrainersListComponent
+  },
+  {
+    path:"users-list",
+    component: UsersListComponent
   },
   {
     path:"add-new-trainer",
