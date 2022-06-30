@@ -29,6 +29,7 @@
                   <th>E-mail</th>
                   <th>Subject</th>
                   <th>Message</th>
+                  <th>Edit</th>
 
                 </tr>
               </thead>
@@ -43,6 +44,13 @@
                   <td>{{ message.content }}</td>
                   <td>
 
+                    <button
+                    class="btn btn-danger mx-2"
+                    style="color: white"
+                    (click)="delete(message._id, i)"
+                  >
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                  </button>
                 </tr>
 
               </tbody>

@@ -22,4 +22,19 @@ export class MessageListComponent implements OnInit {
     })
   }
 
+  delete(id:String,index:number)
+  {
+    this.messageList.splice(index, 1)
+    console.log(id)
+    this.messageService.deleteMessage(id).subscribe({
+      next:(result)=>{
+        console.log(result)
+      },
+      error: (err) => {
+        console.log(err);
+      
+      }
+    })
+  }
+
 }
