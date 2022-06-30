@@ -1,0 +1,65 @@
+<div class="sb-nav-fixed">
+  <app-top-bar></app-top-bar>
+
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <!-- CONTENT-->
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h2 style="color: black">Message managment</h2>
+
+          <div>
+
+
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">...</div>
+              </div>
+            </div>
+            <table class="fl-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Sender</th>
+                  <th>Subject</th>
+
+                  <th>Edit</th>
+
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let message of messageList; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ message.sender }}</td>
+
+
+                  <td>{{ message.title }}</td>
+
+                  <td>
+
+                    <button class="btn btn-primary mx-2" style="color: white" [routerLink]="['/message',message._id]">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-danger mx-2" style="color: white" (click)="delete(message._id, i)">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+
+                   
+                </tr>
+
+              </tbody>
+
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <app-footer-dashboard></app-footer-dashboard>
+</div>

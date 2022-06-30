@@ -3,6 +3,8 @@ import { TrainingService } from 'src/app/services/training.service';
 import { TrainerService } from 'src/app/services/trainer.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { Router } from '@angular/router';
+
+import { ToastrService } from 'ngx-toastr';
 import {
   Validators,
   FormControl,
@@ -18,26 +20,63 @@ import {
 export class AddTrainingComponent implements OnInit {
   trainersList: any []= []
   categoryList: any[] = [];
-  myForm: FormGroup;
+  myForm : any = FormGroup
   selectedFile: any;
-  imageUrl = 'assets/avatar.png';
+  imageUrl = 'assets/img/default.jpg';
 
   constructor(
     private fb: FormBuilder,
     private trainingService: TrainingService,
     private trainerService: TrainerService,
     private categoryService: CategoryService,
-    private router: Router
-  ) {
-    this.myForm = this.fb.group({
-      name: new FormControl(),
-      objectif: new FormControl(),
-      program: new FormControl(),
-      hours: new FormControl(),
-      idTrainer: new FormControl(),
-      idCategory: new FormControl(),
-    });
+    private router: Router,
+    private toastr: ToastrService
+  )
+  
+  {
+    let formControls ={
+      name: new FormControl('', [
+        Validators.required,
+        Validators.pattern("[A-Za-z .'-]+"),
+        Validators.minLength(2)
+      ]),
+      objectif: new FormControl('', [
+        Validators.required,
+        Validators.pattern("[A-Za-z .'-]+"),
+        Validators.minLength(2)
+      ]),
+      program: new FormControl('', [
+        Validators.required,
+        Validators.pattern("[A-Za-z .'-]+"),
+        Validators.minLength(2)
+      ]),
+      hours: new FormControl('',[
+        Validators.required,
+        Validators.pattern("[0-9]+"),
+        Validators.minLength(2),
+        Validators.maxLength(3)
+      ]),
+      idTrainer: new FormControl('', [
+        Validators.required,
+        Validators.pattern("[A-Za-z .'-]+"),
+        Validators.minLength(2)
+      ]),
+      idCategory: new FormControl('', [
+        Validators.required,
+        Validators.pattern("[A-Za-z .'-]+"),
+        Validators.minLength(2)
+      ]),
+      
+    };
+  
+    this.myForm = this.fb.group(formControls)
   }
+  get name() { return this.myForm.get('name') }
+  get objectif() { return this.myForm.get('objectif') }
+  get program() { return this.myForm.get('program') }
+  get hours() { return this.myForm.get('hours') }
+  get idTrainer() { return this.myForm.get('idTrainer') }
+  get idCategory() { return this.myForm.get('idCategory') }
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({
@@ -87,9 +126,11 @@ export class AddTrainingComponent implements OnInit {
     this.trainingService.addTraining(formData).subscribe({
       next: (result) => {
         console.log(result);
+        this.toastr.success(result.message);
         this.router.navigate(['/training-list']);
       },
       error: (err) => {
+        this.toastr.error(err.error.message);
         console.log(err);
       },
     });

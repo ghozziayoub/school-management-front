@@ -11,7 +11,10 @@ export class TrainerItemComponent implements OnInit {
   @Input() lastname!: string
   @Input() speciality!: string
   @Input() image!: string
-  
+  @Input() facebook!: string
+  @Input() instagram!: string
+  @Input() twitter!: string
+
   constructor() { }
 
   ngOnInit(): void {

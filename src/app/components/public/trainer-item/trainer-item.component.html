@@ -1,13 +1,15 @@
 <div class="team-item bg-light">
     <div class="overflow-hidden">
-
-        <img class="img-fluid" src={{image}} alt="">
+        <img class="img-fluid" src="http://localhost:3000/{{image}}" alt="">
     </div>
     <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
         <div class="bg-light d-flex justify-content-center pt-2 px-1">
-            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+            <a *ngIf="facebook" class="btn btn-sm-square btn-primary mx-1" href="{{facebook}}"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a *ngIf="instagram" class="btn btn-sm-square btn-primary mx-1" href="{{instagram}}"><i
+                    class="fab fa-instagram"></i></a>
+            <a *ngIf="twitter" class="btn btn-sm-square btn-primary mx-1" href="{{twitter}}"><i
+                    class="fab fa-twitter"></i></a>
         </div>
     </div>
     <div class="text-center p-4">
