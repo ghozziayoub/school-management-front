@@ -10,12 +10,7 @@
             <main>
                 <div class="container-fluid px-4">
                     <h2 style="color: black">Users Managment</h2>
-
                     <div>
-                        <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target=".bd-example-modal-sm" routerLink="/add-new-training">
-                + add User
-              </button>
-
                         <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-sm">
                                 <div class="modal-content">...</div>
@@ -27,15 +22,15 @@
                                     <th>#</th>
                                     <th>First name</th>
                                     <th>Last name</th>
+                                    <th>file</th>
                                     <th>Email</th>
                                     <th>Password</th>
-                                    <th>Image</th>
                                 </tr>
                             </thead>
                             <!-- <tbody>
-                                <tr *ngFor="let training of trainingList; let i = index">
+                                <tr *ngFor="let users of userslist; let i = index">
                                     <td>{{ i + 1 }}</td>
-                                    <td>{{ training.name }}</td>
+                                    <td>{{ user.name }}</td>
                                     <td>{{ training.objectif }}</td>
                                     <td>{{ training.program }}</td>
                                     <td>{{ training.hours }}</td>
