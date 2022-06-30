@@ -9,25 +9,13 @@
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid px-4">
-          <h2 style="color: black">users managment</h2>
+          <h2 style="color: black">Message managment</h2>
 
           <div>
-            <button
-              type="button"
-              class="btn btn-primary mb-3"
-              data-toggle="modal"
-              data-target=".bd-example-modal-sm"
-              routerLink="/add-new-trainer">
-              + add
-            </button>
 
-            <div
-              class="modal fade bd-example-modal-sm"
-              tabindex="-1"
-              role="dialog"
-              aria-labelledby="mySmallModalLabel"
-              aria-hidden="true"
-            >
+
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+              aria-hidden="true">
               <div class="modal-dialog modal-sm">
                 <div class="modal-content">...</div>
               </div>
@@ -36,27 +24,27 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>firstname</th>
-                   
-                  <th>email</th>
-                  <th>subject</th>
-                  <th>messages</th>
-                  
+                  <th>First Name</th>
+
+                  <th>E-mail</th>
+                  <th>Subject</th>
+                  <th>Message</th>
+
                 </tr>
               </thead>
               <tbody>
-             
-               <tr *ngFor="let message of messageList; let i = index">
+
+                <tr *ngFor="let message of messageList; let i = index">
                   <td>{{ i + 1 }}</td>
                   <td>{{ message.sender }}</td>
-                   
+
                   <td>{{ message.email }}</td>
-                  <td>{{ message.subject }}</td>
-                  <td>{{ message.messages }}</td>
+                  <td>{{ message.title }}</td>
+                  <td>{{ message.content }}</td>
                   <td>
-                 
+
                 </tr>
-               
+
               </tbody>
 
               <tbody></tbody>

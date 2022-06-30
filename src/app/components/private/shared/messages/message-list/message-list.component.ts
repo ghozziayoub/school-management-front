@@ -7,12 +7,12 @@ import { MessageService } from 'src/app/services/message.service';
 })
 export class MessageListComponent implements OnInit {
 
-  messageList:any[] = []
+  messageList: any[] = []
   constructor(private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.messageService.getAllMessages().subscribe({
-      next :(result) => {
+      next: (result) => {
         this.messageList = result
       },
       error: (error) => {
