@@ -15,7 +15,7 @@ export class CategoryService {
     return this.http.get<any>(this.categoryUrl);
   }
 
-  getOneCategory(id: String) {
+  getOneCategory(id: any) {
     return this.http.get<any>(this.categoryUrl + id)
   }
 
@@ -23,11 +23,11 @@ export class CategoryService {
     return this.http.delete<any>(this.categoryUrl + id)
   }
 
-  addCategory(category: Category) {
+  addCategory(category: any) {
     return this.http.post<any>(this.categoryUrl, category);
   }
 
-  updateCategory(category: Category) {
-    return this.http.put<any>(this.categoryUrl, category);
+  updateCategory(category: any, id:string) {
+    return this.http.patch<any>(this.categoryUrl+id, category);
   }
 }
