@@ -1,85 +1,98 @@
 <div class="sb-nav-fixed">
-    <app-top-bar></app-top-bar>
-  
-    <div id="layoutSidenav">
-      <app-side-bar></app-side-bar>
-  
-      <!-- CONTENT-->
-  
-      <div id="layoutSidenav_content">
-        <main>
-          <div class="container-fluid px-4">
-            <h2 style="color: black">add a new trainer</h2>
-  
-            <form [formGroup]="myForm" (ngSubmit)="add()">
+  <app-top-bar></app-top-bar>
+
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4 mx-3">
+          <h1 class="mt-4">trainer managment</h1>
+          <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">add new trainer</li>
+          </ol>
+
+          <form [formGroup]="myForm" (ngSubmit)="add()">
+            <div class="form-group text-center">
+            <img
+              [src]="imageUrl"
+              class="image-fluid category-image"
+              alt="" style="width: 150px;" 
+            />
+              <input type="file" class="form-control upload-input" (change)="save($event)" id="customFile" />
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1">firstname : </label>
+                </div>
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1">lastname :</label>
+                </div>
+                <div class="col-lg-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="firstname"
+                    id="firstname"
+                  />
+                </div>
+                <div class="col-lg-6">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="lastname"
+                    id="lastname"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-group mt-2">
+              <label for="exampleFormControlFile1" class="mb-2">email :</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="email"
+                id="email"
+              />
+            </div>
+            
               <div class="form-group">
-                <label for="exampleFormControlFile1" class="m-2"
-                  >firstname</label
-                >
+                <div class="row">
+                <div class="col-lg-6">
+                  <label for="exampleFormControlFile1">speciality</label>
+                </div>
+              
+              <div class="col-lg-6">
+                <label for="exampleFormControlFile1">years of experience</label>
+              </div>
+              <div class="col-lg-6">
                 <input
                   type="text"
                   class="form-control"
-                  class="m-2"
-                  formControlName="firstname"
-                  id="firstname"
-                />
-                <label for="exampleFormControlFile1" class="m-2"
-                  >lastname</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  class="m-2"
-                  formControlName="lastname"
-                  id="lastname"
-                />    
-                <label for="exampleFormControlFile1" class="m-2"
-                  >email</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  class="m-2"
-                  formControlName="email"
-                  id="email"
-                />                              
-                <label for="exampleFormControlFile1" class="m-2"
-                  >speciality</label
-                >
-                <input
-                  type="text"
-                  class="form-control"
-                  class="m-2"
                   formControlName="speciality"
                   id="speciality"
-                />  
-                <label for="exampleFormControlFile1" class="m-2"
-                  >years of experience</label
-                >
+                />
+              </div>
+              <div class="col-lg-6">
                 <input
                   type="text"
                   class="form-control"
-                  class="m-2"
                   formControlName="yearsOfExperience"
                   id="yearsOfExperience"
-                />              
-                <label for="exampleFormControlFile1" class="m-2"
-                  >Example file input</label
-                >
-                <input
-                  type="file"
-                  class="form-control-file"
-                  (change)="save($event)"
-                  class="m-2"
-                  id="exampleFormControlFile1"
                 />
-                <button class="btn btn-primary" type="submit">add</button>
               </div>
-            </form>
-          </div>
-        </main>
-      </div>
+            </div>
+              </div>
+
+
+
+
+            <button class="btn btn-primary" type="submit">add</button>
+          </form>
+        </div>
+      </main>
     </div>
-    <app-footer-dashboard></app-footer-dashboard>
   </div>
-  
+  <app-footer-dashboard></app-footer-dashboard>
+</div>

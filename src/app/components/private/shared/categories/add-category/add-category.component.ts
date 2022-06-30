@@ -17,7 +17,7 @@ import { Category } from 'src/app/models/category';
 export class AddCategoryComponent implements OnInit {
   myForm: FormGroup;
   selectedFile: any;
-  imageUrl = 'assets/avatar.png';
+  imageUrl = 'assets/img/default.jpg';
 
   constructor(
     private fb: FormBuilder,

@@ -1,35 +1,47 @@
 <div class="sb-nav-fixed">
-    <app-top-bar></app-top-bar>
-  
-    <div id="layoutSidenav">
-      <app-side-bar></app-side-bar>
-  
-      <!-- CONTENT-->
-  
-      <div id="layoutSidenav_content">
-        <main>
-          <div class="container-fluid px-4">
-            <h2 style="color: black">category managment</h2>
-  
-            <form [formGroup]="updateCategoryForm" (ngSubmit)="update()">
+  <app-top-bar></app-top-bar>
 
-                <div class="form-group" >
-                  <div>  <img
-                    [src]="imageUrl"
-                    class="image-fluid category-image"
-                    alt="" style="width: 150px;" 
-                  /></div>
-                    <label for="exampleFormControlFile1" class="m-2">category name</label>
-                    <input type="text" class="form-control"  class="m-2" formControlName="name" id="categoryName">
-                  <label for="exampleFormControlFile1"     class="m-2">Example file input</label>
-                  <input type="file" class="form-control-file" (change)="save($event)" class="m-2" id="exampleFormControlFile1">                  <button class="btn btn-primary" type="submit">update</button>
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <div id="layoutSidenav_content">
+      <main>
+          <div class="container-fluid px-4 mx-3">
+              <h1 class="mt-4">category managment</h1>
+              <ol class="breadcrumb mb-4">
+                  <li class="breadcrumb-item active">add new category</li>
+              </ol>
+        
+          <form [formGroup]="updateCategoryForm" (ngSubmit)="update()">
+            <div class="m-2">
+              <img
+              [src]="imageUrl"
+              class="image-fluid category-image"
+              alt="" style="width: 150px;" 
+            />
+              <input type="file" class="form-control upload-input" (change)="save($event)" id="customFile" />
+
+            </div>
+            <div class="input-sec">
+              <div class="form-group">
+                <div>
+                  <label for="categoryName " class=" mt-3">category name :</label>
                 </div>
-              </form>
-          </div>
-        </main>
-      </div>
+                <input
+                  type="text"
+                  class="form-control category-input"
+                  formControlName="name"
+                  id="categoryName"
+                />
+              </div>
+            </div>
+            
+            
+            <button class="btn btn-primary mt-2" type="submit">add</button>
+          </form>
+        </div>
+      </main>
     </div>
-    <app-footer-dashboard></app-footer-dashboard>
   </div>
-
-
+  <app-footer-dashboard></app-footer-dashboard>
+</div>

@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 export class AddTrainerComponent implements OnInit {
   myForm: FormGroup;
   selectedFile: any;
-  imageUrl = 'assets/avatar.png';
+  imageUrl = 'assets/img/avatar.png';
 
   constructor(
     private fb: FormBuilder,

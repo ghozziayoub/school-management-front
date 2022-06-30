@@ -15,6 +15,9 @@ import { ModifyCategoryComponent } from './components/private/shared/categories/
 import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component'
 import { AddTrainerComponent } from './components/private/shared/trainers/add-trainer/add-trainer.component';
 import { ModifyTrainerComponent } from './components/private/shared/trainers/modify-trainer/modify-trainer.component';
+import { TrainingListComponent } from './components/private/shared/trainings/training-list/training-list.component';
+import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
+import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
 const routes: Routes = [
   {
     path: "",
@@ -71,6 +74,18 @@ const routes: Routes = [
   {
     path:"modify-trainer/:id",
     component: ModifyTrainerComponent
+  },
+  {
+    path:"training-list",
+    component: TrainingListComponent
+  },
+  {
+    path:"add-new-training",
+    component: AddTrainingComponent
+  },
+  {
+    path:"modify-training/:id",
+    component: ModifyTrainingComponent
   },
   {
     path: "**",
