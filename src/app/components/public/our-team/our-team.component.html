@@ -35,15 +35,13 @@
             <h1 class="mb-5">Expert Instructors</h1>
         </div>
         <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div *ngFor="let trainer of trainersList">
-                    <app-trainer-item>
-                        [firstname]="trainer.firstname"
-                        [lastname]="trainer.lastname"
-                        [speciality]="trainer.speciality"
-                        [image]="trainer.image"
-                    </app-trainer-item>
-                </div>
+            <div *ngFor="let trainer of trainersList" class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+
+                <app-trainer-item [firstname]="trainer.firstname" [lastname]="trainer.lastname"
+                    [speciality]="trainer.speciality" [image]="trainer.image" [facebook]="trainer.facebook"
+                    [instagram]="trainer.instagram" [twitter]="trainer.twitter">
+
+                </app-trainer-item>
 
             </div>
         </div>

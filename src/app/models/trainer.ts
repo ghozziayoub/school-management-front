@@ -4,7 +4,10 @@ export class Trainer {
         private lastname? : String ,
         private email? : String ,
         private speciality? : String ,
-        private yearsOfExperience? : Number 
+        private yearsOfExperience? : Number ,
+        private facebook? : String ,
+        private instagram? : String ,
+        private twitter? : String ,
     ){
 
     }
