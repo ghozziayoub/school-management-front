@@ -20,6 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NavbarComponent,
     FooterComponent,
     DashboardComponent,
-    TrainerItemComponent
+    TrainerItemComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
