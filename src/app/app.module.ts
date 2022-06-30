@@ -25,6 +25,7 @@ import { ModifyCategoryComponent } from './components/private/shared/modify-cate
 import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AddCategoryComponent,
     ModifyCategoryComponent,
     TrainerItemComponent
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
