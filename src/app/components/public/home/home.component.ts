@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/services/trainer.service';
-
+import { CategoryService } from 'src/app/services/category.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,8 +11,8 @@ import { TrainerService } from 'src/app/services/trainer.service';
 export class HomeComponent implements OnInit {
 
   trainersList: any = []
-
-  constructor(private trainerService: TrainerService) {
+  categoriesList: any = []
+  constructor(private trainerService: TrainerService,private categoryService: CategoryService) {
 
   }
 
@@ -22,6 +22,12 @@ export class HomeComponent implements OnInit {
       error: err => { console.log(err); }
     }
     )
+    this.categoryService.getAllCategories().subscribe({
+      next: res => { this.categoriesList = res 
+      console.log(res)},
+      error: err => { console.log(err); }
+    }
+    )
   }
-
+ 
 }
