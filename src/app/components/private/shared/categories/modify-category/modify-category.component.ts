@@ -5,7 +5,7 @@ import {
   FormGroup,
   FormBuilder,
 } from '@angular/forms';
-import { CategoryService } from '../../../../services/category.service';
+import { CategoryService } from '../../../../../services/category.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/category';
 
@@ -21,6 +21,7 @@ export class ModifyCategoryComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
+    private router:Router,
     private categoryService: CategoryService
   ) {
     this.updateCategoryForm = this.fb.group({
@@ -69,6 +70,7 @@ export class ModifyCategoryComponent implements OnInit {
     this.categoryService.updateCategory(formData, id).subscribe({
       next: (result) => {
         console.log(result);
+        this.router.navigate(['/category'])
       },
       error: (err) => {
         console.log(err);

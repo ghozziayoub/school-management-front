@@ -5,7 +5,7 @@ import {
   FormGroup,
   FormBuilder,
 } from '@angular/forms';
-import { CategoryService } from '../../../../services/category.service';
+import { CategoryService } from '../../../../../services/category.service';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category';
 
@@ -17,11 +17,12 @@ import { Category } from 'src/app/models/category';
 export class AddCategoryComponent implements OnInit {
   myForm: FormGroup;
   selectedFile: any;
-  imageUrl = 'assets/avatar.png';
+  imageUrl = 'assets/img/default.jpg';
 
   constructor(
     private fb: FormBuilder,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private router: Router
   ) {
     this.myForm = this.fb.group({
       name: new FormControl(),
@@ -52,6 +53,7 @@ export class AddCategoryComponent implements OnInit {
     this.categoryService.addCategory(formData).subscribe({
       next: (result) => {
         console.log(result);
+        this.router.navigate(['/category'])
       },
       error: (err) => {
         console.log(err);

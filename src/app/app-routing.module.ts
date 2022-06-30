@@ -9,11 +9,16 @@ import { LoginComponent } from './components/public/login/login.component';
 import { OurTeamComponent } from './components/public/our-team/our-team.component';
 import { Page404Component } from './components/public/page404/page404.component';
 import { RegisterComponent } from './components/public/register/register.component';
-import { CategoriesListComponent } from './components/private/shared/categories-list/categoriesList.component';
-import { AddCategoryComponent } from './components/private/shared/add-category/add-category.component';
-import { ModifyCategoryComponent } from './components/private/shared/modify-category/modify-category.component';
+import { CategoriesListComponent } from './components/private/shared/categories/categories-list/categoriesList.component';
+import { AddCategoryComponent } from './components/private/shared/categories/add-category/add-category.component';
+import { ModifyCategoryComponent } from './components/private/shared/categories/modify-category/modify-category.component';
+import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component'
+import { AddTrainerComponent } from './components/private/shared/trainers/add-trainer/add-trainer.component';
+import { ModifyTrainerComponent } from './components/private/shared/trainers/modify-trainer/modify-trainer.component';
+import { TrainingListComponent } from './components/private/shared/trainings/training-list/training-list.component';
+import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
+import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-
 const routes: Routes = [
   {
     path: "",
@@ -65,6 +70,30 @@ const routes: Routes = [
   {
     path:"modify-category/:id",
     component: ModifyCategoryComponent
+  },
+  {
+    path:"trainer-list",
+    component: TrainersListComponent
+  },
+  {
+    path:"add-new-trainer",
+    component: AddTrainerComponent
+  },
+  {
+    path:"modify-trainer/:id",
+    component: ModifyTrainerComponent
+  },
+  {
+    path:"training-list",
+    component: TrainingListComponent
+  },
+  {
+    path:"add-new-training",
+    component: AddTrainingComponent
+  },
+  {
+    path:"modify-training/:id",
+    component: ModifyTrainingComponent
   },
   {
     path: "**",
