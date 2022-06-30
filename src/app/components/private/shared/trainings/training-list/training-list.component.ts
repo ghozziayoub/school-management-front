@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainingService } from '../../../../../services/training.service';
 import { TrainerService } from '../../../../../services/trainer.service';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-training-list',
   templateUrl: './training-list.component.html',
@@ -9,7 +11,7 @@ import { TrainerService } from '../../../../../services/trainer.service';
 export class TrainingListComponent implements OnInit {
   trainingList: any[] = [];
   trainerFullname: string = "";
-  constructor(private trainingService: TrainingService, private trainerService: TrainerService) {}
+  constructor(private trainingService: TrainingService, private trainerService: TrainerService,    private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.trainingService.getAllTrainings().subscribe({
@@ -28,6 +30,7 @@ export class TrainingListComponent implements OnInit {
 
     this.trainingService.deleteTraining(id).subscribe({
       next: (result) => {
+        this.toastr.success(result.message);
         console.log(result);
       },
       error: (err) => {

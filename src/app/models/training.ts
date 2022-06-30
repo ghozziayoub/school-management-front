@@ -5,6 +5,7 @@ export class Training {
         private program?: String,
         private hours?: Number,
         private idTrainer?: String,
-        private idCategory?: String
+        private idCategory?: String,
+        private image? : String ,
     ) { }
 }

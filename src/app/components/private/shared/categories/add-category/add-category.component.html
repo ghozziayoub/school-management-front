@@ -11,14 +11,14 @@
               <ol class="breadcrumb mb-4">
                   <li class="breadcrumb-item active">add new category</li>
               </ol>
-        
+         
           <form [formGroup]="myForm" (ngSubmit)="add()">
             <div>
               <img
               [src]="imageUrl"
               class="image-fluid category-image"
               alt="" style="width: 150px;" 
-            />
+            /> 
             <div class="form-group">
               <input type="file" class="form-control upload-input" (change)="save($event)" id="customFile" />
             </div>
