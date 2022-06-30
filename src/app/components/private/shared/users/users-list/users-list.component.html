@@ -22,39 +22,22 @@
                                     <th>#</th>
                                     <th>First name</th>
                                     <th>Last name</th>
-                                    <th>file</th>
                                     <th>Email</th>
-                                    <th>Password</th>
+                                    <th>Edit</th>
+
                                 </tr>
                             </thead>
-                            <!-- <tbody>
-                                <tr *ngFor="let users of userslist; let i = index">
+                            <tbody>
+                                <tr *ngFor="let user of userList; let i = index">
                                     <td>{{ i + 1 }}</td>
-                                    <td>{{ user.name }}</td>
-                                    <td>{{ training.objectif }}</td>
-                                    <td>{{ training.program }}</td>
-                                    <td>{{ training.hours }}</td>
-                                    <td routerLink="/trainer-list">{{training.trainer.firstname}} {{ training.trainer.lastname}}</td>
-                                    <td>{{ training.category.name }}</td>
-                                    <td>
-                                        <button class="btn btn-warning mx-1" [routerLink]="['/modify-category', training._id]">
-                        <i
-                          class="fa fa-pencil"
-                          style="color: white"
-                          aria-hidden="true"
-                        ></i></button
-                      ><button
-                        class="btn btn-danger mx-1"
-                        style="color: white"
-                        (click)="delete(training._id, i)"
-                      >
-                        <i class="fa fa-trash" aria-hidden="true"></i>
-                      </button>
-                                    </td>
-
-
+                                    <td>{{ user.firstname }}</td>
+                                    <td>{{ user.lastname }}</td>
+                                    <td>{{ user.email }}</td>
+                                    <td><button class="btn btn-danger mx-1" style="color: white" (click)="delete(user._id, i)">
+                                        <i class="fa fa-trash" aria-hidden="true"></i>
+                                      </button></td>
                                 </tr>
-                            </tbody> -->
+                            </tbody>
 
                             <tbody></tbody>
                         </table>
