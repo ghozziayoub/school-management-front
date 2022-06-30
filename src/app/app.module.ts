@@ -32,7 +32,10 @@ import { TrainingListComponent } from './components/private/shared/trainings/tra
 import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
 import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { MessageListComponent } from './components/private/shared/messages/message-list/message-list.component';
+import { MessageList2Component } from './components/private/shared/messages/message-list2/message-list2.component';
 import { UsersListComponent } from './components/private/shared/users/users-list/users-list.component';
+
 
 
 @NgModule({
@@ -63,6 +66,8 @@ import { UsersListComponent } from './components/private/shared/users/users-list
     AddTrainingComponent,
     ModifyTrainingComponent,
     ForgotPasswordComponent,
+    MessageListComponent,
+    MessageList2Component
     UsersListComponent,
   ],
   imports: [

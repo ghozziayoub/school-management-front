@@ -1,0 +1,33 @@
+<div class="sb-nav-fixed">
+  <app-top-bar></app-top-bar>
+
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <!-- CONTENT-->
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h3 style="color: black">Message venant de : <span style="color:black ;"> {{message.sender}}</span></h3>
+          <h6> email :<span>{{message.email}}</span></h6>
+
+          <h6> Title : <span>{{message.title}}</span></h6>
+          <h6> Content :</h6> <span>{{message.content}}</span>
+          <div>
+
+
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">...</div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <app-footer-dashboard></app-footer-dashboard>
+</div>
