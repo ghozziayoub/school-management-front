@@ -60,7 +60,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     ModifyTrainerComponent,
     TrainingListComponent,
     AddTrainingComponent,
-    ModifyTrainingComponent
+    ModifyTrainingComponent,
     ForgotPasswordComponent
   ],
   imports: [
