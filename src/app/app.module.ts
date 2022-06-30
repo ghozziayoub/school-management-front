@@ -31,6 +31,8 @@ import { ModifyTrainerComponent } from './components/private/shared/trainers/mod
 import { TrainingListComponent } from './components/private/shared/trainings/training-list/training-list.component';
 import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
 import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { ModifyTrainingComponent } from './components/private/shared/trainings/m
     TrainingListComponent,
     AddTrainingComponent,
     ModifyTrainingComponent
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

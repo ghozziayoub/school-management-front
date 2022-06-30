@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
 import { AboutComponent } from './components/public/about/about.component';
@@ -18,6 +18,7 @@ import { ModifyTrainerComponent } from './components/private/shared/trainers/mod
 import { TrainingListComponent } from './components/private/shared/trainings/training-list/training-list.component';
 import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
 import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 const routes: Routes = [
   {
     path: "",
@@ -51,6 +52,13 @@ const routes: Routes = [
     path: "dashboard",
     component: DashboardComponent
   },
+
+  {
+    path:"forgotPassword",
+    component :ForgotPasswordComponent
+ 
+  },
+  
   {
     path:"category",
     component: CategoriesListComponent
