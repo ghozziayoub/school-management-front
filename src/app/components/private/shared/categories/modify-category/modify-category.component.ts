@@ -8,11 +8,12 @@ import {
 import { CategoryService } from '../../../../../services/category.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/models/category';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-modify-category',
   templateUrl: './modify-category.component.html',
-  styleUrls: ['./modify-category.component.scss'],
+  styleUrls: ['./modify-category.component.css'],
 })
 export class ModifyCategoryComponent implements OnInit {
   updateCategoryForm: FormGroup;
@@ -22,7 +23,8 @@ export class ModifyCategoryComponent implements OnInit {
     private fb: FormBuilder,
     private route: ActivatedRoute,
     private router:Router,
-    private categoryService: CategoryService
+    private categoryService: CategoryService,
+    private toastr: ToastrService
   ) {
     this.updateCategoryForm = this.fb.group({
       name: new FormControl(),
@@ -70,6 +72,7 @@ export class ModifyCategoryComponent implements OnInit {
     this.categoryService.updateCategory(formData, id).subscribe({
       next: (result) => {
         console.log(result);
+        this.toastr.warning(result.message);
         this.router.navigate(['/category'])
       },
       error: (err) => {
