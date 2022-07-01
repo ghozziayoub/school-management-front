@@ -259,7 +259,6 @@
 
 <!-- Team Start -->
 <div class="container-xxl py-5" *ngIf="trainersList.length > 0">
-<<<<<<< HEAD
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 class="section-title bg-white text-center text-primary px-3">
@@ -287,26 +286,6 @@
     </div>
     
   </div>
-=======
-
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Instructors</h6>
-            <h1 class="mb-5">Expert Instructors</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" *ngFor="let trainer of trainersList" data-wow-delay="0.1s">
-
-                <app-trainer-item [firstname]="trainer.firstname" [lastname]="trainer.lastname"
-                [speciality]="trainer.speciality" [image]="trainer.image" [facebook]="trainer.facebook"
-                [instagram]="trainer.instagram" [twitter]="trainer.twitter">
-
-            </app-trainer-item>
-            </div>
-        </div>
-
-    </div>
->>>>>>> dev
 </div>
 <!-- Team End -->
 
