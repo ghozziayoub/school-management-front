@@ -27,8 +27,8 @@ export class TrainingService {
     return this.http.post<any>(this.trainingsUrl, training);
   }
 
-  updateTraining(training: Training) {
-    return this.http.put<any>(this.trainingsUrl, training);
+  updateTraining(training: any, id:String) {
+    return this.http.patch<any>(this.trainingsUrl+id, training);
   }
 
 }
