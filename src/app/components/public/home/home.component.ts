@@ -8,6 +8,7 @@ import { TrainingService } from 'src/app/services/training.service';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
+<<<<<<< HEAD
   trainingsList: any = [];
   trainersList: any = [];
   categoriesList: any = [];
@@ -16,6 +17,14 @@ export class HomeComponent implements OnInit {
     private categoryService: CategoryService,
     private trainingService: TrainingService
   ) {}
+=======
+  trainingsList : any = []
+  trainersList: any = []
+  categoriesList: any = []
+  constructor(private trainerService: TrainerService,private categoryService: CategoryService,private trainingService: TrainingService) {
+
+  }
+>>>>>>> dev
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({
