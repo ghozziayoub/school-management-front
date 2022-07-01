@@ -1,0 +1,14 @@
+.description{
+    height: 200px;
+}
+
+.button{
+    width: 20%;
+    display: block;
+    margin: auto;
+}
+
+.image-training{
+    width: 100%;
+    height: 100%;
+}

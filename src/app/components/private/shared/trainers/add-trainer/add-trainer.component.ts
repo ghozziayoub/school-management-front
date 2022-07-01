@@ -102,6 +102,7 @@ export class AddTrainerComponent implements OnInit {
         this.router.navigate(['/trainer-list']);
       },
       error: (err) => {
+        this.toastr.error(err.message)
         console.log(err);
       },
     });
