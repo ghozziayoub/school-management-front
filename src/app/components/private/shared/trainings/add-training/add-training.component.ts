@@ -58,13 +58,9 @@ export class AddTrainingComponent implements OnInit {
       ]),
       idTrainer: new FormControl('', [
         Validators.required,
-        Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2)
       ]),
       idCategory: new FormControl('', [
         Validators.required,
-        Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2)
       ]),
       
     };

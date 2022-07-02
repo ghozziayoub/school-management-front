@@ -3,6 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,11 +14,13 @@ import { User } from 'src/app/models/user';
 export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup
-
+  selectedFile: any;
+  imageUrl = 'assets/img/avatar.png';
 
   constructor(
 
-    private fb: FormBuilder, private router: Router, private userr: UserService,
+    private fb: FormBuilder, private router: Router, private userService: UserService,
+    private toastr: ToastrService
 
   ) {
 
@@ -63,13 +66,41 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
 
   }
+  save(event: any) {
+    let reader = new FileReader();
+
+    reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+    reader.onload = (event) => {
+      // called once readAsDataURL is completed
+      this.imageUrl = (event.target as FileReader).result!.toString();
+    };
+
+    this.selectedFile = event.target.files[0];
+  }
 
   register() {
     let data = this.registerForm.value;
+    let formData = new FormData();
 
-    let user = new User(data.firstname, data.lastname, data.file, data.email, data.password, data.repassword);
+    formData.append('firstname', data.firstname)
+    formData.append('lastname', data.lastname)
+    formData.append('email', data.email)
+    formData.append('password', data.password);
+    formData.append('picture', this.selectedFile);
 
-    console.log(user);
+    this.userService.addUser(formData).subscribe({
+      next: (result) => {
+        console.log(result);
+        this.toastr.success('you have registred successfully');
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        this.toastr.error(err.error.message);
+        console.log(err);
+      },
+    });
+
   }
 
 }

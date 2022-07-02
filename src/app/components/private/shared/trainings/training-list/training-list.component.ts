@@ -34,6 +34,7 @@ export class TrainingListComponent implements OnInit {
         console.log(result);
       },
       error: (err) => {
+        this.toastr.error(err.error.message);
         console.log(err);
       },
     });

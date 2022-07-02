@@ -15,7 +15,7 @@
           <form [formGroup]="myForm" (ngSubmit)="add()">
             <div class="form-group text-center">
               <img [src]="imageUrl" class="image-fluid category-image" alt="" style="width: 150px;" />
-              <input type="file" class="form-control upload-input" (change)="save($event)" id="customFile" />
+              <input type="file" class="form-control upload-input" (change)="save($event)" accept="image/x-png,image/gif,image/jpeg" id="customFile" />
             </div>
             <div class="form-group">
               <div class="row">

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../../../../services/category.service';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-category-crud',
   templateUrl: './categoriesList.component.html',
@@ -9,7 +9,7 @@ import { CategoryService } from '../../../../../services/category.service';
 export class CategoriesListComponent implements OnInit {
   categoryList: any[] = [];
 
-  constructor(private categoryService: CategoryService) {}
+  constructor(private categoryService: CategoryService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     this.categoryService.getAllCategories().subscribe({
@@ -29,6 +29,7 @@ export class CategoriesListComponent implements OnInit {
     this.categoryService.deleteCategory(id).subscribe({
       next: (result) => {
         console.log(result);
+        this.toastr.success(result.message);
       },
       error: (err) => {
         console.log(err);

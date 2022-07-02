@@ -67,8 +67,8 @@ import { UsersListComponent } from './components/private/shared/users/users-list
     ModifyTrainingComponent,
     ForgotPasswordComponent,
     MessageListComponent,
-    MessageList2Component
-    UsersListComponent,
+    MessageList2Component,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

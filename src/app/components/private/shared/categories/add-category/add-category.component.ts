@@ -8,11 +8,12 @@ import {
 import { CategoryService } from '../../../../../services/category.service';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/models/category';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-category',
   templateUrl: './add-category.component.html',
-  styleUrls: ['./add-category.component.scss'],
+  styleUrls: ['./add-category.component.css'],
 })
 export class AddCategoryComponent implements OnInit {
   myForm: FormGroup;
@@ -22,11 +23,16 @@ export class AddCategoryComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private categoryService: CategoryService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) {
-    this.myForm = this.fb.group({
-      name: new FormControl(),
-    });
+    let category = {
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(6)
+      ]),
+    }
+    this.myForm = this.fb.group(category)
   }
 
   ngOnInit(): void {}
@@ -43,6 +49,7 @@ export class AddCategoryComponent implements OnInit {
 
     this.selectedFile = event.target.files[0];
   }
+  get name() { return this.myForm.get('name') }
 
   add() {
     let data = this.myForm.value;
@@ -53,10 +60,12 @@ export class AddCategoryComponent implements OnInit {
     this.categoryService.addCategory(formData).subscribe({
       next: (result) => {
         console.log(result);
-        this.router.navigate(['/category'])
+        this.toastr.success(result.message);
+        this.router.navigate(['/category']);
       },
-      error: (err) => {
-        console.log(err);
+      error: (error) => {
+        this.toastr.error(error.error.message);
+        console.log();
       },
     });
   }

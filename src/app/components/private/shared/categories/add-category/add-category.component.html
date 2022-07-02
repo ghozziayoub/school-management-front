@@ -34,6 +34,10 @@
                   formControlName="name"
                   id="categoryName"
                 />
+                <div *ngIf="name?.invalid && name?.touched">
+                  <small *ngIf="name?.errors?.['required']" class="text-danger"><b>name is required</b><br></small>
+                  <small *ngIf="name?.errors?.['minlength']" class="text-danger"><b> invalid name</b><br></small>
+                </div>
               </div>
             </div>
             

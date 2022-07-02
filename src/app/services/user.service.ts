@@ -26,7 +26,7 @@ export class UserService {
     return this.http.delete<any>(this.usersUrl + id)
   }
 
-  addUser(user: User) {
+  addUser(user: any) {
     return this.http.post<any>(this.usersUrl, user);
   }
 
