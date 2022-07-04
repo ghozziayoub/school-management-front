@@ -55,6 +55,9 @@
                         alt=""
                       />
                     </td>
+                    <td>{{ article.content.substring(0,70) }}...</td>
+                    <td>{{ article.user.firstname }} {{ article.user.firstname }}</td>
+                    <td>{{ moment(article.createdAt) }}</td>
                     <td>
                       <button
                         class="btn btn-warning mx-2"

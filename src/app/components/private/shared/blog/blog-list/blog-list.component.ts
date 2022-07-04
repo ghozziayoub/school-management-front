@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../../../../services/blog.service';
 import { ToastrService } from 'ngx-toastr';
+import * as moment from 'moment';
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
@@ -8,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class BlogListComponent implements OnInit {
   articleList: any[] = [];
-
   constructor(private articleService: BlogService, private toastr: ToastrService) {}
 
   ngOnInit(): void {
@@ -25,7 +25,6 @@ export class BlogListComponent implements OnInit {
 
   delete(id: string, index: number) {
     this.articleList.splice(index, 1);
-
     this.articleService.deleteArticles(id).subscribe({
       next: (result) => {
         console.log(result);
@@ -35,5 +34,9 @@ export class BlogListComponent implements OnInit {
         console.log(err);
       },
     });
+  }
+
+  moment(x:Date){
+    return moment(x).fromNow()
   }
 }
