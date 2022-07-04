@@ -38,6 +38,7 @@ import { UsersListComponent } from './components/private/shared/users/users-list
 import { BlogListComponent } from './components/private/shared/blog/blog-list/blog-list.component';
 import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
+import { BlogComponent } from './components/public/blog/blog.component';
 
 
 
@@ -74,7 +75,8 @@ import { UpdateArticleComponent } from './components/private/shared/blog/update-
     UsersListComponent,
     BlogListComponent,
     AddArticleComponent,
-    UpdateArticleComponent
+    UpdateArticleComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

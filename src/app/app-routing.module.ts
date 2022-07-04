@@ -25,6 +25,7 @@ import { UsersListComponent } from './components/private/shared/users/users-list
 import { BlogListComponent } from './components/private/shared/blog/blog-list/blog-list.component';
 import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
+import { BlogComponent } from './components/public/blog/blog.component';
 
 const routes: Routes = [
   {
@@ -46,6 +47,10 @@ const routes: Routes = [
   {
     path: "courses",
     component: CoursesComponent
+  },
+  {
+    path: "blog",
+    component: BlogComponent
   },
   {
     path: "our-team",
