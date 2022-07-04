@@ -22,6 +22,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { MessageListComponent } from './components/private/shared/messages/message-list/message-list.component';
 import { MessageList2Component } from './components/private/shared/messages/message-list2/message-list2.component';
 import { UsersListComponent } from './components/private/shared/users/users-list/users-list.component';
+import { BlogListComponent } from './components/private/shared/blog/blog-list/blog-list.component';
+import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
+import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
 
 const routes: Routes = [
   {
@@ -102,6 +105,19 @@ const routes: Routes = [
   {
     path:"modify-training/:id",
     component: ModifyTrainingComponent
+  },
+  
+  {
+    path:"article-list",
+    component: BlogListComponent
+  },
+  {
+    path:"add-new-article",
+    component: AddArticleComponent
+  },
+  {
+    path:"modify-article/:id",
+    component: UpdateArticleComponent
   },
   
   {
