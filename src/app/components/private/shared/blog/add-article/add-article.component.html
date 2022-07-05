@@ -6,7 +6,7 @@
 
     <div id="layoutSidenav_content">
       <main>
-        <div class="container-fluid px-4 mx-3">
+        <div class="container-fluid px-4 ">
           <h1 class="mt-4">article managment</h1>
           <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item active">add new article</li>
@@ -31,20 +31,6 @@
               </div>
             </div>
             <div class="input-sec">
-              <select
-                class="form-select mt-3"
-                formControlName="createdBy"
-                id="createdBy"
-                aria-label="Default select example"
-              >
-                <option selected>Open this select menu</option>
-                <option
-                  *ngFor="let user of userList; let i = index"
-                  [value]="user._id"
-                >
-                  {{ user.firstname }} {{ user.lastname }}
-                </option>
-              </select>
               <div class="form-group">
                 <div>
                   <label for="articleName " class="mt-3">article titre :</label>
