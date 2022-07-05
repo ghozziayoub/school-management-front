@@ -11,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ArticleComponent implements OnInit {
   article: any;
+  articleList:any[]=[]
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
@@ -27,5 +28,30 @@ export class ArticleComponent implements OnInit {
         this.router.navigate(['/page404'])
       }
     })
+    this.blogService.getAllArticles().subscribe({
+      next: (res)=>{
+        this.articleList= res;
+      },
+      error: (error)=>{
+        this.router.navigate(['/page404'])
+      }
+    })
+  }
+  single(id:string){
+    this.blogService.getOneArticles(id).subscribe({
+      next: (res)=>{
+        this.article= res;
+        this.router.navigate(['/blog/'+id])
+      },
+      error: (error)=>{
+        this.router.navigate(['/page404'])
+      }
+    })
+  }
+  moment(x:Date){
+    return moment(x).fromNow()
   }
 }
+
+
+
