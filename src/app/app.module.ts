@@ -35,6 +35,11 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { MessageListComponent } from './components/private/shared/messages/message-list/message-list.component';
 import { MessageList2Component } from './components/private/shared/messages/message-list2/message-list2.component';
 import { UsersListComponent } from './components/private/shared/users/users-list/users-list.component';
+import { BlogListComponent } from './components/private/shared/blog/blog-list/blog-list.component';
+import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
+import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
+import { BlogComponent } from './components/public/blog/blog.component';
+import { ArticleComponent } from './components/public/article/article.component';
 
 
 
@@ -68,7 +73,12 @@ import { UsersListComponent } from './components/private/shared/users/users-list
     ForgotPasswordComponent,
     MessageListComponent,
     MessageList2Component,
-    UsersListComponent
+    UsersListComponent,
+    BlogListComponent,
+    AddArticleComponent,
+    UpdateArticleComponent,
+    BlogComponent,
+    ArticleComponent
   ],
   imports: [
     BrowserModule,
