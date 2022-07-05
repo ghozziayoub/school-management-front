@@ -1,1 +1,47 @@
-<p>article works!</p>
+<!-- Navbar Start -->
+<app-navbar></app-navbar>
+<!-- Navbar End -->
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Blog</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item">
+              <a class="text-white" routerLink="/">Home</a>
+            </li>
+            <li class="breadcrumb-item text-white active">
+              <a class="text-white" routerLink="/blog">Blog</a>
+            </li>
+            <li class="breadcrumb-item text-white active">
+              <a class="text-white">{{ article.titre }}</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Header End -->
+
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">{{ article.titre }}</h1>
+      <div class="article-image ">
+        <img class="image" src="http://localhost:3000/{{ article.image }}" alt="" />
+      </div>
+        <div class="published">
+            <i class="fa-solid fa-calendar-days date mt-2"></i><small class="m-2 date">{{ article.createdAt.substring(0, 10) }}</small>
+        </div>
+      <p class="article-content">{{ article.content }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->

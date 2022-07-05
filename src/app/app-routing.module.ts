@@ -26,6 +26,7 @@ import { BlogListComponent } from './components/private/shared/blog/blog-list/bl
 import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
 import { BlogComponent } from './components/public/blog/blog.component';
+import { ArticleComponent } from './components/public/article/article.component';
 
 const routes: Routes = [
   {
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: "blog",
     component: BlogComponent
+  },
+  {
+    path: "blog/:id",
+    component: ArticleComponent
   },
   {
     path: "our-team",
