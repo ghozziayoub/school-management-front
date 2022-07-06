@@ -1,7 +1,4 @@
-<div
-  class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
-  data-wow-delay="0.1s"
->
+<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
   <div class="container py-5">
     <div class="row g-5">
       <div class="row g-5">
@@ -28,19 +25,15 @@
           <h4 class="text-white mb-3">actualités</h4>
           <div class="d-flex flex-column">
             <div *ngFor="let recentArticle of articleList" class="actualities">
-              <img
-                routerLink="blog/{{ recentArticle._id }}"
-                src="http://localhost:3000/{{ recentArticle.image }}"
-                alt=""
-              />
+              <img routerLink="blog/{{ recentArticle._id }}" src="{{baseUrl}}{{ recentArticle.image }}" alt="" />
               <h4>
                 <a routerLink="blog/{{ recentArticle._id }}">{{
                   recentArticle.titre
-                }}</a>
+                  }}</a>
               </h4>
               <time datetime="2020-01-01">{{
                 recentArticle.createdAt.substring(0, 10)
-              }}</time>
+                }}</time>
             </div>
             <button routerLink="blog" class="view-more">voir plus</button>
           </div>
@@ -59,18 +52,14 @@
             <i class="fa fa-envelope me-3"></i>support@talentlab.tn
           </p>
           <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/Talentlab2021" target="_blank"><i
+                class="fab fa-facebook-f"></i></a>
             <a class="btn btn-outline-light btn-social"
-              ><i class="fab fa-twitter"></i
-            ></a>
-            <a class="btn btn-outline-light btn-social"
-              href="https://www.facebook.com/Talentlab2021" target="_blank"><i class="fab fa-facebook-f"></i
-            ></a>
-            <a class="btn btn-outline-light btn-social"
-            href="https://www.youtube.com/channel/UCg68yOB8VEiYyPkTFSZuBZQ/videos" target="_blank"><i class="fab fa-youtube"></i
-            ></a>
-            <a class="btn btn-outline-light btn-social"
-            href="https://www.linkedin.com/company/talentlab-tn/" target="_blank"><i class="fab fa-linkedin-in"></i
-            ></a>
+              href="https://www.youtube.com/channel/UCg68yOB8VEiYyPkTFSZuBZQ/videos" target="_blank"><i
+                class="fab fa-youtube"></i></a>
+            <a class="btn btn-outline-light btn-social" href="https://www.linkedin.com/company/talentlab-tn/"
+              target="_blank"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
@@ -80,7 +69,6 @@
         <div class="row">
           <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
             &copy; <a><b>TalentLab</b></a>, tous les droits sont réservés.
-
             <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
             développé par <a><b>FormaLab</b></a><br /><br />
           </div>
@@ -96,12 +84,8 @@
       </div>
     </div>
   </div>
-
   <!-- Back to Top -->
-  <a
-    (click)="scrollToTop()"
-    class="btn btn-lg btn-primary btn-lg-square back-to-top"
-  >
+  <a (click)="scrollToTop()" class="btn btn-lg btn-primary btn-lg-square back-to-top">
     <i class="bi bi-arrow-up"></i>
   </a>
 </div>

@@ -3,6 +3,7 @@ import * as moment from 'moment';
 
 import { BlogService } from '../../../services/blog.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { BaseService } from 'src/app/services/base.service';
 
 @Component({
   selector: 'app-article',
@@ -11,44 +12,45 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ArticleComponent implements OnInit {
   article: any;
-  articleList:any[]=[]
+  articleList: any[] = [];
+  baseUrl = `${BaseService.baseUrl}/`;
   constructor(
     private blogService: BlogService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params?.['id']
     this.blogService.getOneArticles(id).subscribe({
-      next: (res)=>{
-        this.article= res;
+      next: (res) => {
+        this.article = res;
       },
-      error: (error)=>{
+      error: (error) => {
         this.router.navigate(['/page404'])
       }
     })
     this.blogService.getAllArticles().subscribe({
-      next: (res)=>{
-        this.articleList= res;
+      next: (res) => {
+        this.articleList = res;
       },
-      error: (error)=>{
+      error: (error) => {
         this.router.navigate(['/page404'])
       }
     })
   }
-  single(id:string){
+  single(id: string) {
     this.blogService.getOneArticles(id).subscribe({
-      next: (res)=>{
-        this.article= res;
-        this.router.navigate(['/blog/'+id])
+      next: (res) => {
+        this.article = res;
+        this.router.navigate(['/blog/' + id])
       },
-      error: (error)=>{
+      error: (error) => {
         this.router.navigate(['/page404'])
       }
     })
   }
-  moment(x:Date){
+  moment(x: Date) {
     return moment(x).fromNow()
   }
 }

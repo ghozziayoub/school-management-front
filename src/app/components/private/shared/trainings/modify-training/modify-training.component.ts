@@ -11,18 +11,19 @@ import {
   FormGroup,
   FormBuilder,
 } from '@angular/forms';
+import { BaseService } from 'src/app/services/base.service';
 @Component({
   selector: 'app-modify-training',
   templateUrl: './modify-training.component.html',
   styleUrls: ['./modify-training.component.scss']
 })
 export class ModifyTrainingComponent implements OnInit {
-  trainersList: any []= []
+  trainersList: any[] = []
   categoryList: any[] = [];
-  myForm : any = FormGroup
-  selectedTrainer:string=""
+  myForm: any = FormGroup
+  selectedTrainer: string = ""
   selectedFile: any;
-  imageUrl = 'http://localhost:3000/';
+  imageUrl = `${BaseService.baseUrl}/`;
 
   constructor(
     private fb: FormBuilder,
@@ -32,10 +33,8 @@ export class ModifyTrainingComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService
-  )
-  
-  {
-    let formControls ={
+  ) {
+    let formControls = {
       name: new FormControl('', [
         Validators.required,
         Validators.pattern("[A-Za-z .'-]+"),
@@ -51,7 +50,7 @@ export class ModifyTrainingComponent implements OnInit {
         Validators.pattern("[A-Za-z .'-]+"),
         Validators.minLength(2)
       ]),
-      hours: new FormControl('',[
+      hours: new FormControl('', [
         Validators.required,
         Validators.pattern("[0-9]+"),
         Validators.minLength(2),
@@ -63,9 +62,8 @@ export class ModifyTrainingComponent implements OnInit {
       idCategory: new FormControl('', [
         Validators.required,
       ]),
-      
     };
-  
+
     this.myForm = this.fb.group(formControls)
   }
   get name() { return this.myForm.get('name') }
@@ -109,27 +107,21 @@ export class ModifyTrainingComponent implements OnInit {
           idTrainer: training.trainer._id,
           idCategory: training.category._id,
         });
- 
         this.imageUrl += training.image;
       },
       error: (error) => {
         console.log(error);
       },
     });
-
-    
   }
 
   save(event: any) {
     let reader = new FileReader();
-
     reader.readAsDataURL(event.target.files[0]); // read file as data url
-
     reader.onload = (event) => {
       // called once readAsDataURL is completed
       this.imageUrl = (event.target as FileReader).result!.toString();
     };
-
     this.selectedFile = event.target.files[0];
   }
 
@@ -138,14 +130,14 @@ export class ModifyTrainingComponent implements OnInit {
     let data = this.myForm.value;
     let formData = new FormData();
     formData.append('name', data.name),
-    formData.append('objectif', data.objectif),
-    formData.append('program', data.program),
-    formData.append('hours', data.hours),
-    formData.append('idTrainer', data.idTrainer),
-    formData.append('idCategory', data.idCategory),
-    formData.append('picture', this.selectedFile);
-    console.log(this.selectedFile)
-    this.trainingService.updateTraining(formData,id).subscribe({
+      formData.append('objectif', data.objectif),
+      formData.append('program', data.program),
+      formData.append('hours', data.hours),
+      formData.append('idTrainer', data.idTrainer),
+      formData.append('idCategory', data.idCategory),
+      formData.append('picture', this.selectedFile);
+
+    this.trainingService.updateTraining(formData, id).subscribe({
       next: (result) => {
         console.log(result);
         this.toastr.success(result.message);

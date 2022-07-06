@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../../../../services/category.service';
 import { ToastrService } from 'ngx-toastr';
+import { BaseService } from 'src/app/services/base.service';
 @Component({
   selector: 'app-category-crud',
   templateUrl: './categoriesList.component.html',
@@ -8,8 +9,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CategoriesListComponent implements OnInit {
   categoryList: any[] = [];
-
-  constructor(private categoryService: CategoryService, private toastr: ToastrService) {}
+  baseUrl = `${BaseService.baseUrl}/`;
+  constructor(private categoryService: CategoryService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.categoryService.getAllCategories().subscribe({
@@ -25,7 +26,6 @@ export class CategoriesListComponent implements OnInit {
 
   delete(id: string, index: number) {
     this.categoryList.splice(index, 1);
-
     this.categoryService.deleteCategory(id).subscribe({
       next: (result) => {
         console.log(result);

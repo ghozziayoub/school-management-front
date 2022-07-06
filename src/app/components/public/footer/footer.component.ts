@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseService } from 'src/app/services/base.service';
 import { BlogService } from 'src/app/services/blog.service';
 @Component({
   selector: 'app-footer',
@@ -6,15 +7,17 @@ import { BlogService } from 'src/app/services/blog.service';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
+  articleList: any[] = [];
+  baseUrl = `${BaseService.baseUrl}/`;
 
-  constructor( private blogService: BlogService) { }
-  articleList:any[]=[]
+  constructor(private blogService: BlogService) { }
+
   ngOnInit(): void {
     this.blogService.getAllArticles().subscribe({
-      next: (res)=>{
+      next: (res) => {
         this.articleList = res
       },
-      error:(err)=>{
+      error: (err) => {
         console.log(err)
       }
     })

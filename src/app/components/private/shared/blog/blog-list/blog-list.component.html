@@ -1,90 +1,59 @@
 <div class="sb-nav-fixed">
-    <app-top-bar></app-top-bar>
-  
-    <div id="layoutSidenav">
-      <app-side-bar></app-side-bar>
-  
-      <!-- CONTENT-->
-  
-      <div id="layoutSidenav_content">
-        <main>
-          <div class="container-fluid px-4">
-            <h2 style="color: black">article managment</h2>
-  
-            <div>
-              <button
-                type="button"
-                class="btn btn-primary mb-3"
-                data-toggle="modal"
-                data-target=".bd-example-modal-sm"
-                routerLink="/add-new-article">
-                + add
-              </button>
-  
-              <div
-                class="modal fade bd-example-modal-sm"
-                tabindex="-1"
-                role="dialog"
-                aria-labelledby="mySmallModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog modal-sm">
-                  <div class="modal-content">...</div>
-                </div>
+  <app-top-bar></app-top-bar>
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+    <!-- CONTENT-->
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h2 style="color: black">article managment</h2>
+          <div>
+            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target=".bd-example-modal-sm"
+              routerLink="/add-new-article">
+              + add
+            </button>
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">...</div>
               </div>
-              <table class="fl-table">
-                <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>titre</th>
-                    <th>image</th>
-                    <th>article</th>
-                    <th>created by</th>
-                    <th>since</th>
-                    <th>edit</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let article of articleList; let i = index">
-                    <td>{{ i + 1 }}</td>
-                    <td>{{ article.titre }}</td>
-                    <td>
-                      <img
-                        src="http://localhost:3000/{{ article.image }}"
-                        class="image-fluid article-image"
-                        alt=""
-                      />
-                    </td>
-                    <td>{{ article.content.substring(0,70) }}...</td>
-                    <td>{{ moment(article.createdAt) }}</td>
-                    <td>
-                      <button
-                        class="btn btn-warning mx-2"
-                        [routerLink]="['/modify-article', article._id]"
-                      >
-                        <i
-                          class="fa fa-pencil"
-                          style="color: white"
-                          aria-hidden="true"
-                        ></i></button
-                      ><button
-                        class="btn btn-danger mx-2"
-                        style="color: white"
-                        (click)="delete(article._id, i)"
-                      >
-                        <i class="fa fa-trash" aria-hidden="true"></i>
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-  
-                <tbody></tbody>
-              </table>
             </div>
+            <table class="fl-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>titre</th>
+                  <th>image</th>
+                  <th>article</th>
+                  <th>created by</th>
+                  <th>since</th>
+                  <th>edit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let article of articleList; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ article.titre }}</td>
+                  <td>
+                    <img src="{{baseUrl}}{{ article.image }}" class="image-fluid article-image" alt="" />
+                  </td>
+                  <td>{{ article.content.substring(0,70) }}...</td>
+                  <td>{{ moment(article.createdAt) }}</td>
+                  <td>
+                    <button class="btn btn-warning mx-2" [routerLink]="['/modify-article', article._id]">
+                      <i class="fa fa-pencil" style="color: white" aria-hidden="true"></i></button><button
+                      class="btn btn-danger mx-2" style="color: white" (click)="delete(article._id, i)">
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody></tbody>
+            </table>
           </div>
-        </main>
-      </div>
+        </div>
+      </main>
     </div>
-    <app-footer-dashboard></app-footer-dashboard>
   </div>
-  
+  <app-footer-dashboard></app-footer-dashboard>
+</div>
