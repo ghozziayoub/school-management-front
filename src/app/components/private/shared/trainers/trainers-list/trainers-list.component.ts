@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {  ToastrService } from 'ngx-toastr';
 import { TrainerService } from '../../../../../services/trainer.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { TrainerService } from '../../../../../services/trainer.service';
 export class TrainersListComponent implements OnInit {
   trainersList: any[] = [];
 
-  constructor(private trainerService: TrainerService, ) {}
+  constructor(private trainerService: TrainerService, private toastr:ToastrService ) {}
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({
@@ -28,7 +29,7 @@ export class TrainersListComponent implements OnInit {
 
     this.trainerService.deleteTrainer(id).subscribe({
       next: (result) => {
-        console.log(result);
+        this.toastr.success("le formateur est supprimé");
 
       },
       error: (err) => {

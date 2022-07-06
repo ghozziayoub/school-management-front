@@ -112,7 +112,7 @@ export class ModifyTrainerComponent implements OnInit {
     console.log(this.selectedFile);
     this.trainerService.updateTrainer(formData, id).subscribe({
       next: (result) => {
-        this.toastr.success('update successful');
+        this.toastr.success("le formateur mise à jour avec succès ");
         console.log(result);
         this.router.navigate(['/trainer-list']);
 

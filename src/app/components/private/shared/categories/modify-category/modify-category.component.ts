@@ -66,7 +66,7 @@ export class ModifyCategoryComponent implements OnInit {
     this.categoryService.updateCategory(formData, id).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.warning(result.message);
+        this.toastr.warning("catégorie mise à jour avec succès ");
         this.router.navigate(['/category'])
       },
       error: (err) => {

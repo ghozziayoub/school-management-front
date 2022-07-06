@@ -29,7 +29,7 @@ export class CategoriesListComponent implements OnInit {
     this.categoryService.deleteCategory(id).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success(result.message);
+        this.toastr.success("la catégorie est supprimée");
       },
       error: (err) => {
         console.log(err);
