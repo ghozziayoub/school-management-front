@@ -9,9 +9,9 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4 mx-3">
-            <h1 class="mt-4">Trainings managment</h1>
+            <h1 class="mt-4">Formation</h1>
             <ol class="breadcrumb mb-4">
-              <li class="breadcrumb-item active">Add new training</li>
+              <li class="breadcrumb-item active">Modifier une formation</li>
           </ol>
      
             <form [formGroup]="myForm" (ngSubmit)="update()">
@@ -29,7 +29,7 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-lg-6 my-2">
-                    <label for="exampleFormControlFile1">Name training : </label>
+                    <label for="exampleFormControlFile1">Nom de formation : </label>
                   </div>
                   <div class="col-lg-6 my-2">
                     <label for="exampleFormControlFile1">Objectif :</label>
@@ -42,12 +42,9 @@
                       id="name"
                     />
                     <div *ngIf="name?.invalid && name?.touched">
-                      <small *ngIf="name?.errors?.['required']" class="text-danger">Name training
-                          required<br></small>
-                      <small *ngIf="name?.errors?.['pattern']" class="text-danger"> invalid
-                        Name training<br></small>
-                      <small *ngIf="name?.errors?.['minlength']" class="text-danger">Name training should
-                          contains 2 chars at least<br></small>
+                      <small *ngIf="name?.errors?.['required']" class="text-danger">nom est requis<br></small>
+                      <small *ngIf="name?.errors?.['pattern']" class="text-danger"> nom incorrect<br></small>
+                      <small *ngIf="name?.errors?.['minlength']" class="text-danger">nom doit contenir au moins deux caractères<br></small>
                   </div>
                   </div>
                   <div class="col-lg-6">
@@ -58,12 +55,9 @@
                       id="objectif"
                     />
                     <div *ngIf="objectif?.invalid && objectif?.touched">
-                      <small *ngIf="objectif?.errors?.['required']" class="text-danger">Objectif
-                          required<br></small>
-                      <small *ngIf="objectif?.errors?.['pattern']" class="text-danger"> invalid
-                        Objectif<br></small>
-                      <small *ngIf="objectif?.errors?.['minlength']" class="text-danger">Objectif should
-                          contains 2 chars at least<br></small>
+                      <small *ngIf="objectif?.errors?.['required']" class="text-danger">objectif est requis<br></small>
+                      <small *ngIf="objectif?.errors?.['pattern']" class="text-danger">objectif incorrect<br></small>
+                      <small *ngIf="objectif?.errors?.['minlength']" class="text-danger">objectif doit contenir au moins deux caractères<br></small>
                   </div>
                   </div>
                 </div>
@@ -71,10 +65,10 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-lg-6 my-2">
-                    <label for="exampleFormControlFile1">Program: </label>
+                    <label for="exampleFormControlFile1">Programme:</label>
                   </div>
                   <div class="col-lg-6 my-2">
-                    <label for="exampleFormControlFile1">Hours :</label>
+                    <label for="exampleFormControlFile1">Heures :</label>
                   </div>
                   <div class="col-lg-6">
                     <input
@@ -84,12 +78,9 @@
                       id="program"
                     />
                     <div *ngIf="program?.invalid && program?.touched">
-                      <small *ngIf="program?.errors?.['required']" class="text-danger">Program
-                          required<br></small>
-                      <small *ngIf="program?.errors?.['pattern']" class="text-danger"> invalid
-                        Program<br></small>
-                      <small *ngIf="program?.errors?.['minlength']" class="text-danger">Program should
-                          contains 2 chars at least<br></small>
+                      <small *ngIf="program?.errors?.['required']" class="text-danger">Programme est requis<br></small>
+                      <small *ngIf="program?.errors?.['pattern']" class="text-danger">Programme incorrect<br></small>
+                      <small *ngIf="program?.errors?.['minlength']" class="text-danger">Programme doit contenir au moins deux caractères<br></small>
                   </div>
                   </div>
                   <div class="col-lg-6">
@@ -100,12 +91,9 @@
                       id="hours"
                     />
                     <div *ngIf="hours?.invalid && hours?.touched">
-                      <small *ngIf="hours?.errors?.['required']" class="text-danger">Hours
-                          required<br></small>
-                      <small *ngIf="hours?.errors?.['pattern']" class="text-danger"> invalid
-                        Hours<br></small>
-                      <small *ngIf="hours?.errors?.['minlength']" class="text-danger">Hours should
-                          contains 2 chars at least<br></small>
+                      <small *ngIf="hours?.errors?.['required']" class="text-danger">Heures est requi<br></small>
+                      <small *ngIf="hours?.errors?.['pattern']" class="text-danger"> Heures incorrect<br></small>
+                      <small *ngIf="hours?.errors?.['minlength']" class="text-danger">Heures doit contenir au moins deux caractères<br></small>
                   </div>
                   </div>
                 </div>
@@ -114,15 +102,15 @@
                 <div class="form-group">
                   <div class="row">
                     <div class="col-lg-6 my-2">
-                  <label for="exampleFormControlFile1" class="">Trainer :</label>
+                  <label for="exampleFormControlFile1" class="">Formateur :</label>
                   </div>
                   <div class="col-lg-6 my-2">
-                    <label for="exampleFormControlFile1" class="">Category :</label>
+                    <label for="exampleFormControlFile1" class="">catégorie :</label>
                     </div>
                     <div class="col-lg-6">
     
                   <select class="form-select" formControlName="idTrainer" id="idTrainer" aria-label="Default select example">
-                    <option selected>Open this select menu</option>
+                    <option selected>selectionner un formateur</option>
                     <option
                       *ngFor="let trainer of trainersList; let i = index"
                       [value]="trainer._id"   
@@ -131,17 +119,15 @@
                     </option>
                   </select>
                   <div *ngIf="idTrainer?.invalid && idTrainer?.touched">
-                    <small *ngIf="idTrainer?.errors?.['required']" class="text-danger">Trainer
-                        required<br></small>
-                    <small *ngIf="idTrainer?.errors?.['pattern']" class="text-danger"> invalid
-                      Trainer<br></small>
+                    <small *ngIf="idTrainer?.errors?.['required']" class="text-danger">Formateur est requis<br></small>
+                    <small *ngIf="idTrainer?.errors?.['pattern']" class="text-danger"> Formateur incorrect<br></small>
                     <small *ngIf="idTrainer?.errors?.['minlength']" class="text-danger">Trainer should
                         contains 2 chars at least<br></small>
                 </div>
                   </div>
                   <div class="col-lg-6">
                   <select class="form-select" formControlName="idCategory" id="idCategory" aria-label="Default select example">
-                    <option [selected]="true">Open this select menu</option>
+                    <option [selected]="true">selectionner une catégorie</option>
                     <option
                       *ngFor="let category of categoryList; let i = index"
                       [value]="category._id" 
@@ -150,10 +136,8 @@
                     </option>
                   </select>
                   <div *ngIf="idCategory?.invalid && idCategory?.touched">
-                    <small *ngIf="idCategory?.errors?.['required']" class="text-danger">Category
-                        required<br></small>
-                    <small *ngIf="idCategory?.errors?.['pattern']" class="text-danger"> invalid
-                      Category<br></small>
+                    <small *ngIf="idCategory?.errors?.['required']" class="text-danger">catégorie est requis<br></small>
+                    <small *ngIf="idCategory?.errors?.['pattern']" class="text-danger"> catégorie incorrect<br></small>
                     <small *ngIf="idCategory?.errors?.['minlength']" class="text-danger">Category should
                         contains 2 chars at least<br></small>
                 </div>
@@ -162,7 +146,7 @@
                 </div>
                 </div>
                
-                <button class="btn btn-primary mt-2" type="submit" [disabled]="myForm.invalid">update</button>
+                <button class="btn btn-primary mt-2" type="submit" [disabled]="myForm.invalid">modifier</button>
               </div>
             </form>
           </div>

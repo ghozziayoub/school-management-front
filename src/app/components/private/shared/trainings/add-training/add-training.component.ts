@@ -122,7 +122,7 @@ export class AddTrainingComponent implements OnInit {
     this.trainingService.addTraining(formData).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success(result.message);
+        this.toastr.success("Formation ajoutée avec succès");
         this.router.navigate(['/training-list']);
       },
       error: (err) => {

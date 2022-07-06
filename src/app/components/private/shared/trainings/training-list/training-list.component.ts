@@ -30,7 +30,7 @@ export class TrainingListComponent implements OnInit {
 
     this.trainingService.deleteTraining(id).subscribe({
       next: (result) => {
-        this.toastr.success(result.message);
+        this.toastr.success("la formation est supprimée");
         console.log(result);
       },
       error: (err) => {

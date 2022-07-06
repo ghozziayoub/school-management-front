@@ -60,7 +60,7 @@ export class AddCategoryComponent implements OnInit {
     this.categoryService.addCategory(formData).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success(result.message);
+        this.toastr.success("catégorie ajoutée avec succès");
         this.router.navigate(['/category']);
       },
       error: (error) => {

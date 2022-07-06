@@ -98,7 +98,7 @@ export class AddTrainerComponent implements OnInit {
     this.trainerService.addTrainer(formData).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success('saved successfully');
+        this.toastr.success("formateur ajoutée avec succès");
         this.router.navigate(['/trainer-list']);
       },
       error: (err) => {

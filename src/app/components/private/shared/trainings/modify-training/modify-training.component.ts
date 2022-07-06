@@ -148,7 +148,7 @@ export class ModifyTrainingComponent implements OnInit {
     this.trainingService.updateTraining(formData,id).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success(result.message);
+        this.toastr.success("la formation mise à jour avec succès ");
         this.router.navigate(['/training-list']);
       },
       error: (err) => {

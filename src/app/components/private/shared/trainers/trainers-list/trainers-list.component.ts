@@ -28,7 +28,7 @@ export class TrainersListComponent implements OnInit {
 
     this.trainerService.deleteTrainer(id).subscribe({
       next: (result) => {
-        console.log(result);
+        console.log("le formateur est supprimé");
 
       },
       error: (err) => {

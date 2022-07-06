@@ -7,9 +7,9 @@
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid px-4 ">
-          <h1 class="mt-4">trainer managment</h1>
+          <h1 class="mt-4">Formateur</h1>
           <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item active">add new trainer</li>
+            <li class="breadcrumb-item active">modifier le formateur</li>
           </ol>
 
           <form [formGroup]="updateTrainerForm" (ngSubmit)="update()">
@@ -20,25 +20,19 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-lg-6 my-2">
-                  <label for="exampleFormControlFile1">firstname : </label>
+                  <label for="exampleFormControlFile1">prénom : </label>
                   <div *ngIf="firstname?.touched && firstname?.invalid">
-                    <small *ngIf="firstname?.errors?.['required']" class="text-danger">name is
-                        required<br></small>
-                    <small *ngIf="firstname?.errors?.['pattern']" class="text-danger">Invalid
-                        name<br></small>
-                    <small *ngIf="firstname?.errors?.['minlength']" class="text-danger">name must contain two
-                        characters at least</small>
+                    <small *ngIf="firstname?.errors?.['required']" class="text-danger">Le prénom est requis<br></small>
+                    <small *ngIf="firstname?.errors?.['pattern']" class="text-danger">prénom incorrec<br></small>
+                    <small *ngIf="firstname?.errors?.['minlength']" class="text-danger">le prénom doit contenir au moins deux caractères</small>
                 </div>
                 </div>
                 <div class="col-lg-6 my-2">
-                  <label for="exampleFormControlFile1">lastname :</label>
+                  <label for="exampleFormControlFile1">nom :</label>
                   <div *ngIf="lastname?.touched && lastname?.invalid">
-                    <small *ngIf="lastname?.errors?.['required']" class="text-danger">lastname is
-                        required<br></small>
-                    <small *ngIf="lastname?.errors?.['pattern']" class="text-danger">Invalid
-                        lastname<br></small>
-                    <small *ngIf="lastname?.errors?.['minlength']" class="text-danger">lastname must contain two
-                        characters at least</small>
+                    <small *ngIf="lastname?.errors?.['required']" class="text-danger">Le nom est requis<br></small>
+                    <small *ngIf="lastname?.errors?.['pattern']" class="text-danger">nom incorrect<br></small>
+                    <small *ngIf="lastname?.errors?.['minlength']" class="text-danger">le nom doit contenir au moins deux caractères</small>
                 </div>
                 </div>
                 <div class="col-lg-6">
@@ -52,12 +46,9 @@
             <div class="form-group mt-2">
               <label for="exampleFormControlFile1" class="mb-2">email :</label>
               <div *ngIf="email?.touched && email?.invalid">
-                <small *ngIf="email?.errors?.['required']" class="text-danger">email is
-                    required<br></small>
-                <small *ngIf="email?.errors?.['pattern']" class="text-danger">Invalid
-                    email<br></small>
-                <small *ngIf="email?.errors?.['minlength']" class="text-danger">email must contain two
-                    characters at least</small>
+                <small *ngIf="email?.errors?.['required']" class="text-danger">email est requis<br></small>
+                <small *ngIf="email?.errors?.['pattern']" class="text-danger">email incorrect<br></small>
+                <small *ngIf="email?.errors?.['minlength']" class="text-danger">email doit contenir au moins deux caractères</small>
             </div>
               <input type="text" class="form-control" formControlName="email" id="email" />
             </div>
@@ -65,26 +56,20 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-lg-6">
-                  <label for="exampleFormControlFile1">speciality</label>
+                  <label for="exampleFormControlFile1">spécialité</label>
                   <div *ngIf="speciality?.touched && speciality?.invalid">
-                    <small *ngIf="speciality?.errors?.['required']" class="text-danger">speciality is
-                        required<br></small>
-                    <small *ngIf="speciality?.errors?.['pattern']" class="text-danger">Invalid
-                        speciality<br></small>
-                    <small *ngIf="speciality?.errors?.['minlength']" class="text-danger">speciality must contain two
-                        characters at least</small>
+                    <small *ngIf="speciality?.errors?.['required']" class="text-danger">spécialité est requis<br></small>
+                    <small *ngIf="speciality?.errors?.['pattern']" class="text-danger">spécialité incorrect<br></small>
+                    <small *ngIf="speciality?.errors?.['minlength']" class="text-danger">spécialité doit contenir au moins deux caractères</small>
                 </div>
                 </div>
 
                 <div class="col-lg-6">
-                  <label for="exampleFormControlFile1">years of experience</label>
+                  <label for="exampleFormControlFile1">Les années d'expérience</label>
                   <div *ngIf="yearsOfExperience?.touched && yearsOfExperience?.invalid">
-                    <small *ngIf="yearsOfExperience?.errors?.['required']" class="text-danger">yearsOfExperience is
-                        required<br></small>
-                    <small *ngIf="yearsOfExperience?.errors?.['pattern']" class="text-danger">Invalid
-                        yearsOfExperience<br></small>
-                    <small *ngIf="yearsOfExperience?.errors?.['minlength']" class="text-danger">yearsOfExperience must contain two
-                        characters at least</small>
+                    <small *ngIf="yearsOfExperience?.errors?.['required']" class="text-danger">Les années d'expérience est requis<br></small>
+                    <small *ngIf="yearsOfExperience?.errors?.['pattern']" class="text-danger">Les années d'expérience incorrect<br></small>
+                    <small *ngIf="yearsOfExperience?.errors?.['minlength']" class="text-danger">Les années d'expérience doit contenir au moins deux caractères</small>
                 </div>
                 </div>
                 <div class="col-lg-6">
@@ -111,7 +96,7 @@
 
 
 
-            <button class="btn btn-primary mt-3" type="submit">add</button>
+            <button class="btn btn-primary mt-3" type="submit">modifier</button>
           </form>
         </div>
       </main>
