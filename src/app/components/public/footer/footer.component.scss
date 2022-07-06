@@ -1,0 +1,61 @@
+.actualities{
+    width: auto;
+    color: white  !important;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.actualities  img{
+    width: 80px;
+    float: left;
+}
+
+
+
+.actualities h4{
+    font-size: 15px;
+  margin-left: 95px;
+  font-weight: bold;
+}
+.actualities h4 a{
+   color: white;
+}
+.actualities:hover{
+    border:1px solid white;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.actualities time{
+    font-size: 12px;
+    margin-left: 15px;
+  font-weight: 100;
+  margin-bottom: 5px;
+}
+
+.post-item{
+    margin: 5px;
+}
+
+.view-more{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: 2px solid white; 
+    color: white;
+    margin: 10px 10px ;
+
+    width: 50%;
+}
+
+.view-more:hover{
+  background-color: white;
+  color: black;
+}
+
+.footer-img{
+    width: 80%;
+}
+
+.row p{
+    width: 80%;
+}
