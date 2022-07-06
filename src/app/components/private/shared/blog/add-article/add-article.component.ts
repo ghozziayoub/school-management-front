@@ -6,7 +6,6 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { BlogService } from '../../../../../services/blog.service';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 @Component({
@@ -16,7 +15,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddArticleComponent implements OnInit {
   myForm: FormGroup;
-  userList: any[] = [];
   selectedFile: any;
   imageUrl = 'assets/img/default.jpg';
 
@@ -25,7 +23,6 @@ export class AddArticleComponent implements OnInit {
     private blogService: BlogService,
     private router: Router,
     private toastr: ToastrService,
-    private userService: UserService
   ) {
     let article = {
       titre: new FormControl('', [
@@ -36,21 +33,11 @@ export class AddArticleComponent implements OnInit {
         Validators.required,
         Validators.minLength(200),
       ]),
-      createdBy: new FormControl('', [Validators.required]),
     };
     this.myForm = this.fb.group(article);
   }
 
   ngOnInit(): void {
-    this.userService.getAllUsers().subscribe({
-      next: (result) => {
-        this.userList = result;
-        console.log(this.userList);
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
   }
 
   save(event: any) {
@@ -71,26 +58,22 @@ export class AddArticleComponent implements OnInit {
   get content() {
     return this.myForm.get('content');
   }
-  get createdBy() {
-    return this.myForm.get('createdBy');
-  }
 
   add() {
     let data = this.myForm.value;
     let formData = new FormData();
     formData.append('titre', data.titre);
     formData.append('content', data.content);
-    formData.append('userId', data.createdBy);
     formData.append('picture', this.selectedFile);
 
     this.blogService.addArticles(formData).subscribe({
       next: (result) => {
-        console.log(result);
+        console.log(result)
         this.toastr.success("Article ajoutée avec succès");
         this.router.navigate(['/article-list']);
       },
       error: (error) => {
-        this.toastr.error(error.error.message);
+        this.toastr.error(error.message);
         console.log();
       },
     });

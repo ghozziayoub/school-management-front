@@ -37,24 +37,17 @@ export class AddTrainingComponent implements OnInit {
     let formControls ={
       name: new FormControl('', [
         Validators.required,
-        Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2)
       ]),
       objectif: new FormControl('', [
         Validators.required,
-        Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2)
+
       ]),
       program: new FormControl('', [
         Validators.required,
-        Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2)
+
       ]),
       hours: new FormControl('',[
         Validators.required,
-        Validators.pattern("[0-9]+"),
-        Validators.minLength(2),
-        Validators.maxLength(3)
       ]),
       idTrainer: new FormControl('', [
         Validators.required,

@@ -55,7 +55,7 @@
 
             <div class="form-group">
               <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 my-2">
                   <label for="exampleFormControlFile1">spécialité</label>
                   <div *ngIf="speciality?.touched && speciality?.invalid">
                     <small *ngIf="speciality?.errors?.['required']" class="text-danger">spécialité est requis<br></small>
@@ -64,7 +64,7 @@
                 </div>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-6 my-2">
                   <label for="exampleFormControlFile1">Les années d'expérience</label>
                   <div *ngIf="yearsOfExperience?.touched && yearsOfExperience?.invalid">
                     <small *ngIf="yearsOfExperience?.errors?.['required']" class="text-danger">Les années d'expérience est requis<br></small>

@@ -38,26 +38,24 @@
                   <input
                     type="text"
                     class="form-control"
-                    formControlName="objectif"
-                    id="objectif"
+                    formControlName="name"
+                    id="name"
                   />
                   <div *ngIf="name?.invalid && name?.touched">
                     <small *ngIf="name?.errors?.['required']" class="text-danger">nom est requis<br></small>
-                    <small *ngIf="name?.errors?.['pattern']" class="text-danger"> nom incorrect<br></small>
-                    <small *ngIf="name?.errors?.['minlength']" class="text-danger">nom doit contenir au moins deux caractères<br></small>
+
                 </div>
                 </div>
                 <div class="col-lg-6">
                   <input
                     type="text"
                     class="form-control"
-                    formControlName="name"
-                    id="name"
+                    formControlName="objectif"
+                    id="objectif"
                   />
                   <div *ngIf="objectif?.invalid && objectif?.touched">
                     <small *ngIf="objectif?.errors?.['required']" class="text-danger">objectif est requis<br></small>
-                    <small *ngIf="objectif?.errors?.['pattern']" class="text-danger"> objectif incorrect<br></small>
-                    <small *ngIf="objectif?.errors?.['minlength']" class="text-danger">objectif doit contenir au moins deux caractères<br></small>
+                  
                 </div>
                 </div>
               </div>
@@ -79,8 +77,7 @@
                   />
                   <div *ngIf="program?.invalid && program?.touched">
                     <small *ngIf="program?.errors?.['required']" class="text-danger">Programme est requis<br></small>
-                    <small *ngIf="program?.errors?.['pattern']" class="text-danger"> Programme incorrect<br></small>
-                    <small *ngIf="program?.errors?.['minlength']" class="text-danger">Programme doit contenir au moins deux caractères<br></small>
+                    
                 </div>
                 </div>
                 <div class="col-lg-6">
@@ -92,8 +89,7 @@
                   />
                   <div *ngIf="hours?.invalid && hours?.touched">
                     <small *ngIf="hours?.errors?.['required']" class="text-danger">Heures est requis<br></small>
-                    <small *ngIf="hours?.errors?.['pattern']" class="text-danger"> Heures incorrect<br></small>
-                    <small *ngIf="hours?.errors?.['minlength']" class="text-danger">Heures doit contenir au moins deux caractères<br></small>
+                    
                 </div>
                 </div>
               </div>
@@ -120,7 +116,7 @@
                 </select>
                 <div *ngIf="idTrainer?.invalid && idTrainer?.touched">
                   <small *ngIf="idTrainer?.errors?.['required']" class="text-danger">Formateur est requis></small>
-                  <small *ngIf="idTrainer?.errors?.['pattern']" class="text-danger">Formateur incorrect<br></small>
+    
               </div>
                 </div>
                 <div class="col-lg-6">
@@ -135,7 +131,7 @@
                 </select>
                 <div *ngIf="idCategory?.invalid && idCategory?.touched">
                   <small *ngIf="idCategory?.errors?.['required']" class="text-danger">catégorie est requis<br></small>
-                  <small *ngIf="idCategory?.errors?.['pattern']" class="text-danger"> catégorie incorrect<br></small>
+ 
                   
               </div>
                 </div>

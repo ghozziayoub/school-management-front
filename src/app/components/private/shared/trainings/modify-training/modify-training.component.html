@@ -29,10 +29,10 @@
               <div class="form-group">
                 <div class="row">
                   <div class="col-lg-6 my-2">
-                    <label for="exampleFormControlFile1">Nom de formation : </label>
+                    <label for="name">Nom de formation : </label>
                   </div>
                   <div class="col-lg-6 my-2">
-                    <label for="exampleFormControlFile1">Objectif :</label>
+                    <label for="objectif">Objectif :</label>
                   </div>
                   <div class="col-lg-6">
                     <input
@@ -43,8 +43,7 @@
                     />
                     <div *ngIf="name?.invalid && name?.touched">
                       <small *ngIf="name?.errors?.['required']" class="text-danger">nom est requis<br></small>
-                      <small *ngIf="name?.errors?.['pattern']" class="text-danger"> nom incorrect<br></small>
-                      <small *ngIf="name?.errors?.['minlength']" class="text-danger">nom doit contenir au moins deux caractères<br></small>
+                      
                   </div>
                   </div>
                   <div class="col-lg-6">
@@ -56,8 +55,7 @@
                     />
                     <div *ngIf="objectif?.invalid && objectif?.touched">
                       <small *ngIf="objectif?.errors?.['required']" class="text-danger">objectif est requis<br></small>
-                      <small *ngIf="objectif?.errors?.['pattern']" class="text-danger">objectif incorrect<br></small>
-                      <small *ngIf="objectif?.errors?.['minlength']" class="text-danger">objectif doit contenir au moins deux caractères<br></small>
+                      
                   </div>
                   </div>
                 </div>
@@ -146,7 +144,7 @@
                 </div>
                 </div>
                
-                <button class="btn btn-primary mt-2" type="submit" [disabled]="myForm.invalid">modifier</button>
+                <button class="btn btn-primary mt-2" type="submit" [disabled]="myForm.invalid">Modifier</button>
               </div>
             </form>
           </div>
