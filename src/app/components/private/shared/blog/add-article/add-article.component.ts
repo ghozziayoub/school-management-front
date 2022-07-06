@@ -86,7 +86,7 @@ export class AddArticleComponent implements OnInit {
     this.blogService.addArticles(formData).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success(result.message);
+        this.toastr.success("Article ajoutée avec succès");
         this.router.navigate(['/article-list']);
       },
       error: (error) => {

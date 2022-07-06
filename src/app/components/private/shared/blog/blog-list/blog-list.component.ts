@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../../../../services/blog.service';
 import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
+import 'moment/locale/es'  // without this line it didn't work
+moment.locale('fr')
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
@@ -28,7 +30,7 @@ export class BlogListComponent implements OnInit {
     this.articleService.deleteArticles(id).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success(result.message);
+        this.toastr.success("la catégorie est supprimée");
       },
       error: (err) => {
         console.log(err);

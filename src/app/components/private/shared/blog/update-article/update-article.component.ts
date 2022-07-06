@@ -51,7 +51,6 @@ export class UpdateArticleComponent implements OnInit {
         this.myForm.patchValue({
           titre: user.titre,
           content: user.content,
-          createdBy: user.createdBy,
         });
         this.imageUrl += user.image;
       },
@@ -98,7 +97,6 @@ export class UpdateArticleComponent implements OnInit {
     let formData = new FormData();
     formData.append('titre', data.titre);
     formData.append('content', data.content);
-    formData.append('userId', data.createdBy);
     formData.append('picture', this.selectedFile);
 
     this.blogService.updateArticles(formData, id).subscribe({
