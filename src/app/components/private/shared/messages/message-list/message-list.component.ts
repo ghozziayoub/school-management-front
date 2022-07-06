@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/services/message.service';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
@@ -8,7 +9,7 @@ import { MessageService } from 'src/app/services/message.service';
 export class MessageListComponent implements OnInit {
 
   messageList: any[] = []
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService, private toastr:ToastrService) { }
 
   ngOnInit(): void {
     this.messageService.getAllMessages().subscribe({
@@ -29,6 +30,7 @@ export class MessageListComponent implements OnInit {
     this.messageService.deleteMessage(id).subscribe({
       next:(result)=>{
         console.log(result)
+        this.toastr.success("le message est supprimée")
       },
       error: (err) => {
         console.log(err);

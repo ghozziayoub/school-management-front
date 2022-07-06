@@ -27,7 +27,5 @@ export class MessageService {
     return this.http.post<any>(this.messagesUrl, message);
   }
 
-  updateMessage(message: Message) {
-    return this.http.put<any>(this.messagesUrl, message);
-  }
+
 }

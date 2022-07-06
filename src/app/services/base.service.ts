@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class BaseService {
 
-  public static baseUrl = "http://localhost:3000"
+  public static baseUrl = "http://localhost:3010"
 
   constructor() { }
 }
