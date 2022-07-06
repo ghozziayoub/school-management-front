@@ -2,30 +2,6 @@
 <app-navbar></app-navbar>
 <!-- Navbar End -->
 
-<!-- Header Start -->
-<div class="container-fluid bg-primary py-5 mb-5 page-header">
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 text-center">
-        <h1 class="display-3 text-white animated slideInDown">Courses</h1>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb justify-content-center">
-            <li class="breadcrumb-item">
-              <a class="text-white" href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item">
-              <a class="text-white" href="#">Pages</a>
-            </li>
-            <li class="breadcrumb-item text-white active" aria-current="page">
-              Courses
-            </li>
-          </ol>
-        </nav>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Header End -->
 <div *ngIf="categoriesList.length == 0" class="container-xxl py-5 category">
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -48,16 +24,18 @@
     </div>
 
     <div class="row g-3 align-items-center justify-content-center d-flex">
-      <div *ngFor="let category of categoriesList" class="col-lg-4 mr-2 col-md-6 mr-5 wow fadeInUp">
+      <div
+        *ngFor="let category of categoriesList"
+        class="col-lg-4 mr-2 col-md-6 mr-5 wow fadeInUp"
+      >
         <div class="card card-shadow" style="width: 25rem">
-          <img src="{{baseUrl}}{{ category.image }}" class="card-img-top category-img" alt="Accroche HTML" />
-          <div class="card-body backg">
+          <img
+            src="{{ baseUrl }}{{ category.image }}"
+            class="card-img-top category-img"
+            alt="Accroche HTML"
+          />
+          <div class="card-body backg text-center">
             <h2 class="card-title">{{ category.name }}</h2>
-            <p class="card-text">
-              courses
-              <small><b>({{ category.trainings }})</b></small>
-            </p>
-            <a href="#" class="btn btn-primary">Explore</a>
           </div>
         </div>
       </div>
@@ -87,15 +65,36 @@
       <h1 class="mb-5">Popular Courses</h1>
     </div>
     <div class="row g-4 justify-content-center">
-      <div class="col-lg-4 col-md-6 wow fadeInUp" *ngFor="let training of trainingsList" data-wow-delay="0.1s">
+      <div
+        class="col-lg-4 col-md-6 wow fadeInUp"
+        *ngFor="let training of trainingsList"
+        data-wow-delay="0.1s"
+      >
         <div class="course-item bg-light">
-          <div class="position-relative trainer-card overflow-hidden" style="height: 250px">
-            <img class="img-fluid image-training" src="{{baseUrl}}{{ training.image }}" alt="" />
-            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-              <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                style="border-radius: 30px 0 0 30px">Read More</a>
-              <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0">Join
-                Now</a>
+          <div
+            class="position-relative trainer-card overflow-hidden"
+            style="height: 250px"
+          >
+            <img
+              class="img-fluid image-training"
+              src="{{ baseUrl }}{{ training.image }}"
+              alt=""
+            />
+            <div
+              class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+            >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
+                style="border-radius: 30px 0 0 30px"
+                >Read More</a
+              >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                style="border-radius: 0 30px 30px 0"
+                >Join Now</a
+              >
             </div>
           </div>
           <div class="text-center p-4 pb-0 description">
@@ -111,11 +110,17 @@
             <h5 class="mb-4">{{ training.name }}</h5>
           </div>
           <div class="d-flex border-top">
-            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{
-              training.category.name }}</small>
-            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>{{
-              training.hours }}</small>
-            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-user-tie text-primary me-2"></i
+              >{{ training.category.name }}</small
+            >
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-clock text-primary me-2"></i
+              >{{ training.hours }}</small
+            >
+            <small class="flex-fill text-center py-2"
+              ><i class="fa fa-user text-primary me-2"></i>30 Students</small
+            >
           </div>
         </div>
       </div>
