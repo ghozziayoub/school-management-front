@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../../services/blog.service';
 import * as moment from 'moment';
+import { BaseService } from 'src/app/services/base.service';
 
 
 @Component({
@@ -10,7 +11,8 @@ import * as moment from 'moment';
 })
 export class BlogComponent implements OnInit {
   articleList: any[] = [];
-  constructor(private articleService: BlogService) {}
+  baseUrl = `${BaseService.baseUrl}/`;
+  constructor(private articleService: BlogService) { }
 
   ngOnInit(): void {
     this.articleService.getAllArticles().subscribe({
@@ -24,7 +26,7 @@ export class BlogComponent implements OnInit {
     });
   }
 
-  moment(x:Date){
+  moment(x: Date) {
     return moment(x).fromNow()
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/services/trainer.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { TrainingService } from 'src/app/services/training.service';
+import { BaseService } from 'src/app/services/base.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,11 +12,12 @@ export class HomeComponent implements OnInit {
   trainingsList: any = [];
   trainersList: any = [];
   categoriesList: any = [];
+  baseUrl = `${BaseService.baseUrl}/`;
   constructor(
     private trainerService: TrainerService,
     private categoryService: CategoryService,
     private trainingService: TrainingService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({

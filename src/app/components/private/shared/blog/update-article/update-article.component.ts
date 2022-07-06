@@ -9,6 +9,7 @@ import { BlogService } from '../../../../../services/blog.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BaseService } from 'src/app/services/base.service';
 @Component({
   selector: 'app-update-article',
   templateUrl: './update-article.component.html',
@@ -19,7 +20,7 @@ export class UpdateArticleComponent implements OnInit {
   user: any;
   userList: any[] = [];
   selectedFile: any;
-  imageUrl = 'http://localhost:3000/';
+  imageUrl = `${BaseService.baseUrl}/`;
 
   constructor(
     private fb: FormBuilder,

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { BaseService } from 'src/app/services/base.service';
 
 @Component({
   selector: 'app-trainer-item',
@@ -14,6 +15,7 @@ export class TrainerItemComponent implements OnInit {
   @Input() facebook!: string
   @Input() instagram!: string
   @Input() twitter!: string
+  baseUrl = `${BaseService.baseUrl}/`;
 
   constructor() { }
 

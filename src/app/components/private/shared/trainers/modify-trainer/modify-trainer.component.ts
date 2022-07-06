@@ -8,6 +8,7 @@ import {
 import { Router, ActivatedRoute } from '@angular/router';
 import { TrainerService } from '../../../../../services/trainer.service';
 import { ToastrService } from 'ngx-toastr';
+import { BaseService } from 'src/app/services/base.service';
 @Component({
   selector: 'app-modify-trainer',
   templateUrl: './modify-trainer.component.html',
@@ -17,7 +18,7 @@ export class ModifyTrainerComponent implements OnInit {
   updateTrainerForm: FormGroup;
   selectedFile: any;
   numberRegEx = /\-?\d*\.?\d{1,2}/;
-  imageUrl = 'http://localhost:3000/';
+  imageUrl = `${BaseService.baseUrl}/`;
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,

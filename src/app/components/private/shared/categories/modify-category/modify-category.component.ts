@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  Validators,
-  FormControl,
-  FormGroup,
-  FormBuilder,
+  FormBuilder, FormControl,
+  FormGroup
 } from '@angular/forms';
-import { CategoryService } from '../../../../../services/category.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { Category } from 'src/app/models/category';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BaseService } from 'src/app/services/base.service';
+import { CategoryService } from '../../../../../services/category.service';
 
 @Component({
   selector: 'app-modify-category',
@@ -18,11 +16,11 @@ import { ToastrService } from 'ngx-toastr';
 export class ModifyCategoryComponent implements OnInit {
   updateCategoryForm: FormGroup;
   selectedFile: any;
-  imageUrl = 'http://localhost:3000/';
+  imageUrl = `${BaseService.baseUrl}/`;
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
-    private router:Router,
+    private router: Router,
     private categoryService: CategoryService,
     private toastr: ToastrService
   ) {
@@ -33,7 +31,6 @@ export class ModifyCategoryComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.route.snapshot.params?.['id'];
-
     this.categoryService.getOneCategory(id).subscribe({
       next: (result) => {
         let category = result;
@@ -50,14 +47,11 @@ export class ModifyCategoryComponent implements OnInit {
 
   save(event: any) {
     let reader = new FileReader();
-
     reader.readAsDataURL(event.target.files[0]); // read file as data url
-
     reader.onload = (event) => {
       // called once readAsDataURL is completed
       this.imageUrl = (event.target as FileReader).result!.toString();
     };
-
     this.selectedFile = event.target.files[0];
     console.log(this.selectedFile);
   }

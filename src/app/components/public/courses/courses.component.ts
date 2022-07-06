@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseService } from 'src/app/services/base.service';
 import { CategoryService } from 'src/app/services/category.service';
 import { TrainingService } from 'src/app/services/training.service';
 @Component({
@@ -9,10 +10,11 @@ import { TrainingService } from 'src/app/services/training.service';
 export class CoursesComponent implements OnInit {
   categoriesList: any = [];
   trainingsList: any = [];
+  baseUrl = `${BaseService.baseUrl}/`;
   constructor(
     private categoryService: CategoryService,
     private trainingService: TrainingService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.categoryService.getAllCategories().subscribe({
