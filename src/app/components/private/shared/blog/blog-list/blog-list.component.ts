@@ -32,7 +32,7 @@ export class BlogListComponent implements OnInit {
     this.articleService.deleteArticles(id).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success("la catégorie est supprimée");
+        this.toastr.success("l'article est supprimée");
       },
       error: (err) => {
         console.log(err);
