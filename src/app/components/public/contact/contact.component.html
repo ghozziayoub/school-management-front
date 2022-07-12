@@ -2,148 +2,194 @@
 <app-navbar></app-navbar>
 <!-- Navbar End -->
 
-<!-- Header Start -->
-<div class="container-fluid bg-primary py-5 mb-5 page-header">
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-10 text-center">
-                <h1 class="display-3 text-white animated slideInDown">Contact</h1>
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb justify-content-center">
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Contact</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Header End -->
-
-
 <!-- Contact Start -->
 <div class="container-xxl py-5">
-    <div class="container">
-        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
-            <h1 class="mb-5">Contact For Any Query</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <h5>Get In Touch</h5>
-                <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with
-                    Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a
-                        href="https://htmlcodex.com/contact-form">Download Now</a>.</p>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
-                        style="width: 50px; height: 50px;">
-                        <i class="fa fa-map-marker-alt text-white"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h5 class="text-primary">Office</h5>
-                        <p class="mb-0">123 Street, New York, USA</p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center mb-3">
-                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
-                        style="width: 50px; height: 50px;">
-                        <i class="fa fa-phone-alt text-white"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h5 class="text-primary">Mobile</h5>
-                        <p class="mb-0">+012 345 67890</p>
-                    </div>
-                </div>
-                <div class="d-flex align-items-center">
-                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
-                        style="width: 50px; height: 50px;">
-                        <i class="fa fa-envelope-open text-white"></i>
-                    </div>
-                    <div class="ms-3">
-                        <h5 class="text-primary">Email</h5>
-                        <p class="mb-0">info@example.com</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <iframe class="position-relative rounded w-100 h-100"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
-                    tabindex="0"></iframe>
-            </div>
-            <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-                <form [formGroup]="contactForm" (ngSubmit)="sendMessage()">
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="name" placeholder="Your Name"
-                                    formControlName="name">
-                                <label for="name">Your Name</label>
-                                <div *ngIf="name?.touched && name?.invalid">
-                                    <small *ngIf="name?.errors?.['required']" class="text-danger">name is
-                                        required<br></small>
-                                    <small *ngIf="name?.errors?.['pattern']" class="text-danger">Invalid
-                                        name<br></small>
-                                    <small *ngIf="name?.errors?.['minlength']" class="text-danger">name must contain two
-                                        characters at least</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" formControlName="email"
-                                    placeholder="Your Email">
-                                <label for="email">Your Email</label>
-                                <div *ngIf="email?.touched && email?.invalid">
-                                    <small *ngIf="email?.errors?.['required']" class="text-danger">Email is
-                                        required<br></small>
-                                    <small *ngIf="email?.errors?.['email']" class="text-danger">Invalid
-                                        Email<br></small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject"
-                                    formControlName="subject">
-                                <label for="subject">Subject</label>
-                                <div *ngIf="subject?.touched && subject?.invalid">
-                                    <small *ngIf="subject?.errors?.['required']" class="text-danger">subject is
-                                        required<br></small>
-                                    <small *ngIf="subject?.errors?.['pattern']" class="text-danger">Invalid
-                                        subject<br></small>
-                                    <small *ngIf="subject?.errors?.['minlength']" class="text-danger">subject must
-                                        contain two
-                                        characters at least</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="form-floating">
-                                <textarea class="form-control" placeholder="Leave a message here" id="content"
-                                    formControlName="content" style="height: 150px"></textarea>
-                                <label for="message">Message</label>
-                                <div *ngIf="content?.touched && content?.invalid">
-                                    <small *ngIf="content?.errors?.['required']" class="text-danger">Message is
-                                        required<br></small>
-                                    <small *ngIf="content?.errors?.['pattern']" class="text-danger">Invalid
-                                        Message<br></small>
-                                    <small *ngIf="content?.errors?.['minlength']" class="text-danger">Message must
-                                        contain ten
-                                        characters at least</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <button [disabled]="contactForm?.invalid" class="btn btn-primary w-100 py-3"
-                                type="submit">Send Message</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h6 class="section-title bg-white text-center text-primary px-3">
+        Nous contacter
+      </h6>
+      <h1 class="mb-5">Contact pour toute question</h1>
     </div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <h5>Get In Touch</h5>
+        <p class="mb-4">
+          TalentLab est un centre de formation des futuristes en qualité et
+          innovation à travers l’application pratique en collaboration avec les
+          sociétés et les parties prenants, enregistrée au Ministère sous le
+          numéro 11-1880-20
+        </p>
+        <div class="d-flex align-items-center mb-3">
+          <div
+            class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+            style="width: 50px; height: 50px"
+          >
+            <i class="fa fa-map-marker-alt text-white"></i>
+          </div>
+          <div class="ms-3  align">
+            <h5 class="text-primary">Bureau</h5>
+            <p class="mb-0 ">
+              Maram Palace, Menzah 4, Avenue 10 Décembre 1948, (En face Immeuble
+              Saadi), 2ème étage, Bureau 2-3 1004 Tunis-Ville, Tunisia 1004
+              Tunis, Tunisia
+            </p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center mb-3">
+          <div
+            class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+            style="width: 50px; height: 50px"
+          >
+            <i class="fa fa-phone-alt text-white"></i>
+          </div>
+          <div class="ms-3">
+            <h5 class="text-primary">Mobile</h5>
+            <p class="mb-0">+216 20 479 667</p>
+          </div>
+        </div>
+        <div class="d-flex align-items-center">
+          <div
+            class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary"
+            style="width: 50px; height: 50px"
+          >
+            <i class="fa fa-envelope-open text-white"></i>
+          </div>
+          <div class="ms-3">
+            <h5 class="text-primary">Email</h5>
+            <p class="mb-0">support@talentlab.tn</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+        <iframe
+          class="position-relative rounded w-100 h-100"
+          src="https://maps.google.com/maps?q=ariana,%20menzah%204,Avenue%2010%20D%C3%A9cembre%201948&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          style="min-height: 300px; border: 0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+      </div>
+      <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+        <form [formGroup]="contactForm" (ngSubmit)="sendMessage()">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  formControlName="name"
+                />
+                <label for="name">nom</label>
+                <div *ngIf="name?.touched && name?.invalid">
+                  <small *ngIf="name?.errors?.['required']" class="text-danger"
+                    >nom est requis<br
+                  /></small>
+                  <small *ngIf="name?.errors?.['pattern']" class="text-danger"
+                    >nom invalide<br
+                  /></small>
+                  <small *ngIf="name?.errors?.['minlength']" class="text-danger"
+                    >name must contain two characters at least</small
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  formControlName="email"
+                  placeholder="Your Email"
+                />
+                <label for="email">email</label>
+                <div *ngIf="email?.touched && email?.invalid">
+                  <small *ngIf="email?.errors?.['required']" class="text-danger"
+                    >Email is required<br
+                  /></small>
+                  <small *ngIf="email?.errors?.['email']" class="text-danger"
+                    >Invalid Email<br
+                  /></small>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="subject"
+                  placeholder="Subject"
+                  formControlName="subject"
+                />
+                <label for="subject">Sujet</label>
+                <div *ngIf="subject?.touched && subject?.invalid">
+                  <small
+                    *ngIf="subject?.errors?.['required']"
+                    class="text-danger"
+                    >subject is required<br
+                  /></small>
+                  <small
+                    *ngIf="subject?.errors?.['pattern']"
+                    class="text-danger"
+                    >Invalid subject<br
+                  /></small>
+                  <small
+                    *ngIf="subject?.errors?.['minlength']"
+                    class="text-danger"
+                    >subject must contain two characters at least</small
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea
+                  class="form-control"
+                  placeholder="Leave a message here"
+                  id="content"
+                  formControlName="content"
+                  style="height: 150px"
+                ></textarea>
+                <label for="message">Message</label>
+                <div *ngIf="content?.touched && content?.invalid">
+                  <small
+                    *ngIf="content?.errors?.['required']"
+                    class="text-danger"
+                    >Message is required<br
+                  /></small>
+                  <small
+                    *ngIf="content?.errors?.['pattern']"
+                    class="text-danger"
+                    >Invalid Message<br
+                  /></small>
+                  <small
+                    *ngIf="content?.errors?.['minlength']"
+                    class="text-danger"
+                    >Message must contain ten characters at least</small
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <button
+                [disabled]="contactForm?.invalid"
+                class="btn btn-primary w-100 py-3"
+                type="submit"
+              >
+                Envoyer Message
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 <!-- Contact End -->
 

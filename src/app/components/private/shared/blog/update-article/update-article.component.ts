@@ -103,7 +103,7 @@ export class UpdateArticleComponent implements OnInit {
     this.blogService.updateArticles(formData, id).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success(result.message);
+        this.toastr.success("l'article mise à jour avec succès ");
         this.router.navigate(['/article-list']);
       },
       error: (error) => {

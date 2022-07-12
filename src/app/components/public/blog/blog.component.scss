@@ -25,7 +25,7 @@
 }
 
 .description{
-    height: 200px;
+    height: 230px;
 }
 
 .image-training{
@@ -42,4 +42,13 @@
     width: 150px;
     font-size: 14px;
     font-weight: bold;
+}
+
+.card-text{
+    padding: 15px;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    text-align: justify;
+    text-justify: auto;
 }

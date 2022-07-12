@@ -55,6 +55,12 @@ export class AddTrainingComponent implements OnInit {
       idCategory: new FormControl('', [
         Validators.required,
       ]),
+      price: new FormControl('', [
+        Validators.required,
+      ]),
+      starting_date: new FormControl('', [
+        Validators.required,
+      ]),
       
     };
   
@@ -66,6 +72,8 @@ export class AddTrainingComponent implements OnInit {
   get hours() { return this.myForm.get('hours') }
   get idTrainer() { return this.myForm.get('idTrainer') }
   get idCategory() { return this.myForm.get('idCategory') }
+  get price() { return this.myForm.get('price') }
+  get starting_date() { return this.myForm.get('starting_date') }
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({
@@ -111,6 +119,8 @@ export class AddTrainingComponent implements OnInit {
       formData.append('hours', data.hours),
       formData.append('idTrainer', data.idTrainer),
       formData.append('idCategory', data.idCategory),
+      formData.append('price', data.price),
+      formData.append('starting_date', data.starting_date),
       formData.append('picture', this.selectedFile);
     this.trainingService.addTraining(formData).subscribe({
       next: (result) => {
