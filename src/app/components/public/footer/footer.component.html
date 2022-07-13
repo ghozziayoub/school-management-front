@@ -22,7 +22,7 @@
           <a class="btn btn-link">FAQ et aide</a>
         </div>
         <div class="col-lg-3 col-md-6">
-          <h4 class="text-white mb-3">actualités</h4>
+          <h4 class="text-white mb-3">Actualités</h4>
           <div class="d-flex flex-column">
             <div *ngFor="let recentArticle of articleList" class="actualities">
               <img routerLink="blog/{{ recentArticle._id }}" src="{{baseUrl}}{{ recentArticle.image }}" alt="" />

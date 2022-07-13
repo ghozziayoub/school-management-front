@@ -8,7 +8,9 @@
       <h6 class="section-title bg-white text-center text-primary px-3">
         Nos Catégories
       </h6>
-      <h1 class="mb-5">il n'y a pas de catégories pour le moment, vérifiez-nous plus tard</h1>
+      <h1 class="mb-5">
+        il n'y a pas de catégories pour le moment, vérifiez-nous plus tard
+      </h1>
     </div>
   </div>
 </div>
@@ -24,20 +26,11 @@
     </div>
 
     <div class="row g-3 align-items-center justify-content-center d-flex">
-      <div
-        *ngFor="let category of categoriesList"
-        class="col-lg-4 mr-2 col-md-6 mr-5 wow fadeInUp"
-      >
-        <div class="card card-shadow" style="width: 25rem">
-          <img
-            src="{{ baseUrl }}{{ category.image }}"
-            class="card-img-top category-img"
-            alt="Accroche HTML"
-          />
-          <div class="card-body backg text-center">
-            <h2 class="card-title">{{ category.name }}</h2>
-          </div>
-        </div>
+      <div (click)="filter('all'); onclick($event);" class="box-cat">
+        <p class="category-name" >all</p>
+      </div>
+      <div *ngFor="let category of categoriesList" (click)="filter(category.name);  onclick($event);" class="box-cat">
+        <p class="category-name" >{{ category.name }}</p>
       </div>
     </div>
   </div>
@@ -50,7 +43,9 @@
       <h6 class="section-title bg-white text-center text-primary px-3">
         Nos Formations
       </h6>
-      <h1 class="mb-5">il n'y a pas de formation en ce moment, vérifiez-nous plus tard</h1>
+      <h1 class="mb-5">
+        il n'y a pas de formation en ce moment, vérifiez-nous plus tard
+      </h1>
     </div>
   </div>
 </div>
@@ -66,7 +61,7 @@
     </div>
     <div class="row g-4 justify-content-center">
       <div
-        class="col-lg-4 col-md-6 wow fadeInUp"
+        class="col-lg-4 col-md-6 "
         *ngFor="let training of trainingsList"
         data-wow-delay="0.1s"
       >
@@ -98,8 +93,9 @@
             </div>
           </div>
           <div class="text-center p-4 pb-0 description">
-            <h3 class="mb-0">$149.00</h3>
+            <h3 class="mb-0">{{ training.price }} DT</h3>
             <h5 class="mb-4">{{ training.name }}</h5>
+            <p class="m-2 objectif">{{ training.objectif }}</p>
           </div>
           <div class="d-flex border-top">
             <small class="flex-fill text-center border-end py-2"
@@ -111,7 +107,8 @@
               >{{ training.hours }} H</small
             >
             <small class="flex-fill text-center py-2"
-              ><i class="fa fa-user text-primary me-2"></i>30 Students</small
+              ><i class="fa fa-user text-primary me-2"></i
+              >{{ training.seat }} places</small
             >
           </div>
         </div>
