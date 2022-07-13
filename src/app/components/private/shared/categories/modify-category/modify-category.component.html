@@ -13,15 +13,6 @@
               </ol>
         
           <form [formGroup]="updateCategoryForm" (ngSubmit)="update()">
-            <div class="m-2">
-              <img
-              [src]="imageUrl"
-              class="image-fluid category-image"
-              alt="" style="width: 150px;" 
-            />
-              <input type="file" class="form-control upload-input" (change)="save($event)" id="customFile" />
-
-            </div>
             <div class="input-sec">
               <div class="form-group">
                 <div>

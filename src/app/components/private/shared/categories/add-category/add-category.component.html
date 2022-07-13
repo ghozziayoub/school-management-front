@@ -13,16 +13,7 @@
               </ol>
          
           <form [formGroup]="myForm" (ngSubmit)="add()">
-            <div>
-              <img
-              [src]="imageUrl"
-              class="image-fluid category-image"
-              alt="" style="width: 150px;" 
-            /> 
-            <div class="form-group">
-              <input type="file" class="form-control upload-input" (change)="save($event)" id="customFile" />
-            </div>
-            </div>
+           
             <div class="input-sec">
               <div class="form-group">
                 <div>

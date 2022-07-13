@@ -1,37 +1,70 @@
-.category-img{
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-   
+.category-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
 .card-text small {
-    color: #2bc5d4;
+  color: #2bc5d4;
 }
-.card-shadow{
-    border: none;
-}
-
-.backg{
-    background-color: #F0FBFC;
-
-}
-.trainer-card{
-    object-fit: cover;
+.card-shadow {
+  border: none;
 }
 
-.category-img :hover{
-    transition: .5s;
+.backg {
+  background-color: #f0fbfc;
+}
+.trainer-card {
+  object-fit: cover;
 }
 
-.description{
-    height: 200px;
-}
-.backg{
-    font-size: 16px;
+.category-img :hover {
+  transition: 0.5s;
 }
 
-.image-training{
-    width: 100%;
-    height: 100%;
+.description {
+  height: 200px;
+}
+.backg {
+  font-size: 16px;
+}
+
+.image-training {
+  width: 100%;
+  height: 100%;
+}
+
+.box-cat {
+  width: 10%;
+  border: 3px solid black;
+  color: black;
+  text-align: center;
+  height: 60px;
+  position: relative;
+  margin: 10px;
+}
+
+.category-name {
+  position: absolute;
+  
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  font-weight: 900;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+
+.box-cat:hover{
+    border: 3px solid #2C4690; 
+    color: #2C4690 ;
+    cursor: pointer;  
+}
+
+.active{
+  border: 3px solid #2C4690; 
+    color: #2C4690 ;
+    cursor: pointer;  
 }
