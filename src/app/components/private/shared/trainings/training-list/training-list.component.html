@@ -35,26 +35,33 @@
               <table class="fl-table">
                 <thead>
                   <tr>
-                    <th>#</th>
+                    <th>N°</th>
                     <th>nom</th>
-                    <th>objectif</th>
-                    <th>programe</th>
                     <th>Heures</th>
+                    <th>date de début</th>
+                    <th>les places</th>
                     <th>Formateur</th>
-                    <th>Formation</th>
-                    <th>"éditer</th>
+                    <th>category</th>
+                    <th>#</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let training of trainingList; let i = index">
                     <td>{{ i + 1 }}</td>
                     <td>{{ training.name }}</td>
-                    <td>{{ training.objectif }}</td>
-                    <td>{{ training.program }}</td>
                     <td>{{ training.hours }}</td>
+                    <td>{{ training.starting_date.substring(0,10) }}</td>
+                    <td>{{training.seat}}</td>
                     <td routerLink="/trainer-list">{{training.trainer.firstname}} {{ training.trainer.lastname}}</td>
                     <td>{{ training.category.name }}</td>
                     <td>
+                      <button
+                      class="btn btn-primary mx-2"
+                      style="color: white"
+                      [routerLink]="['/training-list', training._id]"
+                    >
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
                       <button
                         class="btn btn-warning mx-1"
                         [routerLink]="['/modify-training', training._id]"

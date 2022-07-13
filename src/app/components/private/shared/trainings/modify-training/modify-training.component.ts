@@ -57,6 +57,10 @@ export class ModifyTrainingComponent implements OnInit {
       idCategory: new FormControl('', [
         Validators.required,
       ]),
+      seat: new FormControl('', [
+        Validators.required,
+      ]),
+      
     };
 
     this.myForm = this.fb.group(formControls)
@@ -67,6 +71,7 @@ export class ModifyTrainingComponent implements OnInit {
   get hours() { return this.myForm.get('hours') }
   get idTrainer() { return this.myForm.get('idTrainer') }
   get idCategory() { return this.myForm.get('idCategory') }
+  get seat() { return this.myForm.get('seat') }
 
   ngOnInit(): void {
     this.trainerService.getAllTrainers().subscribe({
@@ -101,6 +106,7 @@ export class ModifyTrainingComponent implements OnInit {
           hours: training.hours,
           idTrainer: training.trainer._id,
           idCategory: training.category._id,
+          seat: training.seat,
         });
         this.imageUrl += training.image;
       },
@@ -125,6 +131,7 @@ export class ModifyTrainingComponent implements OnInit {
     let data = this.myForm.value;
     let formData = new FormData();
     formData.append('name', data.name),
+    formData.append('seat', data.seat),
       formData.append('objectif', data.objectif),
       formData.append('program', data.program),
       formData.append('hours', data.hours),

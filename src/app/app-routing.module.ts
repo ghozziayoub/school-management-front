@@ -25,8 +25,12 @@ import { UsersListComponent } from './components/private/shared/users/users-list
 import { BlogListComponent } from './components/private/shared/blog/blog-list/blog-list.component';
 import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
+import { SingleArticleComponent } from './components/private/shared/blog/single-article/single-article.component';
 import { BlogComponent } from './components/public/blog/blog.component';
 import { ArticleComponent } from './components/public/article/article.component';
+import { SingleTrainerComponent } from './components/private/shared/trainers/single-trainer/single-trainer.component';
+import { SingleTrainingComponent } from './components/private/shared/trainings/single-training/single-training.component';
+
 
 const routes: Routes = [
   {
@@ -105,8 +109,16 @@ const routes: Routes = [
     component: ModifyTrainerComponent
   },
   {
+    path:"trainer-list/:id",
+    component: SingleTrainerComponent
+  },
+  {
     path:"training-list",
     component: TrainingListComponent
+  },
+  {
+    path:"training-list/:id",
+    component: SingleTrainingComponent
   },
   {
     path:"add-new-training",
@@ -120,6 +132,10 @@ const routes: Routes = [
   {
     path:"article-list",
     component: BlogListComponent
+  },
+  {
+    path:"article-list/:id",
+    component: SingleArticleComponent
   },
   {
     path:"add-new-article",
