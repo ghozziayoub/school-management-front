@@ -21,12 +21,11 @@
             <table class="fl-table">
               <thead>
                 <tr>
-                  <th>#</th>
+                  <th>N°</th>
                   <th>titre</th>
                   <th>image</th>
-                  <th>article</th>
                   <th>depuis que</th>
-                  <th>éditer</th>
+                  <th>#</th>
                 </tr>
               </thead>
               <tbody>
@@ -36,9 +35,15 @@
                   <td>
                     <img src="{{baseUrl}}/{{ article.image }}" class="image-fluid article-image" alt="" />
                   </td>
-                  <td>{{ article.content.substring(0,70) }}...</td>
                   <td>{{ moment(article.createdAt) }}</td>
                   <td>
+                    <button
+                    class="btn btn-primary mx-2"
+                    style="color: white"
+                    [routerLink]="['/category', article._id]"
+                  >
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                  </button>
                     <button class="btn btn-warning mx-2" [routerLink]="['/modify-article', article._id]">
                       <i class="fa fa-pencil" style="color: white" aria-hidden="true"></i></button><button
                       class="btn btn-danger mx-2" style="color: white" (click)="delete(article._id, i)">

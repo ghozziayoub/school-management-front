@@ -32,24 +32,23 @@
             <table class="fl-table">
               <thead>
                 <tr>
-                  <th>#</th>
+                  <th>N°</th>
                   <th>Nom</th>
-                  <th>Image</th>
-                  <th>Éditer</th>
+                  <th>#</th>
                 </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let category of categoryList; let i = index">
                   <td>{{ i + 1 }}</td>
                   <td>{{ category.name }}</td>
-                  <td>
-                    <img
-                      src="{{ baseUrl }}{{ category.image }}"
-                      class="image-fluid category-image"
-                      alt=""
-                    />
-                  </td>
-                  <td>
+                  <td class="edit">
+                    <button
+                      class="btn btn-primary mx-2"
+                      style="color: white"
+                      [routerLink]="['/category', category._id]"
+                    >
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
                     <button
                       class="btn btn-warning mx-2"
                       [routerLink]="['/modify-category', category._id]"
@@ -58,8 +57,9 @@
                         class="fa fa-pencil"
                         style="color: white"
                         aria-hidden="true"
-                      ></i></button
-                    ><button
+                      ></i>
+                    </button>
+                    <button
                       class="btn btn-danger mx-2"
                       style="color: white"
                       (click)="delete(category._id, i)"
