@@ -28,6 +28,7 @@ import { UpdateArticleComponent } from './components/private/shared/blog/update-
 import { SingleArticleComponent } from './components/private/shared/blog/single-article/single-article.component';
 import { BlogComponent } from './components/public/blog/blog.component';
 import { ArticleComponent } from './components/public/article/article.component';
+import { SingleTrainerComponent } from './components/private/shared/trainers/single-trainer/single-trainer.component';
 
 
 const routes: Routes = [
@@ -105,6 +106,10 @@ const routes: Routes = [
   {
     path:"modify-trainer/:id",
     component: ModifyTrainerComponent
+  },
+  {
+    path:"trainer-list/:id",
+    component: SingleTrainerComponent
   },
   {
     path:"training-list",
