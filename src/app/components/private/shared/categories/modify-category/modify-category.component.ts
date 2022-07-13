@@ -15,8 +15,6 @@ import { CategoryService } from '../../../../../services/category.service';
 })
 export class ModifyCategoryComponent implements OnInit {
   updateCategoryForm: FormGroup;
-  selectedFile: any;
-  imageUrl = `${BaseService.baseUrl}/`;
   constructor(
     private fb: FormBuilder,
     private route: ActivatedRoute,
@@ -37,7 +35,6 @@ export class ModifyCategoryComponent implements OnInit {
         this.updateCategoryForm.patchValue({
           name: category.name,
         });
-        this.imageUrl += category.image;
       },
       error: (error) => {
         console.log(error);
@@ -45,24 +42,11 @@ export class ModifyCategoryComponent implements OnInit {
     });
   }
 
-  save(event: any) {
-    let reader = new FileReader();
-    reader.readAsDataURL(event.target.files[0]); // read file as data url
-    reader.onload = (event) => {
-      // called once readAsDataURL is completed
-      this.imageUrl = (event.target as FileReader).result!.toString();
-    };
-    this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
-  }
-
   update() {
     let id = this.route.snapshot.params?.['id'];
     let data = this.updateCategoryForm.value;
     let formData = new FormData();
     formData.append('name', data.name),
-      formData.append('picture', this.selectedFile);
-    console.log(this.selectedFile);
     this.categoryService.updateCategory(formData, id).subscribe({
       next: (result) => {
         console.log(result);

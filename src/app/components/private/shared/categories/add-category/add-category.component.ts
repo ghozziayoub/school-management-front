@@ -17,8 +17,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddCategoryComponent implements OnInit {
   myForm: FormGroup;
-  selectedFile: any;
-  imageUrl = 'assets/img/default.jpg';
 
   constructor(
     private fb: FormBuilder,
@@ -37,26 +35,13 @@ export class AddCategoryComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  save(event: any) {
-    let reader = new FileReader();
-
-    reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-    reader.onload = (event) => {
-      // called once readAsDataURL is completed
-      this.imageUrl = (event.target as FileReader).result!.toString();
-    };
-
-    this.selectedFile = event.target.files[0];
-  }
+  
   get name() { return this.myForm.get('name') }
 
   add() {
     let data = this.myForm.value;
     let formData = new FormData();
     formData.append('name', data.name),
-      formData.append('picture', this.selectedFile);
-
     this.categoryService.addCategory(formData).subscribe({
       next: (result) => {
         console.log(result);
