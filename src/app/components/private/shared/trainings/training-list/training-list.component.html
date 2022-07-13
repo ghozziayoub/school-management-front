@@ -39,6 +39,7 @@
                     <th>nom</th>
                     <th>Heures</th>
                     <th>date de début</th>
+                    <th>les places</th>
                     <th>Formateur</th>
                     <th>category</th>
                     <th>#</th>
@@ -50,6 +51,7 @@
                     <td>{{ training.name }}</td>
                     <td>{{ training.hours }}</td>
                     <td>{{ training.starting_date.substring(0,10) }}</td>
+                    <td>{{training.seat}}</td>
                     <td routerLink="/trainer-list">{{training.trainer.firstname}} {{ training.trainer.lastname}}</td>
                     <td>{{ training.category.name }}</td>
                     <td>

@@ -10,19 +10,21 @@ import { BaseService } from 'src/app/services/base.service';
 export class SingleArticleComponent implements OnInit {
   article: any;
   imageUrl = `${BaseService.baseUrl}/`;
-  constructor(private route:ActivatedRoute, private blogService:BlogService, private router:Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private blogService: BlogService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     let id = this.route.snapshot.params?.['id'];
     this.blogService.getOneArticles(id).subscribe({
-      next: (res)=>{
-        this.article = res
+      next: (res) => {
+        this.article = res;
       },
-      error: (err)=>{
-        console.log(err),
-        this.router.navigate(['/404page'])
-      }
-    })
-
+      error: (err) => {
+        console.log(err), this.router.navigate(['/404page']);
+      },
+    });
   }
 }

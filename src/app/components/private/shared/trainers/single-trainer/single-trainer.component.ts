@@ -5,25 +5,25 @@ import { BaseService } from 'src/app/services/base.service';
 @Component({
   selector: 'app-single-trainer',
   templateUrl: './single-trainer.component.html',
-  styleUrls: ['./single-trainer.component.scss']
+  styleUrls: ['./single-trainer.component.scss'],
 })
 export class SingleTrainerComponent implements OnInit {
-  trainer : any
+  trainer: any;
   imageUrl = `${BaseService.baseUrl}/`;
-  constructor(private trainerService: TrainerService, private route: ActivatedRoute) { }
+  constructor(
+    private trainerService: TrainerService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    let id = this.route.snapshot.params?.['id'];//na5ou id mel lien 
+    let id = this.route.snapshot.params?.['id']; //na5ou id mel lien
     this.trainerService.getOneTrainer(id).subscribe({
       next: (result) => {
-        this.trainer = result
+        this.trainer = result;
       },
       error: (error) => {
         console.log(error);
-
-      }
-    })
+      },
+    });
   }
-  }
-
-
+}
