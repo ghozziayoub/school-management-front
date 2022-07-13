@@ -42,6 +42,7 @@ import { BlogComponent } from './components/public/blog/blog.component';
 import { ArticleComponent } from './components/public/article/article.component';
 import { SingleArticleComponent } from './components/private/shared/blog/single-article/single-article.component';
 import { SingleTrainerComponent } from './components/private/shared/trainers/single-trainer/single-trainer.component';
+import { SingleTrainingComponent } from './components/private/shared/trainings/single-training/single-training.component';
 
 
 
@@ -82,7 +83,8 @@ import { SingleTrainerComponent } from './components/private/shared/trainers/sin
     BlogComponent,
     ArticleComponent,
     SingleArticleComponent,
-    SingleTrainerComponent
+    SingleTrainerComponent,
+    SingleTrainingComponent
   ],
   imports: [
     BrowserModule,
