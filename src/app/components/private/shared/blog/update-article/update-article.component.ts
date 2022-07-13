@@ -6,7 +6,6 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import { BlogService } from '../../../../../services/blog.service';
-import { UserService } from 'src/app/services/user.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BaseService } from 'src/app/services/base.service';
@@ -28,7 +27,6 @@ export class UpdateArticleComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService,
-    private userService: UserService
   ) {
     let article = {
       titre: new FormControl('', [
@@ -39,7 +37,6 @@ export class UpdateArticleComponent implements OnInit {
         Validators.required,
         Validators.minLength(200),
       ]),
-      createdBy: new FormControl('', [Validators.required]),
     };
     this.myForm = this.fb.group(article);
   }
@@ -48,21 +45,12 @@ export class UpdateArticleComponent implements OnInit {
     let id = this.route.snapshot.params?.['id'];
     this.blogService.getOneArticles(id).subscribe({
       next: (result) => {
-        let user = result;
+        let article = result;
         this.myForm.patchValue({
-          titre: user.titre,
-          content: user.content,
+          titre: article.titre,
+          content: article.content,
         });
-        this.imageUrl += user.image;
-      },
-      error: (error) => {
-        console.log(error);
-      },
-    });
-    this.userService.getAllUsers().subscribe({
-      next: (result) => {
-        this.userList = result;
-        console.log(this.userList);
+        this.imageUrl += article.image;
       },
       error: (error) => {
         console.log(error);
@@ -87,9 +75,6 @@ export class UpdateArticleComponent implements OnInit {
   }
   get content() {
     return this.myForm.get('content');
-  }
-  get createdBy() {
-    return this.myForm.get('createdBy');
   }
 
   update() {

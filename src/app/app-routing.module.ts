@@ -25,8 +25,10 @@ import { UsersListComponent } from './components/private/shared/users/users-list
 import { BlogListComponent } from './components/private/shared/blog/blog-list/blog-list.component';
 import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
 import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
+import { SingleArticleComponent } from './components/private/shared/blog/single-article/single-article.component';
 import { BlogComponent } from './components/public/blog/blog.component';
 import { ArticleComponent } from './components/public/article/article.component';
+
 
 const routes: Routes = [
   {
@@ -120,6 +122,10 @@ const routes: Routes = [
   {
     path:"article-list",
     component: BlogListComponent
+  },
+  {
+    path:"article-list/:id",
+    component: SingleArticleComponent
   },
   {
     path:"add-new-article",

@@ -40,6 +40,7 @@ import { AddArticleComponent } from './components/private/shared/blog/add-articl
 import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
 import { BlogComponent } from './components/public/blog/blog.component';
 import { ArticleComponent } from './components/public/article/article.component';
+import { SingleArticleComponent } from './components/private/shared/blog/single-article/single-article.component';
 
 
 
@@ -78,7 +79,8 @@ import { ArticleComponent } from './components/public/article/article.component'
     AddArticleComponent,
     UpdateArticleComponent,
     BlogComponent,
-    ArticleComponent
+    ArticleComponent,
+    SingleArticleComponent
   ],
   imports: [
     BrowserModule,
