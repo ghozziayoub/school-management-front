@@ -14,38 +14,36 @@ import { Page404Component } from './components/public/page404/page404.component'
 import { NavbarComponent } from './components/public/navbar/navbar.component';
 import { FooterComponent } from './components/public/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './components/private/shared/dashboard/dashboard.component';
+import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { TopBarComponent } from './components/private/shared/top-bar/top-bar.component';
 import { SideBarComponent } from './components/private/shared/side-bar/side-bar.component';
 import { FooterDashboardComponent } from './components/private/shared/footer-dashboard/footer-dashboard.component';
 import { ToastrModule } from 'ngx-toastr';
-import { CategoriesListComponent } from './components/private/shared/categories/categories-list/categoriesList.component';
-import { AddCategoryComponent } from './components/private/shared/categories/add-category/add-category.component';
-import { ModifyCategoryComponent } from './components/private/shared/categories/modify-category/modify-category.component';
+import { CategoriesListComponent } from './components/private/categories/categories-list/categoriesList.component';
+import { AddCategoryComponent } from './components/private/categories/add-category/add-category.component';
+import { ModifyCategoryComponent } from './components/private/categories/modify-category/modify-category.component';
 import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component';
-import { AddTrainerComponent } from './components/private/shared/trainers/add-trainer/add-trainer.component';
-import { ModifyTrainerComponent } from './components/private/shared/trainers/modify-trainer/modify-trainer.component';
-import { TrainingListComponent } from './components/private/shared/trainings/training-list/training-list.component';
-import { AddTrainingComponent } from './components/private/shared/trainings/add-training/add-training.component';
-import { ModifyTrainingComponent } from './components/private/shared/trainings/modify-training/modify-training.component';
+import { TrainersListComponent } from './components/private/trainers/trainers-list/trainers-list.component';
+import { AddTrainerComponent } from './components/private/trainers/add-trainer/add-trainer.component';
+import { ModifyTrainerComponent } from './components/private/trainers/modify-trainer/modify-trainer.component';
+import { TrainingListComponent } from './components/private/trainings/training-list/training-list.component';
+import { AddTrainingComponent } from './components/private/trainings/add-training/add-training.component';
+import { ModifyTrainingComponent } from './components/private/trainings/modify-training/modify-training.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { MessageListComponent } from './components/private/shared/messages/message-list/message-list.component';
-import { MessageList2Component } from './components/private/shared/messages/message-list2/message-list2.component';
-import { UsersListComponent } from './components/private/shared/users/users-list/users-list.component';
-import { BlogListComponent } from './components/private/shared/blog/blog-list/blog-list.component';
-import { AddArticleComponent } from './components/private/shared/blog/add-article/add-article.component';
-import { UpdateArticleComponent } from './components/private/shared/blog/update-article/update-article.component';
+import { MessageListComponent } from './components/private/messages/message-list/message-list.component';
+import { MessageList2Component } from './components/private/messages/message-list2/message-list2.component';
+import { UsersListComponent } from './components/private/users/users-list/users-list.component';
+import { BlogListComponent } from './components/private/blog/blog-list/blog-list.component';
+import { AddArticleComponent } from './components/private/blog/add-article/add-article.component';
+import { UpdateArticleComponent } from './components/private/blog/update-article/update-article.component';
 import { BlogComponent } from './components/public/blog/blog.component';
 import { ArticleComponent } from './components/public/article/article.component';
-import { SingleArticleComponent } from './components/private/shared/blog/single-article/single-article.component';
-import { SingleTrainerComponent } from './components/private/shared/trainers/single-trainer/single-trainer.component';
-import { SingleTrainingComponent } from './components/private/shared/trainings/single-training/single-training.component';
-import { AdminLoginComponent } from './components/private/shared/admin-login/admin-login.component';
-
-
+import { SingleArticleComponent } from './components/private/blog/single-article/single-article.component';
+import { SingleTrainerComponent } from './components/private/trainers/single-trainer/single-trainer.component';
+import { SingleTrainingComponent } from './components/private/trainings/single-training/single-training.component';
+import { AdminLoginComponent } from './components/private/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +84,7 @@ import { AdminLoginComponent } from './components/private/shared/admin-login/adm
     SingleArticleComponent,
     SingleTrainerComponent,
     SingleTrainingComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -99,6 +97,6 @@ import { AdminLoginComponent } from './components/private/shared/admin-login/adm
     BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

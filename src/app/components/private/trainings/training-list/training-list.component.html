@@ -1,0 +1,97 @@
+<div class="sb-nav-fixed">
+  <app-top-bar></app-top-bar>
+
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <!-- CONTENT-->
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h2 style="color: black">Formation</h2>
+
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary mb-3"
+              data-toggle="modal"
+              data-target=".bd-example-modal-sm"
+              routerLink="/admin/trainings/add"
+            >
+              + ajouter
+            </button>
+
+            <div
+              class="modal fade bd-example-modal-sm"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="mySmallModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">...</div>
+              </div>
+            </div>
+            <table class="fl-table">
+              <thead>
+                <tr>
+                  <th>N°</th>
+                  <th>nom</th>
+                  <th>Heures</th>
+                  <th>date de début</th>
+                  <th>les places</th>
+                  <th>Formateur</th>
+                  <th>category</th>
+                  <th>#</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let training of trainingList; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ training.name }}</td>
+                  <td>{{ training.hours }}</td>
+                  <td>{{ training.starting_date.substring(0, 10) }}</td>
+                  <td>{{ training.seat }}</td>
+                  <td routerLink="/admin/trainings">
+                    {{ training.trainer.firstname }}
+                    {{ training.trainer.lastname }}
+                  </td>
+                  <td>{{ training.category.name }}</td>
+                  <td>
+                    <button
+                      class="btn btn-primary mx-2"
+                      style="color: white"
+                      [routerLink]="['/admin/trainings', training._id]"
+                    >
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      class="btn btn-warning mx-1"
+                      [routerLink]="['/admin/trainings/update/', training._id]"
+                    >
+                      <i
+                        class="fa fa-pencil"
+                        style="color: white"
+                        aria-hidden="true"
+                      ></i></button
+                    ><button
+                      class="btn btn-danger mx-1"
+                      style="color: white"
+                      (click)="delete(training._id, i)"
+                    >
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <app-footer-dashboard></app-footer-dashboard>
+</div>
