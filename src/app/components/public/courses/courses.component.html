@@ -26,10 +26,8 @@
     </div>
 
     <div class="row g-3 align-items-center justify-content-center d-flex">
-
       <div (click)="filter('all'); onclick($event)" class="box-cat">
         <p class="category-name">Tous</p>
-
       </div>
       <div
         *ngFor="let category of categoriesList"

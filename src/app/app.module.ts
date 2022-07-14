@@ -43,6 +43,7 @@ import { ArticleComponent } from './components/public/article/article.component'
 import { SingleArticleComponent } from './components/private/shared/blog/single-article/single-article.component';
 import { SingleTrainerComponent } from './components/private/shared/trainers/single-trainer/single-trainer.component';
 import { SingleTrainingComponent } from './components/private/shared/trainings/single-training/single-training.component';
+import { AdminLoginComponent } from './components/private/shared/admin-login/admin-login.component';
 
 
 
@@ -84,7 +85,8 @@ import { SingleTrainingComponent } from './components/private/shared/trainings/s
     ArticleComponent,
     SingleArticleComponent,
     SingleTrainerComponent,
-    SingleTrainingComponent
+    SingleTrainingComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
