@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { CategoryService } from '../../../../../services/category.service';
 import { Router } from '@angular/router';
-import { Category } from 'src/app/models/category';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
