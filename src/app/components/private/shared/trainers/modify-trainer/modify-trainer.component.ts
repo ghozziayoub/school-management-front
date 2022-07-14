@@ -114,7 +114,7 @@ export class ModifyTrainerComponent implements OnInit {
       next: (result) => {
         this.toastr.success("le formateur mise à jour avec succès ");
         console.log(result);
-        this.router.navigate(['/trainer-list']);
+        this.router.navigate(['/admin/trainers']);
 
       },
       error: (err) => {

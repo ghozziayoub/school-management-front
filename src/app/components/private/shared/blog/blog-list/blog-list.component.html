@@ -8,12 +8,22 @@
         <div class="container-fluid px-4">
           <h2 style="color: black">Articles</h2>
           <div>
-            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target=".bd-example-modal-sm"
-              routerLink="/add-new-article">
+            <button
+              type="button"
+              class="btn btn-primary mb-3"
+              data-toggle="modal"
+              data-target=".bd-example-modal-sm"
+              routerLink="/admin/articles/add"
+            >
               + ajouter
             </button>
-            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-              aria-hidden="true">
+            <div
+              class="modal fade bd-example-modal-sm"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="mySmallModalLabel"
+              aria-hidden="true"
+            >
               <div class="modal-dialog modal-sm">
                 <div class="modal-content">...</div>
               </div>
@@ -33,20 +43,35 @@
                   <td>{{ i + 1 }}</td>
                   <td>{{ article.titre }}</td>
                   <td>
-                    <img src="{{baseUrl}}/{{ article.image }}" class="image-fluid article-image" alt="" />
+                    <img
+                      src="{{ baseUrl }}/{{ article.image }}"
+                      class="image-fluid article-image"
+                      alt=""
+                    />
                   </td>
                   <td>{{ moment(article.createdAt) }}</td>
                   <td>
                     <button
-                    class="btn btn-primary mx-2"
-                    style="color: white"
-                    [routerLink]="['/article-list', article._id]"
-                  >
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                  </button>
-                    <button class="btn btn-warning mx-2" [routerLink]="['/modify-article', article._id]">
-                      <i class="fa fa-pencil" style="color: white" aria-hidden="true"></i></button><button
-                      class="btn btn-danger mx-2" style="color: white" (click)="delete(article._id, i)">
+                      class="btn btn-primary mx-2"
+                      style="color: white"
+                      [routerLink]="['/admin/articles/', article._id]"
+                    >
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                    </button>
+                    <button
+                      class="btn btn-warning mx-2"
+                      [routerLink]="['/admin/articles/update/', article._id]"
+                    >
+                      <i
+                        class="fa fa-pencil"
+                        style="color: white"
+                        aria-hidden="true"
+                      ></i></button
+                    ><button
+                      class="btn btn-danger mx-2"
+                      style="color: white"
+                      (click)="delete(article._id, i)"
+                    >
                       <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>
                   </td>

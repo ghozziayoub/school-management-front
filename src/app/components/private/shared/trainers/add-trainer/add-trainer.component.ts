@@ -99,7 +99,7 @@ export class AddTrainerComponent implements OnInit {
       next: (result) => {
         console.log(result);
         this.toastr.success("formateur ajoutée avec succès");
-        this.router.navigate(['/trainer-list']);
+        this.router.navigate(['/admin/trainers']);
       },
       error: (err) => {
         this.toastr.error(err.message)

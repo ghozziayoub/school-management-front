@@ -17,7 +17,7 @@
                 class="btn btn-primary mb-3"
                 data-toggle="modal"
                 data-target=".bd-example-modal-sm"
-                routerLink="/add-new-training">
+                routerLink="/admin/trainings/add">
                 + ajouter
               </button>
   
@@ -52,19 +52,19 @@
                     <td>{{ training.hours }}</td>
                     <td>{{ training.starting_date.substring(0,10) }}</td>
                     <td>{{training.seat}}</td>
-                    <td routerLink="/trainer-list">{{training.trainer.firstname}} {{ training.trainer.lastname}}</td>
+                    <td routerLink="/admin/trainings">{{training.trainer.firstname}} {{ training.trainer.lastname}}</td>
                     <td>{{ training.category.name }}</td>
                     <td>
                       <button
                       class="btn btn-primary mx-2"
                       style="color: white"
-                      [routerLink]="['/training-list', training._id]"
+                      [routerLink]="['/admin/trainings', training._id]"
                     >
                       <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
                       <button
                         class="btn btn-warning mx-1"
-                        [routerLink]="['/modify-training', training._id]"
+                        [routerLink]="['/admin/trainings/update/', training._id]"
                       >
                         <i
                           class="fa fa-pencil"

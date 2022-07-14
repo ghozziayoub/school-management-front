@@ -70,7 +70,7 @@ export class AddArticleComponent implements OnInit {
       next: (result) => {
         console.log(result)
         this.toastr.success("Article ajoutée avec succès");
-        this.router.navigate(['/article-list']);
+        this.router.navigate(['/admin/articles']);
       },
       error: (error) => {
         this.toastr.error(error.message);

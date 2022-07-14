@@ -17,7 +17,7 @@
                 class="btn btn-primary mb-3"
                 data-toggle="modal"
                 data-target=".bd-example-modal-sm"
-                routerLink="/add-new-trainer">
+                routerLink="/admin/trainers/add">
                 + ajouter
               </button>
   
@@ -54,13 +54,13 @@
                       <button
                       class="btn btn-primary mx-2"
                       style="color: white"
-                      [routerLink]="['/trainer-list', trainer._id]"
+                      [routerLink]="['/admin/trainers/', trainer._id]"
                     >
                       <i class="fa fa-eye" aria-hidden="true"></i>
                     </button>
                       <button
                         class="btn btn-warning mx-2"
-                        [routerLink]="['/modify-trainer', trainer._id]"
+                        [routerLink]="['/admin/trainers/update/', trainer._id]"
                       >
                         <i
                           class="fa fa-pencil"

@@ -143,7 +143,7 @@ export class ModifyTrainingComponent implements OnInit {
       next: (result) => {
         console.log(result);
         this.toastr.success("la formation mise à jour avec succès ");
-        this.router.navigate(['/training-list']);
+        this.router.navigate(['/admin/trainings']);
       },
       error: (err) => {
         this.toastr.error(err.error.message);

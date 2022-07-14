@@ -89,7 +89,7 @@ export class UpdateArticleComponent implements OnInit {
       next: (result) => {
         console.log(result);
         this.toastr.success("l'article mise à jour avec succès ");
-        this.router.navigate(['/article-list']);
+        this.router.navigate(['/admin/articles']);
       },
       error: (error) => {
         this.toastr.error(error.error.message);

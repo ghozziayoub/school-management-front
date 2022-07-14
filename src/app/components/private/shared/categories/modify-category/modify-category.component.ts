@@ -51,7 +51,7 @@ export class ModifyCategoryComponent implements OnInit {
       next: (result) => {
         console.log(result);
         this.toastr.warning("catégorie mise à jour avec succès ");
-        this.router.navigate(['/category'])
+        this.router.navigate(['/admin/categories'])
       },
       error: (err) => {
         console.log(err);

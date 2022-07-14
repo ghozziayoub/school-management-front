@@ -12,7 +12,7 @@ import { RegisterComponent } from './components/public/register/register.compone
 import { CategoriesListComponent } from './components/private/shared/categories/categories-list/categoriesList.component';
 import { AddCategoryComponent } from './components/private/shared/categories/add-category/add-category.component';
 import { ModifyCategoryComponent } from './components/private/shared/categories/modify-category/modify-category.component';
-import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component'
+import { TrainersListComponent } from './components/private/shared/trainers/trainers-list/trainers-list.component';
 import { AddTrainerComponent } from './components/private/shared/trainers/add-trainer/add-trainer.component';
 import { ModifyTrainerComponent } from './components/private/shared/trainers/modify-trainer/modify-trainer.component';
 import { TrainingListComponent } from './components/private/shared/trainings/training-list/training-list.component';
@@ -32,143 +32,176 @@ import { SingleTrainerComponent } from './components/private/shared/trainers/sin
 import { SingleTrainingComponent } from './components/private/shared/trainings/single-training/single-training.component';
 import { AdminLoginComponent } from './components/private/shared/admin-login/admin-login.component';
 
-
 const routes: Routes = [
   {
-    path: "",
-    component: HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path: "login",
-    component: LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: "register",
-    component: RegisterComponent
+    path: 'register',
+    component: RegisterComponent,
   },
   {
-    path: "about",
-    component: AboutComponent
+    path: 'about',
+    component: AboutComponent,
   },
   {
-    path: "courses",
-    component: CoursesComponent
+    path: 'courses',
+    component: CoursesComponent,
   },
   {
-    path: "blog",
-    component: BlogComponent
+    path: 'blog',
+    component: BlogComponent,
   },
   {
-    path: "blog/:id",
-    component: ArticleComponent
+    path: 'blog/:id',
+    component: ArticleComponent,
   },
   {
-    path: "our-team",
-    component: OurTeamComponent
+    path: 'our-team',
+    component: OurTeamComponent,
   },
   {
-    path: "contact",
-    component: ContactComponent
-  },
-  {
-    path: "dashboard",
-    component: DashboardComponent
+    path: 'contact',
+    component: ContactComponent,
   },
 
   {
-    path:"forgotPassword",
-    component :ForgotPasswordComponent
- 
-  },
-  
-  {
-    path:"category",
-    component: CategoriesListComponent
-  },
-  {
-    path:"add-new-category",
-    component: AddCategoryComponent
-  },
-  {
-    path:"modify-category/:id",
-    component: ModifyCategoryComponent
-  },
-  {
-    path:"trainer-list",
-    component: TrainersListComponent
-  },
-  {
-    path:"users-list",
-    component: UsersListComponent
-  },
-  {
-    path:"add-new-trainer",
-    component: AddTrainerComponent
-  },
-  {
-    path:"modify-trainer/:id",
-    component: ModifyTrainerComponent
-  },
-  {
-    path:"trainer-list/:id",
-    component: SingleTrainerComponent
-  },
-  {
-    path:"training-list",
-    component: TrainingListComponent
-  },
-  {
-    path:"training-list/:id",
-    component: SingleTrainingComponent
-  },
-  {
-    path:"add-new-training",
-    component: AddTrainingComponent
-  },
-  {
-    path:"modify-training/:id",
-    component: ModifyTrainingComponent
-  },
-  
-  {
-    path:"article-list",
-    component: BlogListComponent
-  },
-  {
-    path:"article-list/:id",
-    component: SingleArticleComponent
-  },
-  {
-    path:"add-new-article",
-    component: AddArticleComponent
-  },
-  {
-    path:"modify-article/:id",
-    component: UpdateArticleComponent
-  },
-  
-  {
-    path:"message-list",
-    component:MessageListComponent
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
   },
 
   {
-    path:"message/:id",
-    component:MessageList2Component
+    path: 'admin',
+    children: [
+      {
+        path: '',
+        redirectTo: 'dashboard',
+        pathMatch: 'full',
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      {
+        path: 'categories',
+        children: [
+          {
+            path: '',
+            component: CategoriesListComponent,
+          },
+          {
+            path: 'add',
+            component: AddCategoryComponent,
+          },
+          {
+            path: 'update/:id',
+            component: ModifyCategoryComponent,
+          },
+        ],
+      },
+      {
+        path: 'trainers',
+        children: [
+          {
+            path: '',
+            component: TrainersListComponent,
+          },
+          {
+            path: 'add',
+            component: AddTrainerComponent,
+          },
+          {
+            path: 'update/:id',
+            component: ModifyTrainerComponent,
+          },
+          {
+            path: ':id',
+            component: SingleTrainerComponent,
+          },
+        ],
+      },
+      {
+        path: 'trainings',
+        children: [
+          {
+            path: '',
+            component: TrainingListComponent,
+          },
+          {
+            path: 'add',
+            component: AddTrainingComponent,
+          },
+          {
+            path: 'update/:id',
+            component: ModifyTrainingComponent,
+          },
+          {
+            path: ':id',
+            component: SingleTrainingComponent,
+          },
+        ],
+      },
+      {
+        path: 'articles',
+        children: [
+          {
+            path: '',
+            component: BlogListComponent,
+          },
+          {
+            path: 'add',
+            component: AddArticleComponent,
+          },
+          {
+            path: 'update/:id',
+            component: UpdateArticleComponent,
+          },
+          {
+            path: ':id',
+            component: SingleArticleComponent,
+          },
+        ],
+      },
+      {
+        path: 'messages',
+        children: [
+          {
+            path: '',
+            component: MessageListComponent,
+          },
+
+          {
+            path: ':id',
+            component: MessageList2Component,
+          },
+        ],
+      },
+      {
+        path: 'users',
+        component: UsersListComponent,
+      },
+      {
+        path: 'login',
+        component: AdminLoginComponent,
+      },
+    ],
   },
+
   {
-    path:"admin-login",
-    component: AdminLoginComponent
+    path: '**',
+    component: Page404Component,
   },
-  {
-    path: "**",
-    component: Page404Component
-  },
- 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

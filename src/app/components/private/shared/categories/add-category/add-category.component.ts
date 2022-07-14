@@ -45,7 +45,7 @@ export class AddCategoryComponent implements OnInit {
       next: (result) => {
         console.log(result);
         this.toastr.success("catégorie ajoutée avec succès");
-        this.router.navigate(['/category']);
+        this.router.navigate(['/admin/categories']);
       },
       error: (error) => {
         this.toastr.error(error.error.message);
