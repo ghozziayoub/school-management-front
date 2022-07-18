@@ -7,8 +7,8 @@
   <div class="container">
 
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">Login</h6>
-      <h1 class="mb-5">Join our community</h1>
+      <h6 class="section-title bg-white text-center text-primary px-3">Se connecter</h6>
+      <h1 class="mb-5">Rejoignez notre communauté</h1>
     </div>
 
 
@@ -21,9 +21,9 @@
 
             <div class="col-6">
               <div class="form-floating">
-                <input name="email" type="email" class="form-control" id="email" placeholder="Your Email"
+                <input name="email" type="email" class="form-control" id="email" placeholder="Votre Email"
                   formControlName="email">
-                <label for="email">Your Email</label>
+                <label for="email">Email</label>
                 <div *ngIf="email?.invalid && email?.touched">
                   <small *ngIf="email?.errors?.['required']" class="text-danger">Email is required<br></small>
                   <small *ngIf="email?.errors?.['email']" class="text-danger"> invalid Email<br></small>
@@ -40,23 +40,23 @@
                   <small *ngIf="password?.errors?.['required']" class="text-danger">Password is required<br></small>
                   <small *ngIf="password?.errors?.['minlength']" class="text-danger"> Short password<br></small>
                 </div>
-                <label for="name">Your Password</label>
+                <label for="name">mot de passe</label>
               </div>
             </div>
 
             <div class="col-12">
-              <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="myform.invalid">Login Now !</button>
+              <button class="btn btn-primary w-100 py-3" type="submit" [disabled]="myform.invalid">Se Connecter !</button>
             </div>
 
             <div class="col-12">
-              <h6>I don't have an account !
+              <h6>Je n'ai pas de compte !
                 <span routerLink="/register" class="text-primary goto-link">
-                  Join Now !
+                  Inscrivez-vous maintenant!
                 </span>
               </h6>
-              <h6>Have you forgotten the password? !
-                <span routerLink="/forgotPassword" class="text-primary goto-link">
-                  Click Here !
+              <h6>Avez-vous oublié le mot de passe? !
+                <span routerLink="/forgot-password" class="text-primary goto-link">
+                  Cliquez ici !
                 </span>
               </h6>
             </div>

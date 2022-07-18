@@ -18,7 +18,7 @@ import { ModifyTrainerComponent } from './components/private/trainers/modify-tra
 import { TrainingListComponent } from './components/private/trainings/training-list/training-list.component';
 import { AddTrainingComponent } from './components/private/trainings/add-training/add-training.component';
 import { ModifyTrainingComponent } from './components/private/trainings/modify-training/modify-training.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './components/public/forgot-password/forgot-password.component';
 import { MessageListComponent } from './components/private/messages/message-list/message-list.component';
 import { MessageList2Component } from './components/private/messages/message-list2/message-list2.component';
 import { UsersListComponent } from './components/private/users/users-list/users-list.component';
@@ -31,6 +31,9 @@ import { ArticleComponent } from './components/public/article/article.component'
 import { SingleTrainerComponent } from './components/private/trainers/single-trainer/single-trainer.component';
 import { SingleTrainingComponent } from './components/private/trainings/single-training/single-training.component';
 import { AdminLoginComponent } from './components/private/admin-login/admin-login.component';
+import { AuthGuard } from './guards/auth.guard';
+import { SingleCourseComponent } from './components/public/single-course/single-course.component';
+import { AuthAdminGuard } from './guards/auth-admin.guard';
 
 const routes: Routes = [
   {
@@ -52,6 +55,10 @@ const routes: Routes = [
   {
     path: 'courses',
     component: CoursesComponent,
+  },
+  {
+    path:'courses/:id',
+    component: SingleCourseComponent
   },
   {
     path: 'blog',
@@ -77,6 +84,7 @@ const routes: Routes = [
 
   {
     path: 'admin',
+    canActivate:[AuthAdminGuard],
     children: [
       {
         path: '',
@@ -185,11 +193,12 @@ const routes: Routes = [
         path: 'users',
         component: UsersListComponent,
       },
-      {
-        path: 'login',
-        component: AdminLoginComponent,
-      },
+     
     ],
+  },
+  {
+    path: 'admin/login',
+    component: AdminLoginComponent,
   },
 
   {

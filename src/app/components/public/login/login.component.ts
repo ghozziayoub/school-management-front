@@ -45,20 +45,17 @@ export class LoginComponent implements OnInit {
 
     let data = this.myform.value;
 
-    console.log(data)
-
     let user = new User("", "", "", data.email, data.password, "", "");
 
     this.userService.login(user).subscribe({
       next: (result) => {
-        console.log(result)
-        let token = result.token;
-        localStorage.setItem("myToken", token)
-        this.toastr.success(result.message);
-
-        this.router.navigate(['/dashboard']);
+        let token = result.headers.get('authorization');
+        localStorage.setItem("token", token!);
+        this.toastr.success(result.body.message);
+        this.router.navigate(['/']);
       },
       error: (err) => {
+        this.toastr.error(err.message);
         console.log(err);
 
 

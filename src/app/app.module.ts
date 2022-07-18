@@ -11,8 +11,8 @@ import { ContactComponent } from './components/public/contact/contact.component'
 import { LoginComponent } from './components/public/login/login.component';
 import { RegisterComponent } from './components/public/register/register.component';
 import { Page404Component } from './components/public/page404/page404.component';
-import { NavbarComponent } from './components/public/navbar/navbar.component';
-import { FooterComponent } from './components/public/footer/footer.component';
+import { NavbarComponent } from './components/public/shared/navbar/navbar.component';
+import { FooterComponent } from './components/public/shared/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './components/private/dashboard/dashboard.component';
 import { TopBarComponent } from './components/private/shared/top-bar/top-bar.component';
@@ -22,7 +22,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { CategoriesListComponent } from './components/private/categories/categories-list/categoriesList.component';
 import { AddCategoryComponent } from './components/private/categories/add-category/add-category.component';
 import { ModifyCategoryComponent } from './components/private/categories/modify-category/modify-category.component';
-import { TrainerItemComponent } from './components/public/trainer-item/trainer-item.component';
+import { TrainerItemComponent } from './components/public/shared/trainer-item/trainer-item.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrainersListComponent } from './components/private/trainers/trainers-list/trainers-list.component';
@@ -31,7 +31,7 @@ import { ModifyTrainerComponent } from './components/private/trainers/modify-tra
 import { TrainingListComponent } from './components/private/trainings/training-list/training-list.component';
 import { AddTrainingComponent } from './components/private/trainings/add-training/add-training.component';
 import { ModifyTrainingComponent } from './components/private/trainings/modify-training/modify-training.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotPasswordComponent } from './components/public/forgot-password/forgot-password.component';
 import { MessageListComponent } from './components/private/messages/message-list/message-list.component';
 import { MessageList2Component } from './components/private/messages/message-list2/message-list2.component';
 import { UsersListComponent } from './components/private/users/users-list/users-list.component';
@@ -44,6 +44,8 @@ import { SingleArticleComponent } from './components/private/blog/single-article
 import { SingleTrainerComponent } from './components/private/trainers/single-trainer/single-trainer.component';
 import { SingleTrainingComponent } from './components/private/trainings/single-training/single-training.component';
 import { AdminLoginComponent } from './components/private/admin-login/admin-login.component';
+import { FormationDetailComponent } from './components/public/formation-detail/formation-detail.component';
+import { SingleCourseComponent } from './components/public/single-course/single-course.component';
 
 @NgModule({
   declarations: [
@@ -85,6 +87,8 @@ import { AdminLoginComponent } from './components/private/admin-login/admin-logi
     SingleTrainerComponent,
     SingleTrainingComponent,
     AdminLoginComponent,
+    FormationDetailComponent,
+    SingleCourseComponent,
   ],
   imports: [
     BrowserModule,

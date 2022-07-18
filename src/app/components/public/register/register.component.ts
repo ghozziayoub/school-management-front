@@ -28,12 +28,12 @@ export class RegisterComponent implements OnInit {
       firstname: new FormControl('', [
         Validators.required,
         Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2)
+
       ]),
       lastname: new FormControl('', [
         Validators.required,
         Validators.pattern("[A-Za-z .'-]+"),
-        Validators.minLength(2)
+        
       ]),
       file: new FormControl('', [
         Validators.required,
