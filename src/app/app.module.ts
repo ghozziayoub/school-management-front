@@ -44,7 +44,6 @@ import { SingleArticleComponent } from './components/private/blog/single-article
 import { SingleTrainerComponent } from './components/private/trainers/single-trainer/single-trainer.component';
 import { SingleTrainingComponent } from './components/private/trainings/single-training/single-training.component';
 import { AdminLoginComponent } from './components/private/admin-login/admin-login.component';
-import { FormationDetailComponent } from './components/public/formation-detail/formation-detail.component';
 import { SingleCourseComponent } from './components/public/single-course/single-course.component';
 
 @NgModule({
@@ -87,7 +86,6 @@ import { SingleCourseComponent } from './components/public/single-course/single-
     SingleTrainerComponent,
     SingleTrainingComponent,
     AdminLoginComponent,
-    FormationDetailComponent,
     SingleCourseComponent,
   ],
   imports: [
