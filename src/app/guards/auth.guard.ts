@@ -12,13 +12,13 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       let isLoggedInAsAdmin = this.userService.isLoggedInAsAdmin();
+      let isLoggedIn = this.userService.isLoggedIn();
       console.log(isLoggedInAsAdmin)
-      if(isLoggedInAsAdmin){
-       
-        return true;
-      }else{
+      if(isLoggedInAsAdmin || isLoggedIn){
         this.router.navigate(['/'])
         return false;
+      }else{
+        return true;
       }
 
   }

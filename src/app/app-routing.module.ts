@@ -42,10 +42,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
+    canActivate:[AuthGuard],
     component: LoginComponent,
   },
   {
     path: 'register',
+    canActivate:[AuthGuard],
     component: RegisterComponent,
   },
   {
@@ -198,6 +200,7 @@ const routes: Routes = [
   },
   {
     path: 'admin/login',
+    canActivate:[AuthGuard],
     component: AdminLoginComponent,
   },
 

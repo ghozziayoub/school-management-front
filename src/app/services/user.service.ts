@@ -38,9 +38,16 @@ export class UserService {
   }
 
   isLoggedIn() {
-    let token = localStorage.getItem('myToken');
+    let token = localStorage.getItem('token');
+    let decodedToken: any;
     if (token) {
-      return true;
+      decodedToken = jwt_decode(token);
+      console.log(decodedToken);
+      if (decodedToken.role == 'student') {
+        return true;
+      } else {
+        return false;
+      }
     } else {
       return false;
     }

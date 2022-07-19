@@ -13,9 +13,18 @@
             <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Blog</a>
             <a routerLink="/our-team" routerLinkActive="active" class="nav-item nav-link">Notre équipe</a>
             <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
+            <a *ngIf="islogged==true" (click)="logout()" class="nav-item nav-link text-danger" style="cursor: pointer;">logout</a>
         </div>
-        <a routerLink="/register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+        <a *ngIf="isAdmin==false && islogged==false" routerLink="/register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
             Rejoignez-nous
+            <i class="fa fa-arrow-right ms-3"></i>
+        </a>
+        <a *ngIf="islogged==true" routerLink="/" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+            {{user.fullname}}
+            <i class="fa fa-arrow-right ms-3"></i>
+        </a>
+        <a *ngIf="isAdmin==true" routerLink="/admin/dashboard" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+            dashboard
             <i class="fa fa-arrow-right ms-3"></i>
         </a>
     </div>

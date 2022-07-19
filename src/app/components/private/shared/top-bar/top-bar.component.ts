@@ -15,6 +15,7 @@ export class TopBarComponent implements OnInit {
   logout(){
 
     localStorage.removeItem("token");
+    localStorage.removeItem("user");
     this.router.navigate(['/admin/login'])
 
   }

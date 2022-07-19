@@ -54,7 +54,7 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-6">
                             <div class="form-floating">
                                 <input type="email" class="form-control" id="email" placeholder="Votre e-mail"
                                     formControlName="email">
@@ -66,6 +66,17 @@
                                         email<br></small>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="email" placeholder="Votre Telephone"
+                                    formControlName="telephone">
+                                <label for="telephone">telephone</label>
+                                <div *ngIf="telephone?.invalid && email?.touched">
+                                    <small *ngIf="telephone?.errors?.['required']" class="text-danger">telephone
+                                        required<br></small>
+                            </div>
+                        </div>
                         </div>
 
                         <div class="col-md-6">
