@@ -6,16 +6,17 @@
 <div class="container-fluid p-0 mb-5">
   <div class="header-carousel position-relative">
     <div class="position-relative">
-      <img class="img-fluid image-land" src="assets/img/carousel-1.jpg" alt="" />
-      <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center"
-        style="background: rgba(24, 29, 56, 0.7)">
+      <div class="hero vh-100 d-flex align-items-center">
         <div class="container">
-          <div class="row justify-content-start">
-            <div class="col-sm-10 col-lg-8">
+          <div class="row px-1">
+            <div class="col-sm-12 col-lg-8 ">
               <h5 class="text-light text-uppercase mb-3 animated slideInDown">
                 Meilleurs cours en ligne
               </h5>
-              <h1 class="display-3 text-white animated slideInDown">
+              <h1
+                class="text-white display-3 animated slideInDown"
+                
+              >
                 La meilleure plateforme d'apprentissage en ligne
               </h1>
               <p class="fs-5 text-white mb-4 pb-2">
@@ -23,8 +24,16 @@
                 no. Kasd rebum ipsum et diam justo clita et kasd rebum sea
                 sanctus eirmod elitr.
               </p>
-              <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Lire la suite</a>
-              <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">rejoindre maintenant</a>
+              <a
+                href=""
+                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
+                >Lire la suite</a
+              >
+              <a
+                href=""
+                class="btn btn-light py-md-3 px-md-5 animated slideInRight"
+                >rejoindre maintenant</a
+              >
             </div>
           </div>
         </div>
@@ -38,12 +47,11 @@
 <div class="container-xxl py-5">
   <div class="container">
     <div class="row g-4">
-      <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+      <div class="col-lg-3 col-sm-2 wow fadeInUp" data-wow-delay="0.1s">
         <div class="service-item text-center pt-3">
           <div class="p-4">
             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-            <h5 class="mb-3">Des Instructeurs Qualifiés
-            </h5>
+            <h5 class="mb-3">Des Instructeurs Qualifiés</h5>
             <p>
               Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet
               diam
@@ -55,7 +63,7 @@
         <div class="service-item text-center pt-3">
           <div class="p-4">
             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-            <h5 class="mb-3">Les Classes En Ligne </h5>
+            <h5 class="mb-3">Les Classes En Ligne</h5>
             <p>
               Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet
               diam
@@ -96,10 +104,18 @@
 <div class="container-xxl py-5">
   <div class="container">
     <div class="row g-5">
-      <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px">
+      <div
+        class="col-lg-6 wow fadeInUp"
+        data-wow-delay="0.1s"
+        style="min-height: 400px"
+      >
         <div class="position-relative h-100">
-          <img class="img-fluid position-absolute w-100 h-100" src="assets/img/about.jpg" alt=""
-            style="object-fit: cover" />
+          <img
+            class="img-fluid position-absolute w-100 h-100"
+            src="assets/img/about.jpg"
+            alt=""
+            style="object-fit: cover"
+          />
         </div>
       </div>
       <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -119,12 +135,14 @@
         <div class="row gy-2 gx-4 mb-4">
           <div class="col-sm-6">
             <p class="mb-0">
-              <i class="fa fa-arrow-right text-primary me-2"></i>Des Instructeurs Qualifiés
+              <i class="fa fa-arrow-right text-primary me-2"></i>Des
+              Instructeurs Qualifiés
             </p>
           </div>
           <div class="col-sm-6">
             <p class="mb-0">
-              <i class="fa fa-arrow-right text-primary me-2"></i>Les Classes En Ligne
+              <i class="fa fa-arrow-right text-primary me-2"></i>Les Classes En
+              Ligne
             </p>
           </div>
           <div class="col-sm-6">
@@ -135,17 +153,20 @@
           </div>
           <div class="col-sm-6">
             <p class="mb-0">
-              <i class="fa fa-arrow-right text-primary me-2"></i>Bibliothèque De Livres
+              <i class="fa fa-arrow-right text-primary me-2"></i>Bibliothèque De
+              Livres
             </p>
           </div>
           <div class="col-sm-6">
             <p class="mb-0">
-              <i class="fa fa-arrow-right text-primary me-2"></i>Les Classes En Ligne
+              <i class="fa fa-arrow-right text-primary me-2"></i>Les Classes En
+              Ligne
             </p>
           </div>
           <div class="col-sm-6">
             <p class="mb-0">
-              <i class="fa fa-arrow-right text-primary me-2"></i>certificat international
+              <i class="fa fa-arrow-right text-primary me-2"></i>certificat
+              international
             </p>
           </div>
         </div>
@@ -168,15 +189,36 @@
       <h1 class="mb-5">Cours populaires</h1>
     </div>
     <div class="row g-4 justify-content-center">
-      <div class="col-lg-4 col-md-6 wow fadeInUp" *ngFor="let training of trainingsList; let i=index" data-wow-delay="0.1s">
-        <div *ngIf="i<=2" class="course-item bg-light">
-          <div class="position-relative trainer-card overflow-hidden" style="height: 250px">
-            <img class="img-fluid image-training" src="{{baseUrl}}{{ training.image }}" alt="" />
-            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-              <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                style="border-radius: 30px 0 0 30px">Lire La Suite</a>
-              <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                style="border-radius: 0 30px 30px 0">Rejoindre maintenant </a>
+      <div
+        class="col-lg-4 col-md-6 wow fadeInUp"
+        *ngFor="let training of trainingsList; let i = index"
+        data-wow-delay="0.1s"
+      >
+        <div *ngIf="i <= 2" class="course-item bg-light">
+          <div
+            class="position-relative trainer-card overflow-hidden"
+            style="height: 250px"
+          >
+            <img
+              class="img-fluid image-training"
+              src="{{ baseUrl }}{{ training.image }}"
+              alt=""
+            />
+            <div
+              class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+            >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
+                style="border-radius: 30px 0 0 30px"
+                >Lire La Suite</a
+              >
+              <a
+                href="#"
+                class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                style="border-radius: 0 30px 30px 0"
+                >Rejoindre maintenant
+              </a>
             </div>
           </div>
           <div class="text-center p-4 pb-0 description">
@@ -186,22 +228,30 @@
             <p class="m-2 objectif">{{ training.objectif }}</p>
           </div>
           <div class="d-flex border-top">
-            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>{{
-              training.category.name }}</small>
-            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"> H</i>{{
-              training.hours }} H </small>
-            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>{{
-              training.seat }}
-              places</small>
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-user-tie text-primary me-2"></i
+              >{{ training.category.name }}</small
+            >
+            <small class="flex-fill text-center border-end py-2"
+              ><i class="fa fa-clock text-primary me-2"> H</i
+              >{{ training.hours }} H
+            </small>
+            <small class="flex-fill text-center py-2"
+              ><i class="fa fa-user text-primary me-2"></i
+              >{{ training.seat }} places</small
+            >
           </div>
         </div>
       </div>
       <div *ngIf="trainingsList.length > 3" class="col-lg-12">
-        <a routerLink="/courses" class="btn btn-primary button py-3 mt-2" href="">Voir plus</a>
+        <a
+          routerLink="/courses"
+          class="btn btn-primary button py-3 mt-2"
+          href=""
+          >Voir plus</a
+        >
       </div>
-
     </div>
-
   </div>
 </div>
 <!-- Courses End -->
@@ -216,14 +266,23 @@
       <h1 class="mb-5">Nos instructeurs experts</h1>
     </div>
     <div class="row g-4 justify-content-center">
-      <div class="col-lg-3 col-md-6 wow fadeInUp" *ngFor="let trainer of trainersList" data-wow-delay="0.1s">
-        <app-trainer-item [firstname]="trainer.firstname" [lastname]="trainer.lastname"
-          [speciality]="trainer.speciality" [image]="trainer.image" [facebook]="trainer.facebook"
-          [instagram]="trainer.instagram" [twitter]="trainer.twitter">
+      <div
+        class="col-lg-3 col-md-6 wow fadeInUp"
+        *ngFor="let trainer of trainersList"
+        data-wow-delay="0.1s"
+      >
+        <app-trainer-item
+          [firstname]="trainer.firstname"
+          [lastname]="trainer.lastname"
+          [speciality]="trainer.speciality"
+          [image]="trainer.image"
+          [facebook]="trainer.facebook"
+          [instagram]="trainer.instagram"
+          [twitter]="trainer.twitter"
+        >
         </app-trainer-item>
       </div>
     </div>
-
   </div>
 </div>
 <!-- Team End -->
@@ -239,9 +298,14 @@
     </div>
 
     <div class="row position-relative">
-      <div class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-1.jpg"
-          style="width: 80px; height: 80px" />
+      <div
+        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
+      >
+        <img
+          class="border rounded-circle p-2 mx-auto mb-3"
+          src="assets/img/testimonial-1.jpg"
+          style="width: 80px; height: 80px"
+        />
         <h5 class="mb-0">Nom de Client</h5>
         <p>Profession</p>
         <div class="testimonial-text bg-light text-center p-4">
@@ -252,9 +316,14 @@
         </div>
       </div>
 
-      <div class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12  mt-2">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-2.jpg"
-          style="width: 80px; height: 80px" />
+      <div
+        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
+      >
+        <img
+          class="border rounded-circle p-2 mx-auto mb-3"
+          src="assets/img/testimonial-2.jpg"
+          style="width: 80px; height: 80px"
+        />
         <h5 class="mb-0">Nom de Client</h5>
         <p>Profession</p>
         <div class="testimonial-text bg-light text-center p-4">
@@ -265,9 +334,14 @@
         </div>
       </div>
 
-      <div class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12  mt-2">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-3.jpg"
-          style="width: 80px; height: 80px" />
+      <div
+        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
+      >
+        <img
+          class="border rounded-circle p-2 mx-auto mb-3"
+          src="assets/img/testimonial-3.jpg"
+          style="width: 80px; height: 80px"
+        />
         <h5 class="mb-0">Nom de Client</h5>
         <p>Profession</p>
         <div class="testimonial-text bg-light text-center p-4">
@@ -278,9 +352,14 @@
         </div>
       </div>
 
-      <div class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12  mt-2">
-        <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-4.jpg"
-          style="width: 80px; height: 80px" />
+      <div
+        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
+      >
+        <img
+          class="border rounded-circle p-2 mx-auto mb-3"
+          src="assets/img/testimonial-4.jpg"
+          style="width: 80px; height: 80px"
+        />
         <h5 class="mb-0">Nom de Client</h5>
         <p>Profession</p>
         <div class="testimonial-text bg-light text-center p-4">

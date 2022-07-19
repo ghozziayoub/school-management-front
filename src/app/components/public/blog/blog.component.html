@@ -2,8 +2,7 @@
 <app-navbar></app-navbar>
 <!-- Navbar End -->
 
-<div class="container-xxl py-5">
-  <div class="container">
+  <div class="container ">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 class="section-title bg-white text-center text-primary px-3">blog</h6>
       <h1 class="mb-5">Tous les articles</h1>
@@ -12,7 +11,7 @@
           *ngFor="let article of articleList"
           class="col-lg-4 mr-2 col-md-6 mr-5 wow fadeInUp"
         >
-          <div class="card card-shadow" style="width: 25rem">
+          <div class="card card-shadow" >
             <img
               src="{{ baseUrl }}{{ article.image }}"
               class="card-img-top article-img"
@@ -24,18 +23,18 @@
             <div class="card-body backg description">
               <h2 class="card-title my-2">{{ article.titre }}</h2>
               <p class="card-text">{{ article.content.substring(0, 70) }}...</p>
-              <div>
+              
                 <a routerLink="/blog/{{ article._id }}" class="btn btn-primary"
                   >Voir plus</a
                 >
-              </div>
+             
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
 
 <!-- Footer Start -->
 <app-footer></app-footer>
