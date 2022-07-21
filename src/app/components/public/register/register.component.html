@@ -6,8 +6,8 @@
 <div class="container-xxl py-5">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Register</h6>
-            <h1 class="mb-5">Join our community</h1>
+            <h6 class="section-title bg-white text-center text-primary px-3">S'inscrire</h6>
+            <h1 class="mb-5">Rejoignez notre communauté</h1>
         </div>
         <div class="row g-4">
             <form [formGroup]="registerForm" (ngSubmit)="register()">
@@ -15,16 +15,14 @@
                     <div class="row g-3">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="firstname" placeholder="Your Firstname"
+                                <input type="text" class="form-control" id="firstname" placeholder="prénom"
                                     formControlName="firstname">
-                                <label for="name">Your Firstname</label>
+                                <label for="name">Ton prénom</label>
                                 <div *ngIf="firstname?.invalid && firstname?.touched">
-                                    <small *ngIf="firstname?.errors?.['required']" class="text-danger">Firstname
-                                        required<br></small>
-                                    <small *ngIf="firstname?.errors?.['pattern']" class="text-danger"> invalid
-                                        Firstname<br></small>
-                                    <small *ngIf="firstname?.errors?.['minlength']" class="text-danger">Firstname should
-                                        contains 2 chars at least<br></small>
+                                    <small *ngIf="firstname?.errors?.['required']" class="text-danger">Prénom obligatoire<br></small>
+                                    <small *ngIf="firstname?.errors?.['pattern']" class="text-danger"> Prénom
+                                        est invalid<br></small>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -32,21 +30,17 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control" id="lastname" placeholder="Your Lastname"
                                     formControlName="lastname">
-                                <label for="name">Your Lastname</label>
+                                <label for="name">Nom de famille</label>
                                 <div *ngIf="lastname?.invalid && lastname?.touched">
-                                    <small *ngIf="lastname?.errors?.['required']" class="text-danger">lastname
-                                        required<br></small>
-                                    <small *ngIf="lastname?.errors?.['pattern']" class="text-danger"> invalid
-                                        lastname<br></small>
-                                    <small *ngIf="lastname?.errors?.['minlength']" class="text-danger">Lastname should
-                                        contains 2 chars at least<br></small>
+                                    <small *ngIf="lastname?.errors?.['required']" class="text-danger">nom de famille requis<br></small>
+                                    <small *ngIf="lastname?.errors?.['pattern']" class="text-danger"> nom de famille invalide<br></small>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-12">
                             <div class="form-floating">
-                                <p for="file">Import Your Image : <input type="file" class="form-control-file" id="file"
+                                <p for="file">Importez votre image : <input type="file" class="form-control-file" id="file"
                                         formControlName="file" (change)="save($event)"> </p>
                                 <div *ngIf="file?.invalid && file?.touched">
                                     <small *ngIf="file?.errors?.['required']" class="text-danger">image
@@ -56,30 +50,41 @@
                             </div>
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-6">
                             <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                <input type="email" class="form-control" id="email" placeholder="Votre e-mail"
                                     formControlName="email">
-                                <label for="email">Your Email</label>
+                                <label for="email">Email</label>
                                 <div *ngIf="firstname?.invalid && email?.touched">
                                     <small *ngIf="email?.errors?.['required']" class="text-danger">email
-                                        required<br></small>
-                                    <small *ngIf="email?.errors?.['email']" class="text-danger"> invalid
-                                        email<br></small>
+                                        requis<br></small>
+                                    <small *ngIf="email?.errors?.['email']" class="text-danger"> 
+                                        email invalide<br></small>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="email" placeholder="Votre Telephone"
+                                    formControlName="telephone">
+                                <label for="telephone">telephone</label>
+                                <div *ngIf="telephone?.invalid && email?.touched">
+                                    <small *ngIf="telephone?.errors?.['required']" class="text-danger">telephone
+                                        requis<br></small>
+                            </div>
+                        </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-floating">
                                 <input type="password" class="form-control" id="password" placeholder="**********"
                                     formControlName="password">
-                                <label for="name">Your Password</label>
+                                <label for="name">mot de passe</label>
                                 <div *ngIf="password?.invalid && password?.touched">
                                     <small *ngIf="password?.errors?.['required']" class="text-danger">password
-                                        required<br></small>
-                                    <small *ngIf="password?.errors?.['minlength']" class="text-danger">invalid
-                                        password<br></small>
+                                        requis<br></small>
+                                    <small *ngIf="password?.errors?.['minlength']" class="text-danger">
+                                        password invalide<br></small>
                                 </div>
                             </div>
                         </div>
@@ -88,28 +93,27 @@
                             <div class="form-floating">
                                 <input type="password" class="form-control" id="repassword" placeholder="**********"
                                     formControlName="repassword">
-                                <label for="name">Repeat Your Password</label>
+                                <label for="name">Répétez votre mot de passe</label>
                                 <div *ngIf="repassword?.invalid && repassword?.touched">
-                                    <small *ngIf="repassword?.errors?.['required']" class="text-danger">repassword
-                                        required<br></small>
+                                    <small *ngIf="repassword?.errors?.['required']" class="text-danger">re-Mot de passe requis<br></small>
                                 </div>
                                 <div *ngIf="repassword?.valid && repassword?.value != password?.value"
                                     class="text-danger">
-                                    The passwords entered do not match
+                                    Les mots de passe saisis ne correspondent pas
                                 </div>
                             </div>
                         </div>
 
 
                         <div class="col-12">
-                            <button class="btn btn-primary w-100 py-3" [disabled]="registerForm.invalid"
-                                type="submit">Register Now !</button>
+                            <button class="btn btn-primary w-100 py-3" [disabled]="registerForm.invalid "
+                                type="submit">S'inscrire maintenant !</button>
                         </div>
 
                         <div class="col-12">
-                            <h6>I have already an account !
+                            <h6>J'ai déjà un compte !
                                 <span [routerLink]="['/login']" class="text-primary goto-link">
-                                    Login Now !
+                                    Se connecter
                                 </span>
                             </h6>
                         </div>

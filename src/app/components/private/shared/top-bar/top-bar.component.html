@@ -1,26 +1,63 @@
-    <!-- TOPBAR -->
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg ">
-        <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" routerLink="/dashboard"><img src="assets/img/5.png" alt="">
-        </a>
+<!-- TOPBAR -->
+<nav class="sb-topnav navbar navbar-expand navbar-dark bg">
+  <!-- Navbar Brand-->
+  <a class="navbar-brand ps-3" routerLink="/"
+    ><img src="assets/img/5.png" alt="" />
+  </a>
 
-        <!-- Navbar-->
-        <div class="ms-auto">
-            <ul class="navbar-nav ms-md-0 me-3 me-lg-5 ">
-                <li class="nav-item dropstart">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-start m-auto" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item">paramètres</a></li>
-                        <li><a class="dropdown-item">journal d'activité</a></li>
-                        <li>
-                            <hr class="dropdown-divider" />
-                        </li>
-                        <li><a class="dropdown-item" routerLink="/admin-login">Se déconnecter</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-       
-
-    </nav>
+  <!-- Navbar-->
+  <div class="ms-auto">
+    <!-- Default dropstart button -->
+    <div class="btn-group dropstart">
+      <a
+        type="a"
+        class="nav-link dropdown-toggle button-u"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+      <i class="fas fa-user fa-fw"></i
+        >
+      </a>
+      <ul class="dropdown-menu mt-4">
+        <!-- Dropdown menu links -->
+        <li><a class="dropdown-item">paramètres</a></li>
+        <li><a class="dropdown-item">journal d'activité</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li>
+          <a class="dropdown-item" (click)="logout()">Se déconnecter</a>
+        </li>
+      </ul>
+    </div>
+    <!--
+  <ul class="navbar-nav ms-md-0 me-3 me-lg-5">
+    <li class="nav-item dropstart">
+      <a
+        class="nav-link dropdown-toggle"
+        id="navbarDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+        ><i class="fas fa-user fa-fw"></i
+      ></a>
+      <ul
+        class="dropdown-menu dropdown-menu-start m-auto"
+        aria-labelledby="navbarDropdown"
+      >
+        <li><a class="dropdown-item">paramètres</a></li>
+        <li><a class="dropdown-item">journal d'activité</a></li>
+        <li>
+          <hr class="dropdown-divider" />
+        </li>
+        <li>
+          <a class="dropdown-item" routerLink="/admin-login"
+            >Se déconnecter</a
+          >
+        </li>
+      </ul>
+    </li>
+  </ul>
+-->
+  </div>
+</nav>

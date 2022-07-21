@@ -25,16 +25,23 @@
       <h1 class="mb-5">Tous les catégories</h1>
     </div>
 
-    <div class="row g-3 align-items-center justify-content-center d-flex">
-      <div (click)="filter('all'); onclick($event)" class="box-cat">
-        <p class="category-name">Tous</p>
+    <div class="d-flex justify-content-center">
+      <div class="m-1">
+        <button
+          (click)="filter('all'); onclick($event)"
+          class="btn btn-sm btn-outline-primary categoryButton"
+        >
+          Tous
+        </button>
       </div>
       <div
+        class="m-1"
         *ngFor="let category of categoriesList"
         (click)="filter(category.name); onclick($event)"
-        class="box-cat"
       >
-        <p class="category-name">{{ category.name }}</p>
+        <button class="btn btn-sm btn-outline-primary categoryButton">
+          {{ category.name }}
+        </button>
       </div>
     </div>
   </div>
@@ -83,16 +90,10 @@
               class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
             >
               <a
-                href="#"
-                class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                style="border-radius: 30px 0 0 30px"
-                >Read More</a
-              >
-              <a
-                href="#"
-                class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                style="border-radius: 0 30px 30px 0"
-                >Join Now</a
+                [routerLink]="['/courses/', training._id]"
+                class="btn btn-sm btn-primary px-3"
+                style="border-radius: 30px "
+                >Lire la suite</a
               >
             </div>
           </div>

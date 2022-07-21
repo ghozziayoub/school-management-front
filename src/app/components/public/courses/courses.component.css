@@ -34,26 +34,8 @@
   height: 100%;
 }
 
-.box-cat {
-  width: 10%;
-  border: 3px solid black;
-  color: black;
-  text-align: center;
-  height: 60px;
-  position: relative;
-  margin: 10px;
-}
-
-.category-name {
-  position: absolute;
-  
-  top: 50%;
-  left: 50%;
-  font-size: 14px;
-  font-weight: 900;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: -1;
+.categoryButton{
+  max-width: 300px;
 }
 
 

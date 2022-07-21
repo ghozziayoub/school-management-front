@@ -1,0 +1,255 @@
+<div class="sb-nav-fixed">
+  <app-top-bar></app-top-bar>
+
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <!-- CONTENT-->
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h1 class="mt-4">Formation</h1>
+          <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item active">modifier une formation</li>
+          </ol>
+
+          <form [formGroup]="myForm">
+            <div>
+              <img
+                [src]="imageUrl"
+                class="image-fluid training-image"
+                alt=""
+                style="width: 150px"
+              />
+              <div class="form-group">
+                <input
+                  type="file"
+                  class="form-control upload-input"
+                  (change)="save($event)"
+                  id="customFile"
+                />
+              </div>
+            </div>
+            <div class="form-group mt-2">
+              <div class="row">
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1"
+                    >Nom de formation :
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="name"
+                    id="name"
+                  />
+                  <div *ngIf="name?.invalid && name?.touched">
+                    <small
+                      *ngIf="name?.errors?.['required']"
+                      class="text-danger"
+                      >nom est requis<br
+                    /></small>
+                  </div>
+                </div>
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1">heures: </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="hours"
+                    id="hours"
+                  />
+                  <div *ngIf="hours?.invalid && hours?.touched">
+                    <small
+                      *ngIf="hours?.errors?.['required']"
+                      class="text-danger"
+                      >Heures est requis<br
+                    /></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1">prix : </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="price"
+                    id="price"
+                  />
+                  <div *ngIf="name?.invalid && name?.touched">
+                    <small
+                      *ngIf="name?.errors?.['required']"
+                      class="text-danger"
+                      >prix est requis<br
+                    /></small>
+                  </div>
+                </div>
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1" class=""
+                    >Nombre d'etudiants :</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="seat"
+                    id="seat"
+                  />
+                  <div *ngIf="name?.invalid && name?.touched">
+                    <small
+                      *ngIf="name?.errors?.['required']"
+                      class="text-danger"
+                      >seat est requis<br
+                    /></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1" class=""
+                    >Formateur :</label
+                  >
+                  <select
+                    class="form-select"
+                    formControlName="idTrainer"
+                    id="idTrainer"
+                    aria-label="Default select example"
+                  >
+                    <option selected>selectionner un formateur</option>
+                    <option
+                      *ngFor="let trainer of trainersList; let i = index"
+                      [value]="trainer._id"
+                    >
+                      {{ trainer.firstname }} {{ trainer.lastname }}
+                    </option>
+                  </select>
+                  <div *ngIf="idTrainer?.invalid && idTrainer?.touched">
+                    <small
+                      *ngIf="idTrainer?.errors?.['required']"
+                      class="text-danger"
+                      >Formateur est requis></small
+                    >
+                  </div>
+                </div>
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1" class=""
+                    >catégorie :</label
+                  >
+                  <select
+                    class="form-select"
+                    formControlName="idCategory"
+                    id="idCategory"
+                    aria-label="Default select example"
+                  >
+                    <option [selected]="true">
+                      selectionner une catégorie
+                    </option>
+                    <option
+                      *ngFor="let category of categoryList; let i = index"
+                      [value]="category._id"
+                    >
+                      {{ category.name }}
+                    </option>
+                  </select>
+                  <div *ngIf="idCategory?.invalid && idCategory?.touched">
+                    <small
+                      *ngIf="idCategory?.errors?.['required']"
+                      class="text-danger"
+                      >catégorie est requis<br
+                    /></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-12 my-2">
+                  <label for="exampleFormControlFile1">date de debut :</label>
+                  <input
+                    type="date"
+                    id="start"
+                    name="trip-start"
+                    value="2022-07-22"
+                    min="2022-01-01"
+                    max="2030-12-31"
+                    formControlName="starting_date"
+                    id="starting_date"
+                    class="form-control"
+                  />
+
+                  <div *ngIf="objectif?.invalid && objectif?.touched">
+                    <small
+                      *ngIf="objectif?.errors?.['required']"
+                      class="text-danger"
+                      >objectif est requis<br
+                    /></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1">Programme: </label>
+                  <textarea
+                    type="text"
+                    class="form-control"
+                    formControlName="program"
+                    id="program"
+                    rows="5"
+                  ></textarea>
+                  <div *ngIf="program?.invalid && program?.touched">
+                    <small
+                      *ngIf="program?.errors?.['required']"
+                      class="text-danger"
+                      >Programme est requis<br
+                    /></small>
+                  </div>
+                </div>
+                <div class="col-lg-6 my-2">
+                  <label for="exampleFormControlFile1">Objectif :</label>
+                  <textarea
+                    type="text"
+                    class="form-control"
+                    formControlName="objectif"
+                    id="objectif"
+                    rows="5"
+                  ></textarea>
+                  <div *ngIf="objectif?.invalid && objectif?.touched">
+                    <small
+                      *ngIf="objectif?.errors?.['required']"
+                      class="text-danger"
+                      >objectif est requis<br
+                    /></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+            class="btn btn-primary mt-2"
+            style="color: white"
+            [swal]="{
+              text: 'tu es sure ?',
+              showCancelButton: true,
+              confirmButtonText: 'Modifier',
+              confirmButtonColor: '#FF8800'
+            }"
+            (confirm)="update()"
+          >
+            modifier
+          </button>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+  <app-footer-dashboard></app-footer-dashboard>
+</div>

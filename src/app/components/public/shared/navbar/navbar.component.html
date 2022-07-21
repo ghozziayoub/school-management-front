@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0 ">
+    <a routerLink="/" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <img src="assets/img/logolab.png" class="logo mx-3" alt="">
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a routerLink="/" routerLinkActive="active" class="nav-item nav-link">Accueil</a>
+            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">A propos</a>
+            <a routerLink="/courses" routerLinkActive="active" class="nav-item nav-link">Formation</a>
+            <a routerLink="/blog" routerLinkActive="active" class="nav-item nav-link">Blog</a>
+            <a routerLink="/our-team" routerLinkActive="active" class="nav-item nav-link">Notre équipe</a>
+            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
+            <a *ngIf="islogged==true" (click)="logout()" class="nav-item nav-link text-danger" style="cursor: pointer;">logout</a>
+        </div>
+        <a *ngIf="isAdmin==false && islogged==false" routerLink="/register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+            Rejoignez-nous
+            <i class="fa fa-arrow-right ms-3"></i>
+        </a>
+        <a *ngIf="islogged==true" routerLink="/" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+            {{user.fullname}}
+            <i class="fa fa-arrow-right ms-3"></i>
+        </a>
+        <a *ngIf="isAdmin==true" routerLink="/admin/dashboard" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">
+            dashboard
+            <i class="fa fa-arrow-right ms-3"></i>
+        </a>
+    </div>
+</nav>

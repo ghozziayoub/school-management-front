@@ -15,6 +15,10 @@ export class TrainingService {
     return this.http.get<any>(this.trainingsUrl);
   }
 
+  getAllRelatedTrainings(category: String) {
+    return this.http.get<any>(this.trainingsUrl+"related/"+ category);
+  }
+
   getOneTraining(id: String) {
     return this.http.get<any>(this.trainingsUrl + id)
   }

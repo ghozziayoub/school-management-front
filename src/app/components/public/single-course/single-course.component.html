@@ -1,0 +1,213 @@
+<app-navbar></app-navbar>
+<!-- Page header -->
+<div class="pt-lg-8 pb-lg-16 pt-8 pb-12 bg-primary">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-xl-7 col-lg-7 col-md-12">
+        <div>
+          <h1 class="text-white display-4 font-weight-semi-bold">
+            {{ training.name }}
+          </h1>
+          <p class="text-white mb-6 lead">
+            {{ training.objectif }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="pb-10">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-12 col-12 mt-n8 mb-4 mb-lg-0">
+        <!-- Card -->
+        <div class="card rounded-lg">
+          <!-- Card header -->
+          <div class="card-header border-bottom-0 p-0">
+            <div>
+              <!-- Nav -->
+              <ul class="nav nav-lb-tab" id="tab" role="tablist">
+                <li class="nav-item">
+                  <a class="nav-link active">description</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="tab-content" id="tabContent">
+              <div class="mb-4">
+                <h3 class="mb-2">Course Descriptions</h3>
+                <p>
+                  {{ training.program }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-12 col-12 mt-lg-n22">
+        <!-- Card -->
+        <div class="card mb-3 mb-4">
+          <div class="p-1">
+            <div
+              class="d-flex justify-content-center position-relative rounded py-10 border-white border rounded-lg bg-cover"
+              style="background-image: url('http://localhost:3010/{{training.image}}');"
+            ></div>
+          </div>
+          <!-- Card body -->
+          <div class="card-body">
+            <div class="d-flex align-items-center">
+              <div class="position-relative">
+                <img
+                  src="http://localhost:3010/{{ training.trainer.image }}"
+                  alt=""
+                  class="rounded-circle avatar-xl"
+                />
+              </div>
+              <div class="ml-4">
+                <h4 class="mb-0">
+                  {{ training.trainer.firstname }}
+                  {{ training.trainer.lastname }}
+                </h4>
+                <p class="mb-1 font-size-xs">
+                  {{ training.trainer.speciality }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Card -->
+        <div class="card mb-4">
+          <div>
+            <!-- Card header -->
+            <div class="card-header">
+              <h4 class="mb-0">Details</h4>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-transparent">
+                <i class="fas fa-clock text-success me-2"></i>Durée :<span
+                  class="font-weight-bold"
+                >
+                  {{ training.hours }} heures</span
+                >
+              </li>
+              <li class="list-group-item bg-transparent">
+                <i class="fa-solid fa-money-bill-wave text-success me-2"></i
+                >Prix :<span class="font-weight-bold">
+                  {{ training.price }} DT</span
+                >
+              </li>
+              <li class="list-group-item bg-transparent">
+                <i class="fa fa-calendar text-success me-2"></i>Date de début
+                :<span class="font-weight-bold">
+                  {{ training.starting_date.substring(0, 10) }}</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="card">
+          <!-- Card body -->
+          <div *ngIf="isAdmin==false" class="card-body pe-5">
+            <div class="d-flex align-items-start">
+              <div class="ml-4 w-100">
+                <form [formGroup]="myForm" (ngSubmit)="inscrire(training._id)">
+                  <h3 class="mb-0">Inscription</h3>
+                  <div class="form-group mt-2">
+                    <input
+                      class="form-control mb-2"
+                      type="text"
+                      placeholder="Nom"
+                      formControlName="fullname"
+                    />
+                    <input
+                      class="form-control mb-2"
+                      type="email"
+                      placeholder="Votre Email"
+                      formControlName="email"
+                    />
+                    <input
+                      class="form-control mb-2"
+                      type="text"
+                      placeholder="Votre Téléphone"
+                      formControlName="telephone"
+                    />
+                    <button [ngClass]="{'btn-primary':isInscrit==false || !myForm.pristine, 'btn-success':isInscrit==true && myForm.pristine}" class="btn btn-block" [disabled]="isInscrit && myForm.pristine">
+                      {{ !myForm.pristine ? "s'inscrire": (isInscrit == false ? "S 'inscrire" : "tu t'es deja inscrite") }}
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="pt-12 pb-3">
+      <div class="row d-md-flex align-items-center mb-4">
+        <div class="col-12">
+          <h2 class="mb-0">Cours connexes</h2>
+        </div>
+      </div>
+      <div *ngIf="trainingList.length > 0" class="container-xxl py-5">
+        <div class="container">
+          <div class="row g-4 justify-content-center">
+            <div
+              class="col-lg-4 col-md-6"
+              *ngFor="let training of trainingList"
+              data-wow-delay="0.1s"
+            >
+              <div class="course-item bg-light">
+                <div
+                  class="position-relative trainer-card overflow-hidden"
+                  style="height: 250px"
+                >
+                  <img
+                    class="img-fluid image-training"
+                    src="{{ baseUrl }}{{ training.image }}"
+                    alt=""
+                  />
+                  <div
+                    class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
+                  >
+                    <a
+                      (click)="single(training._id)"
+                      class=" btn btn-sm btn-primary px-3"
+                      style="border-radius: 30px "
+                      >Lire la suite</a
+                    >
+                  </div>
+                </div>
+                <div class="text-center p-4 pb-0 description " style="height: 200px;">
+                  <h3 class="mb-0">{{ training.price }} DT</h3>
+                  <h5 class="mb-4">{{ training.name }}</h5>
+                  <p class="m-2 objectif">{{ training.objectif }}</p>
+                </div>
+                <div class="d-flex border-top">
+                  <small class="flex-fill text-center border-end py-2"
+                    ><i class="fa fa-user-tie text-primary me-2"></i
+                    >{{ training.category.name }}</small
+                  >
+                  <small class="flex-fill text-center border-end py-2"
+                    ><i class="fa fa-clock text-primary me-2"></i
+                    >{{ training.hours }} H</small
+                  >
+                  <small class="flex-fill text-center py-2"
+                    ><i class="fa fa-user text-primary me-2"></i
+                    >{{ training.seat }} places</small
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<app-footer></app-footer>

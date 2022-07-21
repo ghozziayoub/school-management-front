@@ -1,0 +1,70 @@
+<div class="sb-nav-fixed">
+  <app-top-bar></app-top-bar>
+
+  <div id="layoutSidenav">
+    <app-side-bar></app-side-bar>
+
+    <!-- CONTENT-->
+
+    <div id="layoutSidenav_content">
+      <main>
+        <div class="container-fluid px-4">
+          <h2 style="color: black">Formation</h2>
+
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary mb-3"
+              data-toggle="modal"
+              data-target=".bd-example-modal-sm"
+              routerLink="/admin/trainings"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <div
+              class="modal fade bd-example-modal-sm"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="mySmallModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-sm">
+                <div class="modal-content">...</div>
+              </div>
+            </div>
+            <table class="fl-table">
+              <thead>
+                <tr>
+                  <th>N°</th>
+                  <th>Nom complete</th>
+                  <th>Email</th>
+                  <th>Telephone</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let inscription of inscriptionList; let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ inscription.fullname }}</td>
+                  <td>{{ inscription.email }}</td>
+                  <td>{{ inscription.telephone }}</td>
+                  <td>
+                    {{ inscription.createdAt.substring(8, 10)
+                    }}{{ inscription.createdAt.substring(4, 8)
+                    }}{{ inscription.createdAt.substring(0, 4)
+                    }}<span>{{ inscription.createdAt.substring(11, 16) }}</span>
+                  </td>
+                </tr>
+              </tbody>
+              <tbody></tbody>
+            </table>
+            <div class="text-center mt-5" *ngIf="inscriptionList.length == 0">
+              <h4>Il n'ya pas des inscriptions</h4>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <app-footer-dashboard></app-footer-dashboard>
+</div>
