@@ -42,7 +42,6 @@ export class UserService {
     let decodedToken: any;
     if (token) {
       decodedToken = jwt_decode(token);
-      console.log(decodedToken);
       if (decodedToken.role == 'student') {
         return true;
       } else {
@@ -58,7 +57,6 @@ export class UserService {
     let decodedToken: any;
     if (token) {
       decodedToken = jwt_decode(token);
-      console.log(decodedToken);
       if (decodedToken.role == 'admin') {
         return true;
       } else {

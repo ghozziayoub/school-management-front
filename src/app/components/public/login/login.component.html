@@ -25,8 +25,8 @@
                   formControlName="email">
                 <label for="email">Email</label>
                 <div *ngIf="email?.invalid && email?.touched">
-                  <small *ngIf="email?.errors?.['required']" class="text-danger">Email is required<br></small>
-                  <small *ngIf="email?.errors?.['email']" class="text-danger"> invalid Email<br></small>
+                  <small *ngIf="email?.errors?.['required']" class="text-danger">L'e-mail est requis<br></small>
+                  <small *ngIf="email?.errors?.['email']" class="text-danger"> email invalide<br></small>
                 </div>
               </div>
 
@@ -37,8 +37,7 @@
                 <input type="password" class="form-control" id="password" placeholder="**********"
                   formControlName="password">
                 <div *ngIf="password?.invalid && password?.touched">
-                  <small *ngIf="password?.errors?.['required']" class="text-danger">Password is required<br></small>
-                  <small *ngIf="password?.errors?.['minlength']" class="text-danger"> Short password<br></small>
+                  <small *ngIf="password?.errors?.['required']" class="text-danger">Mot de passe requis<br></small>
                 </div>
                 <label for="name">mot de passe</label>
               </div>

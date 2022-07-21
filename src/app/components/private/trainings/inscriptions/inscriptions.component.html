@@ -9,8 +9,18 @@
     <div id="layoutSidenav_content">
       <main>
         <div class="container-fluid px-4">
-          <h2 style="color: black">utilisateurs</h2>
+          <h2 style="color: black">Formation</h2>
+
           <div>
+            <button
+              type="button"
+              class="btn btn-primary mb-3"
+              data-toggle="modal"
+              data-target=".bd-example-modal-sm"
+              routerLink="/admin/trainings"
+            >
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
             <div
               class="modal fade bd-example-modal-sm"
               tabindex="-1"
@@ -26,41 +36,31 @@
               <thead>
                 <tr>
                   <th>N°</th>
-                  <th>Prénom</th>
-                  <th>Nom</th>
+                  <th>Nom complete</th>
                   <th>Email</th>
-                  <th>#</th>
+                  <th>Telephone</th>
+                  <th>Date</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let user of userList; let i = index">
+                <tr *ngFor="let inscription of inscriptionList; let i = index">
                   <td>{{ i + 1 }}</td>
-                  <td>{{ user.firstname }}</td>
-                  <td>{{ user.lastname }}</td>
-                  <td>{{ user.email }}</td>
+                  <td>{{ inscription.fullname }}</td>
+                  <td>{{ inscription.email }}</td>
+                  <td>{{ inscription.telephone }}</td>
                   <td>
-                    <button
-                    class="btn btn-danger mx-2"
-                    style="color: white"
-                    [swal]="{
-                      text:
-                        'tu vas supprimer ' +
-                        user.firstname +
-                        ', tu es sure ?',
-                      showCancelButton: true,
-                      confirmButtonText: 'supprimer',
-                      confirmButtonColor: 'red'
-                    }"
-                    (confirm)="delete(user._id, i)"
-                  >
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </button>
+                    {{ inscription.createdAt.substring(8, 10)
+                    }}{{ inscription.createdAt.substring(4, 8)
+                    }}{{ inscription.createdAt.substring(0, 4)
+                    }}<span>{{ inscription.createdAt.substring(11, 16) }}</span>
                   </td>
                 </tr>
               </tbody>
-
               <tbody></tbody>
             </table>
+            <div class="text-center mt-5" *ngIf="inscriptionList.length == 0">
+              <h4>Il n'ya pas des inscriptions</h4>
+            </div>
           </div>
         </div>
       </main>

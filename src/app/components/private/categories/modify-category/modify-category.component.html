@@ -12,7 +12,7 @@
             <li class="breadcrumb-item active">modifier</li>
           </ol>
 
-          <form [formGroup]="updateCategoryForm" (ngSubmit)="update()">
+          <form [formGroup]="updateCategoryForm">
             <div class="input-sec">
               <div class="form-group">
                 <div>
@@ -29,7 +29,19 @@
               </div>
             </div>
 
-            <button class="btn btn-primary mt-2" type="submit">Modifier</button>
+            <button
+            class="btn btn-primary mt-2"
+            style="color: white"
+            [swal]="{
+              text: 'tu es sure ?',
+              showCancelButton: true,
+              confirmButtonText: 'Modifier',
+              confirmButtonColor: '#FF8800'
+            }"
+            (confirm)="update()"
+          >
+            modifier
+          </button>
           </form>
         </div>
       </main>

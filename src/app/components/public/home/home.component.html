@@ -25,12 +25,12 @@
                 sanctus eirmod elitr.
               </p>
               <a
-                href=""
+                href="#courses"
                 class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                 >Lire la suite</a
               >
               <a
-                href=""
+                routerLink="/courses"
                 class="btn btn-light py-md-3 px-md-5 animated slideInRight"
                 >rejoindre maintenant</a
               >
@@ -180,7 +180,7 @@
 <!-- Categories Start -->
 
 <!-- Courses Start -->
-<div *ngIf="trainingsList.length > 0" class="container-xxl py-5">
+<div *ngIf="trainingsList.length > 0" class="container-xxl py-5" id="courses">
   <div class="container">
     <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 class="section-title bg-white text-center text-primary px-3">
@@ -208,17 +208,11 @@
               class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
             >
               <a
-                href="#"
-                class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                style="border-radius: 30px 0 0 30px"
-                >Lire La Suite</a
-              >
-              <a
-                href="#"
-                class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                style="border-radius: 0 30px 30px 0"
-                >Rejoindre maintenant
-              </a>
+              routerLink="/courses/{{training._id}}"
+              class=" btn btn-sm btn-primary px-3"
+              style="border-radius: 30px "
+              >Lire la suite</a
+            >
             </div>
           </div>
           <div class="text-center p-4 pb-0 description">

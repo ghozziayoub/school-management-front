@@ -12,7 +12,7 @@
             <li class="breadcrumb-item active">modifier le formateur</li>
           </ol>
 
-          <form [formGroup]="updateTrainerForm" (ngSubmit)="update()">
+          <form [formGroup]="updateTrainerForm">
             <div class="form-group text-center">
               <img
                 [src]="imageUrl"
@@ -210,7 +210,19 @@
               />
             </div>
 
-            <button class="btn btn-primary mt-3" type="submit">modifier</button>
+            <button
+            class="btn btn-primary mt-2"
+            style="color: white"
+            [swal]="{
+              text: 'tu es sure ?',
+              showCancelButton: true,
+              confirmButtonText: 'Modifier',
+              confirmButtonColor: '#FF8800'
+            }"
+            (confirm)="update()"
+          >
+            modifier
+          </button>
           </form>
         </div>
       </main>

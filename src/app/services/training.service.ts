@@ -14,8 +14,8 @@ export class TrainingService {
   getAllTrainings() {
     return this.http.get<any>(this.trainingsUrl);
   }
+
   getAllRelatedTrainings(category: String) {
-    console.log(category)
     return this.http.get<any>(this.trainingsUrl+"related/"+ category);
   }
 

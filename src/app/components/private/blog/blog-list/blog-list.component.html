@@ -66,11 +66,20 @@
                         class="fa fa-pencil"
                         style="color: white"
                         aria-hidden="true"
-                      ></i></button
-                    ><button
+                      ></i>
+                    </button>
+                    <button
                       class="btn btn-danger mx-2"
                       style="color: white"
-                      (click)="delete(article._id, i)"
+                      [swal]="{
+                        text:
+                          'tu vas supprimer ' +
+                          article.titre +
+                          ', tu es sure ?',
+                        showCancelButton: true,
+                        confirmButtonText: 'supprimer',
+                        confirmButtonColor: 'red'}"
+                      (confirm)="delete(article._id, i)"
                     >
                       <i class="fa fa-trash" aria-hidden="true"></i>
                     </button>

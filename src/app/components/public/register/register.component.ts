@@ -101,7 +101,7 @@ export class RegisterComponent implements OnInit {
     this.userService.addUser(formData).subscribe({
       next: (result) => {
         console.log(result);
-        this.toastr.success('you have registred successfully');
+        this.toastr.success('vous vous êtes inscrit avec succès');
         this.router.navigate(['/login']);
       },
       error: (err) => {

@@ -45,7 +45,8 @@ import { SingleTrainerComponent } from './components/private/trainers/single-tra
 import { SingleTrainingComponent } from './components/private/trainings/single-training/single-training.component';
 import { AdminLoginComponent } from './components/private/admin-login/admin-login.component';
 import { SingleCourseComponent } from './components/public/single-course/single-course.component';
-
+import { InscriptionsComponent } from './components/private/trainings/inscriptions/inscriptions.component';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 @NgModule({
   declarations: [
     AppComponent,
@@ -87,6 +88,7 @@ import { SingleCourseComponent } from './components/public/single-course/single-
     SingleTrainingComponent,
     AdminLoginComponent,
     SingleCourseComponent,
+    InscriptionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -97,6 +99,7 @@ import { SingleCourseComponent } from './components/public/single-course/single-
     ToastrModule.forRoot(), // ToastrModule added
     CommonModule,
     BrowserAnimationsModule,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

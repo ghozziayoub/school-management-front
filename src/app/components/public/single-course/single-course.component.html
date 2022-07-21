@@ -110,29 +110,32 @@
         </div>
         <div class="card">
           <!-- Card body -->
-          <div class="card-body pe-5">
+          <div *ngIf="isAdmin==false" class="card-body pe-5">
             <div class="d-flex align-items-start">
               <div class="ml-4 w-100">
-                <form>
+                <form [formGroup]="myForm" (ngSubmit)="inscrire(training._id)">
                   <h3 class="mb-0">Inscription</h3>
                   <div class="form-group mt-2">
                     <input
                       class="form-control mb-2"
                       type="text"
                       placeholder="Nom"
+                      formControlName="fullname"
                     />
                     <input
                       class="form-control mb-2"
                       type="email"
                       placeholder="Votre Email"
+                      formControlName="email"
                     />
                     <input
                       class="form-control mb-2"
                       type="text"
                       placeholder="Votre Téléphone"
+                      formControlName="telephone"
                     />
-                    <button class="btn btn-primary btn-block">
-                      S'inscrire
+                    <button [ngClass]="{'btn-primary':isInscrit==false || !myForm.pristine, 'btn-success':isInscrit==true && myForm.pristine}" class="btn btn-block" [disabled]="isInscrit && myForm.pristine">
+                      {{ !myForm.pristine ? "s'inscrire": (isInscrit == false ? "S 'inscrire" : "tu t'es deja inscrite") }}
                     </button>
                   </div>
                 </form>
@@ -173,15 +176,9 @@
                   >
                     <a
                       (click)="single(training._id)"
-                      class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                      style="border-radius: 30px 0 0 30px"
+                      class=" btn btn-sm btn-primary px-3"
+                      style="border-radius: 30px "
                       >Lire la suite</a
-                    >
-                    <a
-                      href="#"
-                      class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                      style="border-radius: 0 30px 30px 0"
-                      >Rejoindre maintenant</a
                     >
                   </div>
                 </div>

@@ -10,7 +10,9 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class TrainingListComponent implements OnInit {
   trainingList: any[] = [];
+  recentInscription: any[] = [];
   trainerFullname: string = '';
+
   constructor(
     private trainingService: TrainingService,
     private trainerService: TrainerService,
@@ -21,7 +23,6 @@ export class TrainingListComponent implements OnInit {
     this.trainingService.getAllTrainings().subscribe({
       next: (result) => {
         this.trainingList = result;
-        console.log(this.trainingList);
       },
       error: (error) => {
         console.log(error);

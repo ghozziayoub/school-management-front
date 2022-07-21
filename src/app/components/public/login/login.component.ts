@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
-        Validators.minLength(6),
       ]),
     };
     this.myform = this.fb.group(formLogin);
@@ -59,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/']);
       },
       error: (err) => {
-        this.toastr.error(err.message);
+        this.toastr.error(err.error.message);
         console.log(err);
       },
     });

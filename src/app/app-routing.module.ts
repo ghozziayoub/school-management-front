@@ -34,6 +34,7 @@ import { AdminLoginComponent } from './components/private/admin-login/admin-logi
 import { AuthGuard } from './guards/auth.guard';
 import { SingleCourseComponent } from './components/public/single-course/single-course.component';
 import { AuthAdminGuard } from './guards/auth-admin.guard';
+import { InscriptionsComponent } from './components/private/trainings/inscriptions/inscriptions.component';
 
 const routes: Routes = [
   {
@@ -154,6 +155,11 @@ const routes: Routes = [
             path: ':id',
             component: SingleTrainingComponent,
           },
+          { 
+            path:'inscriptions/:id',
+            component:InscriptionsComponent
+
+          }
         ],
       },
       {
