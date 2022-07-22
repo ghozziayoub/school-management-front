@@ -20,7 +20,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class SingleCourseComponent implements OnInit {
   myForm: any = FormGroup;
-  training: any;
+  training: any ={trainer:{image: ""}};
   student: any[] = [];
   isInscrit: boolean = false;
   trainingList: any[] = [];
