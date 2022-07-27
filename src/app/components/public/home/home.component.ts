@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
         console.log(err);
       },
     });
-    this.trainingService.getAllTrainings().subscribe({
+    this.trainingService.getComingTrainings().subscribe({
       next: (res) => {
         this.trainingsList = res;
         console.log(res);

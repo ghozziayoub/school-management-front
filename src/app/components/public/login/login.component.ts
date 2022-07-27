@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', token!);
         let user: any;
         user = JSON.stringify(result.body.userDetails);
-        console.log('user=', user);
         localStorage.setItem('user', user);
         this.toastr.success(result.body.message);
         this.router.navigate(['/']);

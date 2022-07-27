@@ -47,6 +47,7 @@ import { AdminLoginComponent } from './components/private/admin-login/admin-logi
 import { SingleCourseComponent } from './components/public/single-course/single-course.component';
 import { InscriptionsComponent } from './components/private/trainings/inscriptions/inscriptions.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CourseCardComponent } from './components/public/shared/course-card/course-card.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -89,6 +90,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AdminLoginComponent,
     SingleCourseComponent,
     InscriptionsComponent,
+    CourseCardComponent,
   ],
   imports: [
     BrowserModule,

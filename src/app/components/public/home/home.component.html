@@ -9,14 +9,11 @@
       <div class="hero vh-100 d-flex align-items-center">
         <div class="container">
           <div class="row px-1">
-            <div class="col-sm-12 col-lg-8 ">
+            <div class="col-sm-12 col-lg-8">
               <h5 class="text-light text-uppercase mb-3 animated slideInDown">
                 Meilleurs cours en ligne
               </h5>
-              <h1
-                class="text-white display-3 animated slideInDown"
-                
-              >
+              <h1 class="text-white display-3 animated slideInDown">
                 La meilleure plateforme d'apprentissage en ligne
               </h1>
               <p class="fs-5 text-white mb-4 pb-2">
@@ -194,180 +191,151 @@
         *ngFor="let training of trainingsList; let i = index"
         data-wow-delay="0.1s"
       >
-        <div *ngIf="i <= 2" class="course-item bg-light">
-          <div
-            class="position-relative trainer-card overflow-hidden"
-            style="height: 250px"
+        <app-course-card
+          *ngIf="i <= 2"
+          [image]="training.image"
+          [_id]="training._id"
+          [price]="training.price"
+          [objectif]="training.objectif"
+          [name]="training.name"
+          [hours]="training.hours"
+          [seat]="training.seat"
+          [catname]="training.category.name"
+        >
+        </app-course-card>
+        <div *ngIf="trainingsList.length > 3" class="col-lg-12">
+          <a
+            routerLink="/courses"
+            class="btn btn-primary button py-3 mt-2"
+            href=""
+            >Voir plus</a
           >
-            <img
-              class="img-fluid image-training"
-              src="{{ baseUrl }}{{ training.image }}"
-              alt=""
-            />
-            <div
-              class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
-            >
-              <a
-              routerLink="/courses/{{training._id}}"
-              class=" btn btn-sm btn-primary px-3"
-              style="border-radius: 30px "
-              >Lire la suite</a
-            >
-            </div>
-          </div>
-          <div class="text-center p-4 pb-0 description">
-            <h3 class="mb-0">{{ training.price }} DT</h3>
-
-            <h5 class="m-1">{{ training.name }}</h5>
-            <p class="m-2 objectif">{{ training.objectif }}</p>
-          </div>
-          <div class="d-flex border-top">
-            <small class="flex-fill text-center border-end py-2"
-              ><i class="fa fa-user-tie text-primary me-2"></i
-              >{{ training.category.name }}</small
-            >
-            <small class="flex-fill text-center border-end py-2"
-              ><i class="fa fa-clock text-primary me-2"> H</i
-              >{{ training.hours }} H
-            </small>
-            <small class="flex-fill text-center py-2"
-              ><i class="fa fa-user text-primary me-2"></i
-              >{{ training.seat }} places</small
-            >
-          </div>
         </div>
       </div>
-      <div *ngIf="trainingsList.length > 3" class="col-lg-12">
-        <a
-          routerLink="/courses"
-          class="btn btn-primary button py-3 mt-2"
-          href=""
-          >Voir plus</a
+    </div>
+  </div>
+  <!-- Courses End -->
+
+  <!-- Team Start -->
+  <div class="container-xxl py-5" *ngIf="trainersList.length > 0">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h6 class="section-title bg-white text-center text-primary px-3">
+          Instructeurs
+        </h6>
+        <h1 class="mb-5">Nos instructeurs experts</h1>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div
+          class="col-lg-3 col-md-6 wow fadeInUp"
+          *ngFor="let trainer of trainersList"
+          data-wow-delay="0.1s"
         >
+          <app-trainer-item
+            [firstname]="trainer.firstname"
+            [lastname]="trainer.lastname"
+            [speciality]="trainer.speciality"
+            [image]="trainer.image"
+            [facebook]="trainer.facebook"
+            [instagram]="trainer.instagram"
+            [twitter]="trainer.twitter"
+          >
+          </app-trainer-item>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Courses End -->
+  <!-- Team End -->
 
-<!-- Team Start -->
-<div class="container-xxl py-5" *ngIf="trainersList.length > 0">
-  <div class="container">
-    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-      <h6 class="section-title bg-white text-center text-primary px-3">
-        Instructeurs
-      </h6>
-      <h1 class="mb-5">Nos instructeurs experts</h1>
-    </div>
-    <div class="row g-4 justify-content-center">
-      <div
-        class="col-lg-3 col-md-6 wow fadeInUp"
-        *ngFor="let trainer of trainersList"
-        data-wow-delay="0.1s"
-      >
-        <app-trainer-item
-          [firstname]="trainer.firstname"
-          [lastname]="trainer.lastname"
-          [speciality]="trainer.speciality"
-          [image]="trainer.image"
-          [facebook]="trainer.facebook"
-          [instagram]="trainer.instagram"
-          [twitter]="trainer.twitter"
+  <!-- Testimonial Start -->
+  <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+      <div class="text-center">
+        <h6 class="section-title bg-white text-center text-primary px-3">
+          Témoignage
+        </h6>
+        <h1 class="mb-5">Impressions de nos étudiants</h1>
+      </div>
+
+      <div class="row position-relative">
+        <div
+          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
         >
-        </app-trainer-item>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Team End -->
-
-<!-- Testimonial Start -->
-<div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-  <div class="container">
-    <div class="text-center">
-      <h6 class="section-title bg-white text-center text-primary px-3">
-        Témoignage
-      </h6>
-      <h1 class="mb-5">Impressions de nos étudiants</h1>
-    </div>
-
-    <div class="row position-relative">
-      <div
-        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-      >
-        <img
-          class="border rounded-circle p-2 mx-auto mb-3"
-          src="assets/img/testimonial-1.jpg"
-          style="width: 80px; height: 80px"
-        />
-        <h5 class="mb-0">Nom de Client</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">
-            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-            amet diam et eos. Clita erat ipsum et lorem et sit.
-          </p>
+          <img
+            class="border rounded-circle p-2 mx-auto mb-3"
+            src="assets/img/testimonial-1.jpg"
+            style="width: 80px; height: 80px"
+          />
+          <h5 class="mb-0">Nom de Client</h5>
+          <p>Profession</p>
+          <div class="testimonial-text bg-light text-center p-4">
+            <p class="mb-0">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+              amet diam et eos. Clita erat ipsum et lorem et sit.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div
-        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-      >
-        <img
-          class="border rounded-circle p-2 mx-auto mb-3"
-          src="assets/img/testimonial-2.jpg"
-          style="width: 80px; height: 80px"
-        />
-        <h5 class="mb-0">Nom de Client</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">
-            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-            amet diam et eos. Clita erat ipsum et lorem et sit.
-          </p>
+        <div
+          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
+        >
+          <img
+            class="border rounded-circle p-2 mx-auto mb-3"
+            src="assets/img/testimonial-2.jpg"
+            style="width: 80px; height: 80px"
+          />
+          <h5 class="mb-0">Nom de Client</h5>
+          <p>Profession</p>
+          <div class="testimonial-text bg-light text-center p-4">
+            <p class="mb-0">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+              amet diam et eos. Clita erat ipsum et lorem et sit.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div
-        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-      >
-        <img
-          class="border rounded-circle p-2 mx-auto mb-3"
-          src="assets/img/testimonial-3.jpg"
-          style="width: 80px; height: 80px"
-        />
-        <h5 class="mb-0">Nom de Client</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">
-            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-            amet diam et eos. Clita erat ipsum et lorem et sit.
-          </p>
+        <div
+          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
+        >
+          <img
+            class="border rounded-circle p-2 mx-auto mb-3"
+            src="assets/img/testimonial-3.jpg"
+            style="width: 80px; height: 80px"
+          />
+          <h5 class="mb-0">Nom de Client</h5>
+          <p>Profession</p>
+          <div class="testimonial-text bg-light text-center p-4">
+            <p class="mb-0">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+              amet diam et eos. Clita erat ipsum et lorem et sit.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div
-        class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-      >
-        <img
-          class="border rounded-circle p-2 mx-auto mb-3"
-          src="assets/img/testimonial-4.jpg"
-          style="width: 80px; height: 80px"
-        />
-        <h5 class="mb-0">Nom de Client</h5>
-        <p>Profession</p>
-        <div class="testimonial-text bg-light text-center p-4">
-          <p class="mb-0">
-            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-            amet diam et eos. Clita erat ipsum et lorem et sit.
-          </p>
+        <div
+          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
+        >
+          <img
+            class="border rounded-circle p-2 mx-auto mb-3"
+            src="assets/img/testimonial-4.jpg"
+            style="width: 80px; height: 80px"
+          />
+          <h5 class="mb-0">Nom de Client</h5>
+          <p>Profession</p>
+          <div class="testimonial-text bg-light text-center p-4">
+            <p class="mb-0">
+              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
+              amet diam et eos. Clita erat ipsum et lorem et sit.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- Testimonial End -->
+  <!-- Testimonial End -->
 
-<!-- Footer Start -->
-<app-footer></app-footer>
-<!-- Footer End -->
+  <!-- Footer Start -->
+
+  <!-- Footer End -->
+</div>
+  <app-footer></app-footer>

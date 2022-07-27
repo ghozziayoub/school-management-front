@@ -28,7 +28,7 @@ export class CoursesComponent implements OnInit {
       },
     });
 
-    this.trainingService.getAllTrainings().subscribe({
+    this.trainingService.getComingTrainings().subscribe({
       next: (res) => {
         this.trainingsList = res;
         this.allTrainingsList = res;

@@ -69,7 +69,10 @@
                     <button
                       class="btn btn-success mx-2"
                       style="color: white"
-                      [routerLink]="['/admin/trainings/inscriptions', training._id]"
+                      [routerLink]="[
+                        '/admin/trainings/inscriptions',
+                        training._id
+                      ]"
                     >
                       <i class="fa fa-users" aria-hidden="true"></i>
                     </button>
@@ -81,23 +84,25 @@
                         class="fa fa-pencil"
                         style="color: white"
                         aria-hidden="true"
-                      ></i></button
-                    > <button
-                    class="btn btn-danger mx-2"
-                    style="color: white"
-                    [swal]="{
-                      text:
-                        'tu vas supprimer ' +
-                        training.name +
-                        ', tu es sure ?',
-                      showCancelButton: true,
-                      confirmButtonText: 'supprimer',
-                      confirmButtonColor: 'red'
-                    }"
-                    (confirm)="delete(training._id, i)"
-                  >
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                  </button>
+                      ></i>
+                    </button>
+                    <button
+                      class="btn btn-danger mx-2"
+                      style="color: white"
+                      [swal]="{
+                        text:
+                          'tu vas supprimer ' +
+                          training.name +
+                          ', tu es sure ?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'supprimer',
+                        confirmButtonColor: 'red'
+                      }"
+                      (confirm)="delete(training._id, i)"
+                    >
+                      <i class="fa fa-trash" aria-hidden="true"></i>
+                    </button>
                   </td>
                 </tr>
               </tbody>

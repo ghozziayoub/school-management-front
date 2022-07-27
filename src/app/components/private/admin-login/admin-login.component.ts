@@ -45,17 +45,14 @@ export class AdminLoginComponent implements OnInit {
   login() {
     let data = this.myform.value;
 
-    console.log(data);
-
     let user = new User('', '', '', data.email, data.password, '', '');
 
     this.userService.login(user).subscribe({
       next: (result) => {
-        console.log(result);
         let token = result.headers.get('authorization');
         localStorage.setItem('token', token!);
         let decodedToken: any;
-        let user:string
+        let user: string;
         decodedToken = jwt_decode(token!);
         user = JSON.stringify(result.body.userDetails);
         console.log('user=', user);
@@ -65,9 +62,7 @@ export class AdminLoginComponent implements OnInit {
         this.router.navigate(['/admin/dashboard']);
       },
       error: (err) => {
-        console.log();
         this.toastr.error(err.error.message);
-        console.log(err);
       },
     });
   }

@@ -12,6 +12,10 @@ export class TrainingService {
   constructor(private http: HttpClient) { }
 
   getAllTrainings() {
+    return this.http.get<any>(this.trainingsUrl+"all");
+  }
+
+  getComingTrainings() {
     return this.http.get<any>(this.trainingsUrl);
   }
 

@@ -76,47 +76,17 @@
         *ngFor="let training of trainingsList"
         data-wow-delay="0.1s"
       >
-        <div class="course-item bg-light">
-          <div
-            class="position-relative trainer-card overflow-hidden"
-            style="height: 250px"
-          >
-            <img
-              class="img-fluid image-training"
-              src="{{ baseUrl }}{{ training.image }}"
-              alt=""
-            />
-            <div
-              class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4"
-            >
-              <a
-                [routerLink]="['/courses/', training._id]"
-                class="btn btn-sm btn-primary px-3"
-                style="border-radius: 30px "
-                >Lire la suite</a
-              >
-            </div>
-          </div>
-          <div class="text-center p-4 pb-0 description">
-            <h3 class="mb-0">{{ training.price }} DT</h3>
-            <h5 class="mb-4">{{ training.name }}</h5>
-            <p class="m-2 objectif">{{ training.objectif }}</p>
-          </div>
-          <div class="d-flex border-top">
-            <small class="flex-fill text-center border-end py-2"
-              ><i class="fa fa-user-tie text-primary me-2"></i
-              >{{ training.category.name }}</small
-            >
-            <small class="flex-fill text-center border-end py-2"
-              ><i class="fa fa-clock text-primary me-2"></i
-              >{{ training.hours }} H</small
-            >
-            <small class="flex-fill text-center py-2"
-              ><i class="fa fa-user text-primary me-2"></i
-              >{{ training.seat }} places</small
-            >
-          </div>
-        </div>
+      <app-course-card
+      [image]="training.image"
+      [_id]="training._id"
+      [price]="training.price"
+      [objectif]="training.objectif"
+      [name]="training.name"
+      [hours]="training.hours"
+      [seat]="training.seat"
+      [catname]="training.category.name"
+    >
+    </app-course-card>
       </div>
     </div>
   </div>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../../../../services/blog.service';
 import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
-import 'moment/locale/es'; // without this line it didn't work
 moment.locale('fr');
 import { BaseService } from 'src/app/services/base.service';
 @Component({
@@ -22,7 +21,7 @@ export class BlogListComponent implements OnInit {
     this.articleService.getAllArticles().subscribe({
       next: (result) => {
         this.articleList = result;
-        console.log(this.articleList);
+
       },
       error: (error) => {
         console.log(error);
@@ -38,7 +37,7 @@ export class BlogListComponent implements OnInit {
         this.toastr.success("l'article est supprimée");
       },
       error: (err) => {
-        console.log(err);
+        this.toastr.success("il y un error");
       },
     });
   }
