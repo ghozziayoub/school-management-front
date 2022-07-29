@@ -53,7 +53,7 @@
           <div class="p-1">
             <div
               class="d-flex justify-content-center position-relative rounded py-10 border-white border rounded-lg bg-cover"
-              style="background-image: url('http://localhost:3010/{{training.image}}');"
+              style="background-image: url('{{baseUrl}}{{training.image}}');"
             ></div>
           </div>
           <!-- Card body -->
@@ -61,7 +61,7 @@
             <div class="d-flex align-items-center">
               <div class="position-relative">
                 <img
-                  src="http://localhost:3010/{{ training.trainer.image }}"
+                  src="{{baseUrl}}{{ training.trainer.image }}"
                   alt=""
                   class="rounded-circle avatar-xl"
                 />
@@ -102,7 +102,7 @@
               <li class="list-group-item bg-transparent">
                 <i class="fa fa-calendar text-success me-2"></i>Date de début
                 :<span class="font-weight-bold">
-                  {{ training.starting_date.substring(0, 10) }}</span
+                  {{ training.starting_date?.substring(0, 10) }}</span
                 >
               </li>
             </ul>

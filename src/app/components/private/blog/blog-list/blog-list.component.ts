@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../../../../services/blog.service';
-import { ToastrService } from 'ngx-toastr';
 import * as moment from 'moment';
-moment.locale('fr');
+
+import { ToastrService } from 'ngx-toastr';
+
 import { BaseService } from 'src/app/services/base.service';
+import { BlogService } from '../../../../services/blog.service';
+moment.locale('fr');
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',

@@ -5204,8 +5204,7 @@ input[type=submit].btn-block {
     display: block;
     min-height: 1.4rem;
     padding-left: 1.5rem;
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact
+    print-color-adjust: exact;
 }
 
 .custom-control-inline {
@@ -20004,18 +20003,18 @@ a:hover .text-primary-hover {
 .odometer.odometer-auto-theme .odometer-digit {
     display: inline-block;
     vertical-align: middle;
-    *vertical-align: auto;
-    *zoom: 1;
-    *display: inline;
+    vertical-align: auto;
+    zoom: 1;
+    display: inline;
     position: relative
 }
 
 .odometer.odometer-auto-theme .odometer-digit .odometer-digit-spacer {
     display: inline-block;
     vertical-align: middle;
-    *vertical-align: auto;
-    *zoom: 1;
-    *display: inline;
+    vertical-align: auto;
+    zoom: 1;
+    display: inline;
     visibility: hidden
 }
 
@@ -20036,12 +20035,12 @@ a:hover .text-primary-hover {
 
 .odometer.odometer-auto-theme .odometer-digit .odometer-ribbon-inner {
     display: block;
-    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
 }
 
 .odometer.odometer-auto-theme .odometer-digit .odometer-value {
     display: block;
-    -webkit-transform: translateZ(0)
+    transform: translateZ(0)
 }
 
 .odometer.odometer-auto-theme .odometer-digit .odometer-value.odometer-last-value {
@@ -20064,18 +20063,18 @@ a:hover .text-primary-hover {
 .odometer.odometer-theme-default .odometer-digit {
     display: inline-block;
     vertical-align: middle;
-    *vertical-align: auto;
-    *zoom: 1;
-    *display: inline;
+    vertical-align: auto;
+    zoom: 1;
+    display: inline;
     position: relative
 }
 
 .odometer.odometer-theme-default .odometer-digit .odometer-digit-spacer {
     display: inline-block;
     vertical-align: middle;
-    *vertical-align: auto;
-    *zoom: 1;
-    *display: inline;
+    vertical-align: auto;
+    zoom: 1;
+    display: inline;
     visibility: hidden
 }
 
@@ -20096,12 +20095,12 @@ a:hover .text-primary-hover {
 
 .odometer.odometer-theme-default .odometer-digit .odometer-ribbon-inner {
     display: block;
-    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
 }
 
 .odometer.odometer-theme-default .odometer-digit .odometer-value {
     display: block;
-    -webkit-transform: translateZ(0)
+    transform: translateZ(0)
 }
 
 .odometer.odometer-theme-default .odometer-digit .odometer-value.odometer-last-value {
