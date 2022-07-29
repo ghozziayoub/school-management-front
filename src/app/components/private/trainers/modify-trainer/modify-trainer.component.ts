@@ -99,13 +99,10 @@ export class ModifyTrainerComponent implements OnInit {
     };
 
     this.selectedFile = event.target.files[0];
-    console.log(this.selectedFile);
   }
 
   update() {
     let id = this.route.snapshot.params?.['id'];
-    console.log(id);
-
     let data = this.updateTrainerForm.value;
     let formData = new FormData();
     formData.append('firstname', data.firstname),
@@ -121,7 +118,6 @@ export class ModifyTrainerComponent implements OnInit {
     this.trainerService.updateTrainer(formData, id).subscribe({
       next: (result) => {
         this.toastr.success('le formateur mise à jour avec succès ');
-        console.log(result);
         this.router.navigate(['/admin/trainers']);
       },
       error: (err) => {
@@ -129,7 +125,5 @@ export class ModifyTrainerComponent implements OnInit {
       },
     });
   }
-  imageUpload() {
-    console.log('hii');
-  }
+
 }

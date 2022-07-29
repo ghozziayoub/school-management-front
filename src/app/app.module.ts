@@ -48,6 +48,15 @@ import { SingleCourseComponent } from './components/public/single-course/single-
 import { InscriptionsComponent } from './components/private/trainings/inscriptions/inscriptions.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { CourseCardComponent } from './components/public/shared/course-card/course-card.component';
+import { TemoignageListComponent } from './components/private/temoignage/temoignage-list/temoignage-list.component';
+import { AddTemoignageComponent } from './components/private/temoignage/add-temoignage/add-temoignage.component';
+import { ViewTemoignageComponent } from './components/private/temoignage/view-temoignage/view-temoignage.component';
+import { UpdateTemoignageComponent } from './components/private/temoignage/update-temoignage/update-temoignage.component';
+import { SwiperModule } from 'swiper/angular';
+import { RouterModule } from '@angular/router';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { Routes } from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,6 +100,10 @@ import { CourseCardComponent } from './components/public/shared/course-card/cour
     SingleCourseComponent,
     InscriptionsComponent,
     CourseCardComponent,
+    TemoignageListComponent,
+    AddTemoignageComponent,
+    ViewTemoignageComponent,
+    UpdateTemoignageComponent,
   ],
   imports: [
     BrowserModule,
@@ -102,6 +115,9 @@ import { CourseCardComponent } from './components/public/shared/course-card/cour
     CommonModule,
     BrowserAnimationsModule,
     SweetAlert2Module.forRoot(),
+    SwiperModule,
+    CarouselModule,
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

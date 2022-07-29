@@ -35,6 +35,10 @@ import { AuthGuard } from './guards/auth.guard';
 import { SingleCourseComponent } from './components/public/single-course/single-course.component';
 import { AuthAdminGuard } from './guards/auth-admin.guard';
 import { InscriptionsComponent } from './components/private/trainings/inscriptions/inscriptions.component';
+import { TemoignageListComponent } from './components/private/temoignage/temoignage-list/temoignage-list.component';
+import { UpdateTemoignageComponent } from './components/private/temoignage/update-temoignage/update-temoignage.component';
+import { ViewTemoignageComponent } from './components/private/temoignage/view-temoignage/view-temoignage.component';
+import { AddTemoignageComponent } from './components/private/temoignage/add-temoignage/add-temoignage.component';
 
 const routes: Routes = [
   {
@@ -43,12 +47,12 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     component: LoginComponent,
   },
   {
     path: 'register',
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     component: RegisterComponent,
   },
   {
@@ -60,8 +64,8 @@ const routes: Routes = [
     component: CoursesComponent,
   },
   {
-    path:'courses/:id',
-    component: SingleCourseComponent
+    path: 'courses/:id',
+    component: SingleCourseComponent,
   },
   {
     path: 'blog',
@@ -87,7 +91,7 @@ const routes: Routes = [
 
   {
     path: 'admin',
-    canActivate:[AuthAdminGuard],
+    canActivate: [AuthAdminGuard],
     children: [
       {
         path: '',
@@ -155,11 +159,10 @@ const routes: Routes = [
             path: ':id',
             component: SingleTrainingComponent,
           },
-          { 
-            path:'inscriptions/:id',
-            component:InscriptionsComponent
-
-          }
+          {
+            path: 'inscriptions/:id',
+            component: InscriptionsComponent,
+          },
         ],
       },
       {
@@ -198,15 +201,23 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'temoignages',
+        children: [
+          { path: '', component: TemoignageListComponent },
+          { path: 'add', component: AddTemoignageComponent },
+          { path: 'update/:id', component: UpdateTemoignageComponent },
+          { path: ':id', component: ViewTemoignageComponent },
+        ],
+      },
+      {
         path: 'users',
         component: UsersListComponent,
       },
-     
     ],
   },
   {
     path: 'admin/login',
-    canActivate:[AuthGuard],
+    canActivate: [AuthGuard],
     component: AdminLoginComponent,
   },
 

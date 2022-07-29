@@ -258,77 +258,28 @@
       </div>
 
       <div class="row position-relative">
-        <div
-          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-        >
-          <img
-            class="border rounded-circle p-2 mx-auto mb-3"
-            src="assets/img/testimonial-1.jpg"
-            style="width: 80px; height: 80px"
-          />
-          <h5 class="mb-0">Nom de Client</h5>
-          <p>Profession</p>
-          <div class="testimonial-text bg-light text-center p-4">
-            <p class="mb-0">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-              amet diam et eos. Clita erat ipsum et lorem et sit.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-        >
-          <img
-            class="border rounded-circle p-2 mx-auto mb-3"
-            src="assets/img/testimonial-2.jpg"
-            style="width: 80px; height: 80px"
-          />
-          <h5 class="mb-0">Nom de Client</h5>
-          <p>Profession</p>
-          <div class="testimonial-text bg-light text-center p-4">
-            <p class="mb-0">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-              amet diam et eos. Clita erat ipsum et lorem et sit.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-        >
-          <img
-            class="border rounded-circle p-2 mx-auto mb-3"
-            src="assets/img/testimonial-3.jpg"
-            style="width: 80px; height: 80px"
-          />
-          <h5 class="mb-0">Nom de Client</h5>
-          <p>Profession</p>
-          <div class="testimonial-text bg-light text-center p-4">
-            <p class="mb-0">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-              amet diam et eos. Clita erat ipsum et lorem et sit.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="col-lg-3 testimonial-item text-center col-md-6 col-sm-12 mt-2"
-        >
-          <img
-            class="border rounded-circle p-2 mx-auto mb-3"
-            src="assets/img/testimonial-4.jpg"
-            style="width: 80px; height: 80px"
-          />
-          <h5 class="mb-0">Nom de Client</h5>
-          <p>Profession</p>
-          <div class="testimonial-text bg-light text-center p-4">
-            <p class="mb-0">
-              Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam
-              amet diam et eos. Clita erat ipsum et lorem et sit.
-            </p>
-          </div>
-        </div>
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let temoignage of temoignages">
+            <ng-template carouselSlide [id]="temoignages.id">
+              <div
+                class="testimonial-item text-center mx-2"
+              >
+                <img
+                  class="border rounded-circle p-2 mx-auto mb-3"
+                  src="http://localhost:3010/{{ temoignage.image }}"
+                  style="width: 80px; height: 80px"
+                />
+                <h5 class="mb-0">{{ temoignage.fullname }}</h5>
+                <p>Profession</p>
+                <div class="testimonial-text bg-light text-center p-4">
+                  <p class="mb-0">
+                    {{ temoignage.content.substring(0, 200) }}
+                  </p>
+                </div>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
       </div>
     </div>
   </div>
@@ -338,4 +289,4 @@
 
   <!-- Footer End -->
 </div>
-  <app-footer></app-footer>
+<app-footer></app-footer>

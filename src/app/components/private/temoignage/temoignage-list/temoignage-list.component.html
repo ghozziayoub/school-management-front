@@ -1,0 +1,99 @@
+<div class="sb-nav-fixed">
+    <app-top-bar></app-top-bar>
+  
+    <div id="layoutSidenav">
+      <app-side-bar></app-side-bar>
+  
+      <!-- CONTENT-->
+  
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h2 style="color: black">Temoignage</h2>
+  
+            <div>
+              <button
+                type="button"
+                class="btn btn-primary mb-3"
+                data-toggle="modal"
+                data-target=".bd-example-modal-sm"
+                routerLink="/admin/temoignages/add"
+              >
+                + ajouter
+              </button>
+  
+              <div
+                class="modal fade bd-example-modal-sm"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="mySmallModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-sm">
+                  <div class="modal-content">...</div>
+                </div>
+              </div>
+              <table class="fl-table">
+                <thead>
+                  <tr>
+                    <th>N°</th>
+                    <th>Nom Complet</th>
+                    <th>contenu</th>
+                    <th>#</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let temoignage of temoignageList; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ temoignage.fullname }}</td>
+                    <td>{{ temoignage.content.substring(0,70) }}</td>
+                    <td>
+                      <button
+                        class="btn btn-primary mx-2"
+                        style="color: white"
+                        [routerLink]="['/admin/temoignages/', temoignage._id]"
+                      >
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                      </button>
+                      <button
+                        class="btn btn-warning mx-2"
+                        [routerLink]="['/admin/temoignages/update/', temoignage._id]"
+                      >
+                        <i
+                          class="fa fa-pencil"
+                          style="color: white"
+                          aria-hidden="true"
+                        ></i>
+                      </button>
+                      <button
+                        class="btn btn-danger mx-2"
+                        style="color: white"
+                        [swal]="{
+                          text:
+                            'tu vas supprimer ' +
+                            temoignage.fullname +
+                            ', tu es sure ?',
+                          icon: 'warning',
+                          showCancelButton: true,
+                          confirmButtonText: 'supprimer',
+                          confirmButtonColor: 'red'
+                        }"
+                        (confirm)="delete(temoignage._id, i)"
+                      >
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                      </button>
+                      
+                    </td>
+                  </tr>
+                </tbody>
+  
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <app-footer-dashboard></app-footer-dashboard>
+  </div>
+  

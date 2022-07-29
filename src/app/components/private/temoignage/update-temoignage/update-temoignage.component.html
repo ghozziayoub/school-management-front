@@ -1,0 +1,100 @@
+<div class="sb-nav-fixed">
+    <app-top-bar></app-top-bar>
+  
+    <div id="layoutSidenav">
+      <app-side-bar></app-side-bar>
+  
+      <div id="layoutSidenav_content">
+        <main>
+          <div class="container-fluid px-4">
+            <h1 class="mt-4">Temoignage</h1>
+            <ol class="breadcrumb mb-4">
+              <li class="breadcrumb-item active">
+                Modifier une temoignage
+              </li>
+            </ol>
+  
+            <form [formGroup]="myForm" (ngSubmit)="update()" >
+              <div class="form-group text-center">
+                <img
+                  [src]="imageUrl"
+                  class="image-fluid category-image"
+                  alt=""
+                  style="width: 150px"
+                />
+                <input
+                  type="file"
+                  class="form-control upload-input"
+                  (change)="save($event)"
+                  accept="image/x-png,image/gif,image/jpeg"
+                  id="customFile"
+                  
+                />
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-lg-12 my-2">
+                    <label for="exampleFormControlFile1">Nom Complet : </label>
+                    <div *ngIf="fullname?.touched && fullname?.invalid">
+                      <small
+                        *ngIf="fullname?.errors?.['required']"
+                        class="text-danger"
+                        >Le prénom est requis<br
+                      /></small>
+                      <small
+                        *ngIf="fullname?.errors?.['pattern']"
+                        class="text-danger"
+                        >prénom incorrect<br
+                      /></small>
+                      <small
+                        *ngIf="fullname?.errors?.['minlength']"
+                        class="text-danger"
+                        >le prénom doit contenir au moins deux caractères</small
+                      >
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="fullname"
+                      id="fullname"
+                    />
+                  </div>
+                  <div class="col-lg-12 my-2">
+                    <label for="exampleFormControlFile1">contenu :</label>
+                    <div *ngIf="contenu?.touched && contenu?.invalid">
+                      <small
+                        *ngIf="contenu?.errors?.['required']"
+                        class="text-danger"
+                        >Le nom est requis<br
+                      /></small>
+                      <small
+                        *ngIf="contenu?.errors?.['pattern']"
+                        class="text-danger"
+                        >nom incorrect<br
+                      /></small>
+                      <small
+                        *ngIf="contenu?.errors?.['minlength']"
+                        class="text-danger"
+                        >le nom doit contenir au moins deux caractères</small
+                      >
+                    </div>
+                    <textarea
+                      type="text"
+                      class="form-control"
+                      formControlName="contenu"
+                      id="contenu"
+                      rows="5"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+  
+              <button class="btn btn-primary mt-2" type="submit">Modifier</button>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+    <app-footer-dashboard></app-footer-dashboard>
+  </div>
+  

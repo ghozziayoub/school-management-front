@@ -9,7 +9,6 @@ import { TrainerService } from '../../../../services/trainer.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-contactForm: FormGroup;
 @Component({
   selector: 'app-add-trainer',
   templateUrl: './add-trainer.component.html',

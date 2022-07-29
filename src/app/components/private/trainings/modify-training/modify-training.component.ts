@@ -43,6 +43,7 @@ export class ModifyTrainingComponent implements OnInit {
       idCategory: new FormControl('', [Validators.required]),
       seat: new FormControl('', [Validators.required]),
       price: new FormControl('', [Validators.required]),
+      starting_date: new FormControl('', [Validators.required]),
     };
 
     this.myForm = this.fb.group(formControls);
@@ -67,6 +68,9 @@ export class ModifyTrainingComponent implements OnInit {
   }
   get seat() {
     return this.myForm.get('seat');
+  }
+  get starting_date() {
+    return this.myForm.get('starting_date');
   }
   get price() {
     return this.myForm.get('price');
@@ -108,6 +112,7 @@ export class ModifyTrainingComponent implements OnInit {
           idCategory: training.category._id,
           seat: training.seat,
           price: training.price,
+          starting_date: training.starting_date,
         });
         this.imageUrl += training.image;
       },
@@ -135,6 +140,7 @@ export class ModifyTrainingComponent implements OnInit {
       formData.append('seat', data.seat),
       formData.append('objectif', data.objectif),
       formData.append('program', data.program),
+      formData.append('starting_date', data.starting_date),
       formData.append('hours', data.hours),
       formData.append('idTrainer', data.idTrainer),
       formData.append('idCategory', data.idCategory),
