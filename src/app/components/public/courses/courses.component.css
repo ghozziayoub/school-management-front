@@ -1,0 +1,34 @@
+.category-img{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+   
+}
+
+.card-text small {
+    color: #2bc5d4;
+}
+.card-shadow{
+    border: none;
+}
+
+.backg{
+    background-color: #F0FBFC;
+
+}
+.trainer-card{
+    object-fit: cover;
+}
+
+.category-img :hover{
+    transition: .5s;
+}
+
+.description{
+    height: 200px;
+}
+
+.image-training{
+    width: 100%;
+    height: 100%;
+}

@@ -1,0 +1,117 @@
+<!-- Navbar Start -->
+<app-navbar></app-navbar>
+<!-- Navbar End -->
+
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 text-center">
+        <h1 class="display-3 text-white animated slideInDown">Blog</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center">
+            <li class="breadcrumb-item">
+              <a class="text-white" routerLink="/">Home</a>
+            </li>
+            <li class="breadcrumb-item text-white active">
+              <a class="text-white" routerLink="/blog">Blog</a>
+            </li>
+            <li class="breadcrumb-item text-white active">
+              <a class="text-white">{{ article.titre }}</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Header End -->
+<!-- 
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+      <h1 class="mb-5">{{ article.titre }}</h1>
+      <div class="article-image ">
+        <img class="image" src="http://localhost:3000/{{ article.image }}" alt="" />
+      </div>
+        <div class="published">
+            <i class="fa-solid fa-calendar-days date mt-2"></i><small class="m-2 date">{{ article.createdAt.substring(0, 10) }}</small>
+        </div>
+      <p class="article-content">{{ article.content }}</p>
+    </div>
+  </div>
+</div> -->
+
+<!-- ======= Blog Single Section ======= -->
+<section id="blog" class="blog">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-8 entries">
+        <article class="entry entry-single">
+          <div class="entry-img mb-2">
+            <img src="http://localhost:3000/{{ article.image }}" alt="" class="img-fluid " />
+          </div>
+
+          <h2 class="entry-title">
+            <a href="blog-single.html"
+              >{{ article.titre }}</a
+            >
+          </h2>
+
+          <div class="entry-meta">
+            <ul>
+              <li class="d-flex align-items-center">
+                <i class="bi bi-clock"></i>
+                <a href="blog-single.html"
+                  ><time datetime="2020-01-01">{{ article.createdAt.substring(0, 10) }}</time></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="entry-content">
+            <p>
+              {{ article.content }}
+            </p>
+          </div>
+        </article>
+      </div>
+      <div class="col-lg-4">
+        <div class="sidebar">
+          <h3 class="sidebar-title">Search</h3>
+          <div class="sidebar-item search-form">
+            <form action="">
+              <input type="text" />
+              <button type="submit"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <!-- End sidebar search formn-->
+
+          <!-- End sidebar categories-->
+
+          <h3 class="sidebar-title">Recent Posts</h3>
+          <div class="sidebar-item recent-posts">
+            <div *ngFor="let recentArticle of articleList" class="post-item clearfix">
+              <img src="http://localhost:3000/{{ recentArticle.image }}" alt="" />
+              <h4>
+                <a (click)="single(recentArticle._id)"
+                  >{{recentArticle.titre}}</a
+                >
+              </h4>
+              <time datetime="2020-01-01">{{ moment(recentArticle.createdAt) }}</time>
+            </div>
+
+            
+          </div>
+          <!-- End sidebar recent posts-->
+        </div>
+        <!-- End sidebar -->
+      </div>
+      <!-- End blog sidebar -->
+    </div>
+  </div>
+</section>
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->
